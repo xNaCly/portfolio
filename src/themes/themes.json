@@ -1,0 +1,22 @@
+{
+	"light": {
+		"--accent": "#FF6600",
+		"--accent2": "#FF6600",
+		"--background2": "white",
+		"--background": "#F6F6EF",
+		"--text-color": "black",
+		"--text-color2": "grey",
+		"--font": "'Space Mono', Verdana, Geneva, sans-serif",
+		"--code": "grey"
+	},
+	"dark": {
+		"--accent": "#ac4142",
+		"--accent2": "#fd898b",
+		"--background": "#151515",
+		"--background2": "#212121",
+		"--text-color": "#cccccc",
+		"--text-color2": "#e5b567",
+		"--font": "'JetBrains Mono', monospace",
+		"--code": "grey"
+	}
+}

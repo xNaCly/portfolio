@@ -1,0 +1,24 @@
+{
+	"About": "I'm an AGE year old student from germany and I am interested in technologies and programming.\n I enjoy procrastinating, exercising and listening to music.",
+	"Skillset": {
+		"Typescript": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png",
+		"Javascript": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png",
+		"CSS3": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png",
+
+		"HTML5": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png",
+		"Python": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png",
+		"Visual Studio Code": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png",
+
+		"node.js": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png",
+		"react.js": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png",
+		"express.js": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png",
+
+		"git": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png",
+		"bash": "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png",
+		"several Linuxdistros": "https://raw.githubusercontent.com/github/explore/master/topics/linux/linux.png"
+	},
+	"GithubStatsHref": [
+		"https://github-readme-stats.codestackr.vercel.app/api?username=xnacly&show_icons=true&hide_border=true&count_private=true&include_all_commits=true",
+		"https://github-readme-stats.vercel.app/api/top-langs/?username=xnacly&layout=compact&hide_border=true"
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"Projects": [
+		{
+			"title": "Betterforum",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/betterforum-vercel-app-.png",
+			"desc": "Betterforums is a simple and easy to understand alternative to conventional social media by focussing on the anonymous aspect of online communication.",
+			"repo": "https://github.com/xNaCly/betterforum",
+			"contr": false,
+			"lang": ["typescript", "javascript", "html", "css", "react", "express"]
+		},
+		{
+			"title": "tokenchecker-website",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/discordtoken-vercel-app-.png",
+			"desc": "simple website to check for a tokens validity (discord) ",
+			"repo": "https://github.com/xNaCly/tokenchecker-website",
+			"contr": false,
+			"lang": ["javascript", "html", "css"]
+		},
+		{
+			"title": "missing-native-JS-functions",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-Flam3rboy-missing-native-JS-functions.png",
+			"desc": "missing native javascript functions that should be the base lib for every JS project.",
+			"repo": "https://github.com/Flam3rboy/missing-native-JS-functions",
+			"contr": true,
+			"lang": ["typescript", "javascript"]
+		},
+		{
+			"title": "Better issues",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/xnacly-github-io-better-issues-.png",
+			"desc": "restbased-cdn to render github issues as images.",
+			"repo": "https://github.com/xNaCly/better-issues",
+			"contr": false,
+			"lang": ["javascript", "express"]
+		},
+		{
+			"title": "InstagramAPIwrapper",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-xNaCly-InstagramAPIwrapper.png",
+			"desc": "reverse engineered Instagram webAPI wrapper.",
+			"repo": "https://github.com/xNaCly/InstagramAPIwrapper",
+			"contr": false,
+			"lang": ["python"]
+		},
+		{
+			"title": "Netflix-Discord integration",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-xNaCly-netflix-rpc.png",
+			"desc": "netflix discord integration (Rich presence).",
+			"repo": "https://github.com/xNaCly/netflix-rpc",
+			"contr": false,
+			"lang": ["javascript"]
+		},
+		{
+			"title": "password generator",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/password-gen-xnacly-vercel-app-.png",
+			"desc": "a simple password generator written using native web tech.",
+			"repo": "https://github.com/xNaCly/password-gen",
+			"contr": false,
+			"lang": ["javascript", "html", "css"]
+		},
+		{
+			"title": "semikurs code",
+			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/semikurs-code-vercel-app-.png",
+			"desc": "simple, educational game to convey the roots of data sec.",
+			"repo": "https://github.com/xNaCly/semikurs-code",
+			"contr": false,
+			"lang": ["python", "flask", "javascript", "html", "css"]
+		}
+	]
+}
