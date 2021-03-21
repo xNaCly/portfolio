@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function NotYet({ notyet = false }) {
@@ -13,7 +12,6 @@ function NotYet({ notyet = false }) {
 						: "404 - Not found"}
 				</code>
 			</div>
-			{!notyet && <Footer />}
 		</div>
 	);
 }
