@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Href from "./Href";
 
-import themes from "../../themes/themes.json";
+// import themes from "../../themes/themes.json";
 import { defaultTheme } from "../../data/config.json";
 
 function Navbar() {
