@@ -3,7 +3,7 @@ import Navbar from "./util_components/Navbar";
 import ProjectCompact from "./project_components/ProjectCompact";
 
 import { Projects as ProjectsData } from "../data/projects.json";
-import { useState } from "react";
+// import { useState } from "react";s
 
 function Projects() {
 	// TODO: figure out a way to do the up sticky arrow on ios mobile
