@@ -29,19 +29,14 @@ function Navbar() {
 					href="/projects"></Href>
 			</div>
 			<div className="right_navbar_element">
-				<span className="secondary_text theme_span">Theme: </span>
-				<select
-					value={theme}
-					onChange={(e) => {
-						updateTheme(e.target.value);
+				<button
+					class="material-icons"
+					onClick={() => {
+						updateTheme(theme === "light" ? "dark" : "light");
 						window.location.reload();
 					}}>
-					{Object.keys(themes).map((x) => (
-						<option key={x} className={theme === defaultTheme && "Link_highlighted"} value={x}>
-							{x}
-						</option>
-					))}
-				</select>
+					{theme !== "dark" ? "dark_mode" : "light_mode"}
+				</button>
 			</div>
 		</div>
 	);

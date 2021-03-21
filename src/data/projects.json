@@ -9,7 +9,7 @@
 			"lang": ["typescript", "javascript", "html", "css", "react", "express"]
 		},
 		{
-			"title": "tokenchecker-website",
+			"title": "tokenchecker website",
 			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/discordtoken-vercel-app-.png",
 			"desc": "simple website to check for a tokens validity (discord) ",
 			"repo": "https://github.com/xNaCly/tokenchecker-website",
@@ -17,7 +17,7 @@
 			"lang": ["javascript", "html", "css"]
 		},
 		{
-			"title": "missing-native-JS-functions",
+			"title": "missing native JS functions",
 			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-Flam3rboy-missing-native-JS-functions.png",
 			"desc": "missing native javascript functions that should be the base lib for every JS project.",
 			"repo": "https://github.com/Flam3rboy/missing-native-JS-functions",
@@ -33,7 +33,7 @@
 			"lang": ["javascript", "express"]
 		},
 		{
-			"title": "InstagramAPIwrapper",
+			"title": "Instagram API wrapper",
 			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-xNaCly-InstagramAPIwrapper.png",
 			"desc": "reverse engineered Instagram webAPI wrapper.",
 			"repo": "https://github.com/xNaCly/InstagramAPIwrapper",
@@ -41,7 +41,7 @@
 			"lang": ["python"]
 		},
 		{
-			"title": "Netflix-Discord integration",
+			"title": "Netflix Discord integration",
 			"imageSrc": "https://raw.githubusercontent.com/xNaCly/xnacly.github.io/master/assets/github-com-xNaCly-netflix-rpc.png",
 			"desc": "netflix discord integration (Rich presence).",
 			"repo": "https://github.com/xNaCly/netflix-rpc",

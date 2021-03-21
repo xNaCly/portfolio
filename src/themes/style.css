@@ -11,10 +11,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--background2);
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-bottom: 0.5rem;
-	padding-top: 0.25rem;
+	padding: 1rem;
 }
 a {
 	color: var(--text-color);
@@ -54,9 +51,10 @@ a {
 	margin: 1rem;
 	background-color: var(--background2);
 	border-radius: 1rem;
-	width: 25%;
-	min-height: fit-content;
-	max-width: 25%;
+	overflow: hidden;
+	/* width: 25%; */
+	/* min-height: fit-content; */
+	width: 70%;
 	/* border: 0.1rem solid var(--accent); */
 }
 .secondary_container:hover {
@@ -68,6 +66,7 @@ a {
 	/* border: 0.1rem solid var(--accent2); */
 }
 .secondary_container_about {
+	overflow: hidden;
 	text-align: center;
 	display: flex;
 	word-wrap: break-word;
@@ -75,8 +74,8 @@ a {
 	margin: 1rem;
 	background-color: var(--background2);
 	border-radius: 1rem;
-	width: 25%;
-	max-width: 25%;
+	/* width: 25%; */
+	width: 70%;
 	margin-bottom: 10rem;
 	/* border: 0.1rem solid var(--accent); */
 }
@@ -129,6 +128,8 @@ button {
 	align-items: center;
 }
 .project_container {
+	overflow: hidden;
+	word-wrap: break-word;
 	background-color: var(--background2);
 	margin: 2rem;
 	text-align: center;
@@ -137,7 +138,7 @@ button {
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 1rem;
-	width: 40rem;
+	width: 70%;
 	padding-bottom: 1rem;
 	/* border: 0.1rem solid var(--accent); */
 }
@@ -148,7 +149,7 @@ button {
 .project_container > img {
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
-	width: 40rem;
+	width: 100%;
 	border-bottom: 0.25rem solid var(--accent);
 }
 .project_container > a {
@@ -179,7 +180,7 @@ option:hover {
 	background-color: var(--background2) !important;
 }
 .not_yet_mf_container {
-	padding: 17rem;
+	margin-top: 10rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -202,9 +203,18 @@ option:hover {
 code {
 	padding: 0.25rem;
 	background-color: var(--background);
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 0.5rem;
+	margin-left: 0.5rem;
 }
 .languages {
 	color: var(--code);
+	font-style: italic;
 	margin-left: 0.25rem;
 	margin-right: 0.25rem;
+}
+.right_navbar_element {
+	display: flex;
+	align-items: center;
 }

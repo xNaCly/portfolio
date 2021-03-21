@@ -6,7 +6,7 @@
 		"--background": "#F6F6EF",
 		"--text-color": "black",
 		"--text-color2": "grey",
-		"--font": "'Space Mono', Verdana, Geneva, sans-serif",
+		"--font": "'JetBrains Mono', monospace",
 		"--code": "grey"
 	},
 	"dark": {
