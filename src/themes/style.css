@@ -8,9 +8,9 @@ body {
 	margin: 0;
 }
 .navbar {
-	position: sticky;
-	position: -webkit-sticky;
-	top: 0;
+	/* position: sticky; */
+	/* position: -webkit-sticky; */
+	/* top: 0; */
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--background2);
