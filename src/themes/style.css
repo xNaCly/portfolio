@@ -192,7 +192,7 @@ option:hover {
 	align-items: center;
 }
 .not_yet_mf {
-	font-size: 50pt;
+	font-size: 25pt;
 	color: var(--accent);
 }
 .secondary_text {
