@@ -12,22 +12,27 @@ const LandingPage = () => {
 	const [githubStatsVisible, setGithubStatsVisibleFlag] = useState(toggledByDefault.githubStats);
 	const [skillSetVisible, skillSetVisibleFlag] = useState(toggledByDefault.skillSet);
 	const [aboutVisible, setAboutVisibleFlag] = useState(toggledByDefault.about);
-	const [position, updatePos] = useState(0);
 
-	document.addEventListener("scroll", () => {
-		updatePos(document.documentElement.scrollTop);
-	});
+	// TODO: figure out a way to do the up sticky arrow on ios mobile
+	// const [position, updatePos] = useState(0);
+
+	// document.addEventListener("scroll", () => {
+	// 	updatePos(document.documentElement.scrollTop);
+	// });
 
 	return (
 		<div>
 			<Navbar></Navbar>
-			{position > 150 && (
+			{
+				// TODO: figure out a way to do the up sticky arrow on ios mobile
+				/* {position > 150 && (
 				<button
 					className="material-icons md-48 scroll_to_top"
 					onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 					arrow_upward
 				</button>
-			)}
+			)} */
+			}
 			<div className="landing_container">
 				<div className="secondary_container">
 					<div className="heading_container">
