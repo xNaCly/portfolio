@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import "./themes/style.css";
-import applyTheme from "./util/applyTheme";
+import applyTheme from "./util/Theme";
 
 import LandingPage from "./components/LandingPage";
 import Projects from "./components/Projects";

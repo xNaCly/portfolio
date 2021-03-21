@@ -9,6 +9,7 @@ import themeFonts from "../themes/theme_fonts.json";
  */
 function injectFontUrl(themeSelected) {
 	const fontURL = themeFonts[themeSelected];
+	if (!fontURL) return;
 
 	var head = document.getElementsByTagName("head")[0];
 

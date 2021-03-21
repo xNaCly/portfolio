@@ -218,3 +218,12 @@ code {
 	display: flex;
 	align-items: center;
 }
+.material-icons:hover {
+	color: var(--text-color2);
+}
+.scroll_to_top {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+	padding: 2rem;
+}

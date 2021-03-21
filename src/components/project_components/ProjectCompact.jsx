@@ -6,11 +6,15 @@ function ProjectCompact({ title, imageSrc, desc, repo, contr, lang }) {
 			<hr className="hr_full" />
 			<span className={contr ? "pill contr" : "pill"}>{contr ? "Contribution" : "Self-Project"}</span>
 			{desc.split("\n").map((x) => (
-				<p className="text_padding">{x}</p>
+				<p key={x.slice(0.6)} className="text_padding">
+					{x}
+				</p>
 			))}
 			<code>
 				{lang.map((x) => (
-					<span className="languages">{x}</span>
+					<span key={x.slice(0.6)} className="languages">
+						{x}
+					</span>
 				))}
 			</code>
 			<a href={repo} className="Link Link_highlighted">

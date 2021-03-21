@@ -9,7 +9,7 @@ function NotYet({ notyet = false }) {
 				<span className="not_yet_mf">{"¯\\_(ツ)_/¯"}</span>
 				<code className="secondary_text languages">
 					{notyet
-						? "this page isn't written yet, file a complain and shove it up your ass :)"
+						? "this page isn't written yet, file a complaint and shove it up your ass :)"
 						: "404 - Not found"}
 				</code>
 			</div>
