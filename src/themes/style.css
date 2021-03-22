@@ -219,7 +219,7 @@ code {
 	color: var(--text-color2);
 }
 #navbar_icon {
-	font-size: 40pt;
+	font-size: 20pt;
 }
 .scroll_to_top {
 	position: sticky;
@@ -275,8 +275,15 @@ code {
 	align-items: center;
 }
 @media only screen and (max-width: 1000px) {
+	#navbar_icon {
+		font-size: 30pt;
+	}
 	.project_container {
 		width: 80%;
 		height: fit-content;
+	}
+	.scroll_to_top_temp {
+		font-size: 30pt;
+		margin-right: 1rem;
 	}
 }

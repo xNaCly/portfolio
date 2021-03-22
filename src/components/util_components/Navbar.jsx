@@ -40,6 +40,7 @@ function Navbar() {
 				)}
 				<button
 					className="material-icons"
+					id="navbar_icon"
 					onClick={() => {
 						updateTheme(theme === "light" ? "dark" : "light");
 						window.location.reload();
