@@ -4,7 +4,7 @@ import Navbar from "./util_components/Navbar";
 import SkillSetField from "./landingpage_components/SkillSetField";
 import GithubStats from "./landingpage_components/GithubStats";
 
-import { toggledByDefault, hidden, prod } from "../data/config.json";
+import { toggledByDefault, hidden /*, prod*/ } from "../data/config.json";
 import { Skillset, About, GithubStatsHref, Contact } from "../data/about.json";
 import ContactField from "./landingpage_components/ContactField";
 

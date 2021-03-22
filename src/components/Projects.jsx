@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import Navbar from "./util_components/Navbar";
 import ProjectCompact from "./project_components/ProjectCompact";
