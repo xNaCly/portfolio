@@ -8,9 +8,9 @@ function NotYet({ notyet = false, custom = null }) {
 				{custom &&
 					custom.split("\n").map((x) => (
 						<code>
-							<p className="secondary_text languages" key={x.slice(0, 6)}>
+							<span className="secondary_text languages" key={x.slice(0, 6)}>
 								{x}
-							</p>
+							</span>
 						</code>
 					))}
 				<span className="not_yet_mf">{"¯\\_(ツ)_/¯"}</span>

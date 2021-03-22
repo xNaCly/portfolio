@@ -7,7 +7,7 @@ function Blog() {
 			<NotYet
 				notyet={true}
 				custom={
-					"This section will contain a blog about my weekly coding adventures, new technologies i discover or just things I'm generaly interested in.\n Stay tuned..."
+					"This section will contain a blog about my weekly coding adventures,\nnew technologies i discover or just things I'm generaly interested in.\n Stay tuned..."
 				}
 			/>
 		</>
