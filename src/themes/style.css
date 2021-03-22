@@ -275,6 +275,12 @@ code {
 	justify-content: center;
 	align-items: center;
 }
+.easter {
+	font-size: 12pt;
+}
+.alert {
+	color: var(--accent);
+}
 @media only screen and (max-width: 1000px) {
 	#navbar_icon {
 		font-size: 25pt;

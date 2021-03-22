@@ -15,9 +15,24 @@ function NotYet({ notyet = false, custom = null }) {
 					))}
 				<span className="not_yet_mf">{"¯\\_(ツ)_/¯"}</span>
 				<code className="secondary_text languages">
-					{notyet
-						? "this page isn't written yet, file a complaint and shove it up your ass :)"
-						: "404 - Not found"}
+					{notyet ? (
+						<p>
+							<span className="alert">501</span> - Page not yet added
+						</p>
+					) : (
+						<>
+							<p>
+								<span className="alert">404</span> - Not found
+								<p className="secondary_text languages easter">
+									are you as lost as{" "}
+									<a className="easter" href="https://github.com/Flam3rboy">
+										Flam3rboy
+									</a>
+									?
+								</p>
+							</p>
+						</>
+					)}
 				</code>
 			</div>
 		</div>
