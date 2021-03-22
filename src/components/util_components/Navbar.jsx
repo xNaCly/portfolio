@@ -29,6 +29,10 @@ function Navbar() {
 					className={window.location.pathname === "/projects" ? "Link Link_highlighted" : "Link"}
 					text="Projects"
 					href="/projects"></Href>
+				<Href
+					className={window.location.pathname === "/blog" ? "Link Link_highlighted" : "Link"}
+					text="Blog"
+					href="/blog"></Href>
 			</div>
 			<div className="right_navbar_element">
 				{position > 200 && (

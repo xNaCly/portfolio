@@ -6,8 +6,10 @@ import applyTheme from "./util/Theme";
 
 import LandingPage from "./components/LandingPage";
 import Projects from "./components/Projects";
-import Footer from "./components/util_components/Footer";
+import Blog from "./components/Blog";
+
 import NotYet from "./components/util_components/NotYet";
+import Footer from "./components/util_components/Footer";
 
 function App() {
 	useEffect(() => {
@@ -20,6 +22,7 @@ function App() {
 			<Switch>
 				<Route component={LandingPage} path="/" exact></Route>
 				<Route component={Projects} path="/projects" exact></Route>
+				<Route component={Blog} path="/blog" exact></Route>
 				<Route component={NotYet} path="*"></Route>
 			</Switch>
 			<Footer></Footer>

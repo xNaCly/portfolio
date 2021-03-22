@@ -184,7 +184,8 @@ option:hover {
 	align-items: center;
 }
 .not_yet_mf {
-	font-size: 25pt;
+	margin-top: 2rem;
+	font-size: 50pt;
 	color: var(--accent);
 }
 .secondary_text {
@@ -276,7 +277,7 @@ code {
 }
 @media only screen and (max-width: 1000px) {
 	#navbar_icon {
-		font-size: 30pt;
+		font-size: 25pt;
 	}
 	.project_container {
 		width: 80%;
@@ -285,5 +286,8 @@ code {
 	.scroll_to_top_temp {
 		font-size: 30pt;
 		margin-right: 1rem;
+	}
+	.not_yet_mf {
+		font-size: 25pt;
 	}
 }
