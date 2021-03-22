@@ -1,6 +1,6 @@
 import themes from "../themes/themes.json";
-import { defaultTheme } from "../data/config.json";
 import themeFonts from "../themes/theme_fonts.json";
+import { defaultTheme } from "../data/config.json";
 
 /**
  * @param themeSelected `../themes/theme_fonts.json`
@@ -9,8 +9,6 @@ import themeFonts from "../themes/theme_fonts.json";
  */
 function injectFontUrl(themeSelected) {
 	const fontURL = themeFonts[themeSelected];
-	if (!fontURL) return;
-
 	var head = document.getElementsByTagName("head")[0];
 
 	var link = document.createElement("link");
