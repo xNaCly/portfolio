@@ -6,7 +6,6 @@ import applyTheme from "./util/Theme";
 
 import LandingPage from "./components/LandingPage";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import Footer from "./components/util_components/Footer";
 import NotYet from "./components/util_components/NotYet";
 
@@ -21,7 +20,6 @@ function App() {
 			<Switch>
 				<Route component={LandingPage} path="/" exact></Route>
 				<Route component={Projects} path="/projects" exact></Route>
-				<Route component={Contact} path="/contact" exact></Route>
 				<Route component={NotYet} path="*"></Route>
 			</Switch>
 			<Footer></Footer>

@@ -1,4 +1,4 @@
-import about from "../src/data/about.json";
+import about from "./data/about.json";
 
 module.exports = (req, res) => {
 	res.json({

@@ -56,6 +56,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	margin: 1rem;
+	text-align: center;
 	background-color: var(--background2);
 	border-radius: 1rem;
 	overflow: hidden;
@@ -71,20 +72,6 @@ a {
 .secondary_container_about:hover {
 	background-color: var(--background);
 	/* border: 0.1rem solid var(--accent2); */
-}
-.secondary_container_about {
-	overflow: hidden;
-	text-align: center;
-	display: flex;
-	word-wrap: break-word;
-	flex-direction: column;
-	margin: 1rem;
-	background-color: var(--background2);
-	border-radius: 1rem;
-	/* width: 25%; */
-	width: 70%;
-	margin-bottom: 10rem;
-	/* border: 0.1rem solid var(--accent); */
 }
 .hr_full {
 	width: 100%;
@@ -117,8 +104,10 @@ a {
 	margin-right: 0.5rem;
 }
 .heading_container {
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 	display: flex;
-	justify-content: space-between;
 	padding-right: 1rem;
 }
 button {
@@ -228,6 +217,9 @@ code {
 .material-icons:hover {
 	color: var(--text-color2);
 }
+#navbar_icon {
+	font-size: 40pt;
+}
 .scroll_to_top {
 	position: sticky;
 	position: -webkit-sticky;
@@ -238,4 +230,46 @@ code {
 /*TODO: fix ios bug*/
 .scroll_to_top_temp {
 	margin-right: 0.25rem;
+}
+.about {
+	display: flex;
+	margin-top: 1rem;
+	/* margin-bottom: 5rem; */
+	width: 70%;
+	overflow: hidden;
+	text-align: center;
+	word-wrap: break-word;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.about > p {
+	margin: 0;
+	padding: 0;
+}
+.icon_container {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+}
+.contact_icon {
+	font-size: 40pt;
+	margin: 2rem;
+	color: var(--accent);
+}
+.contact_icon:hover {
+	color: var(--text-color2);
+}
+.avatar_img {
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+	border: 0.25rem solid var(--accent);
+}
+.left_navbar_element {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

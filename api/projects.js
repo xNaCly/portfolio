@@ -1,4 +1,4 @@
-import projects from "../src/data/projects.json";
+import projects from "./data/projects.json";
 
 module.exports = (req, res) => {
 	res.json({

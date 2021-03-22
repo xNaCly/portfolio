@@ -26,11 +26,6 @@ function Navbar() {
 					text="Home"
 					href="/"></Href>
 				<Href
-					className={window.location.pathname === "/contact" ? "Link Link_highlighted" : "Link"}
-					text="Contact"
-					href="/contact"></Href>
-
-				<Href
 					className={window.location.pathname === "/projects" ? "Link Link_highlighted" : "Link"}
 					text="Projects"
 					href="/projects"></Href>

@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 import Navbar from "./util_components/Navbar";
-
 import SkillSetField from "./landingpage_components/SkillSetField";
 import GithubStats from "./landingpage_components/GithubStats";
 
-import { Skillset, About, GithubStatsHref } from "../data/about.json";
-import { toggledByDefault, hidden } from "../data/config.json";
+import { toggledByDefault, hidden, prod } from "../data/config.json";
+import { Skillset, About, GithubStatsHref, Contact } from "../data/about.json";
+import ContactField from "./landingpage_components/ContactField";
 
 const LandingPage = () => {
 	const [githubStatsVisible, setGithubStatsVisibleFlag] = useState(toggledByDefault.githubStats);
-	const [skillSetVisible, skillSetVisibleFlag] = useState(toggledByDefault.skillSet);
-	const [aboutVisible, setAboutVisibleFlag] = useState(toggledByDefault.about);
+	const [skillSetVisible] = useState(toggledByDefault.skillSet);
+	// const [aboutVisible, setAboutVisibleFlag] = useState(toggledByDefault.about);
 
 	// TODO: figure out a way to do the up sticky arrow on ios mobile
 	// const [position, updatePos] = useState(0);
@@ -34,12 +34,29 @@ const LandingPage = () => {
 			)} */
 			}
 			<div className="landing_container">
+				<div className="about">
+					<img alt="pp" className="avatar_img" src="https://avatars0.githubusercontent.com/u/47723417" />
+					{About.replace("AGE", new Date().getFullYear() - 2003)
+						.split("\n")
+						.map((x) => (
+							<p key={x.slice(0, 6)} className="text_padding">
+								{x}
+							</p>
+						))}
+					<div className="icon_container">
+						{Contact.map((x) => (
+							<ContactField {...x} />
+						))}
+					</div>
+				</div>
+			</div>
+			<div className="landing_container">
 				<div className="secondary_container">
 					<div className="heading_container">
 						<span className="text_padding Link_highlighted">Skills</span>
-						<button onClick={() => skillSetVisibleFlag(!skillSetVisible)}>
+						{/* <button onClick={() => skillSetVisibleFlag(!skillSetVisible)}>
 							[{skillSetVisible ? "-" : "+"}]
-						</button>
+						</button> */}
 					</div>
 					{skillSetVisible && <hr className="hr_full" />}
 					{skillSetVisible && (
@@ -62,23 +79,6 @@ const LandingPage = () => {
 						{githubStatsVisible && GithubStatsHref.map((x) => <GithubStats href={x} />)}
 					</div>
 				)}
-			</div>
-			<div className="landing_container">
-				<div className="secondary_container_about">
-					<div className="heading_container">
-						<span className="text_padding Link_highlighted">About</span>
-						<button onClick={() => setAboutVisibleFlag(!aboutVisible)}>[{aboutVisible ? "-" : "+"}]</button>
-					</div>
-					{aboutVisible && <hr className="hr_full" />}
-					{aboutVisible &&
-						About.replace("AGE", new Date().getFullYear() - 2003)
-							.split("\n")
-							.map((x) => (
-								<p key={x.slice(0, 6)} className="text_padding">
-									{x}
-								</p>
-							))}
-				</div>
 			</div>
 		</div>
 	);

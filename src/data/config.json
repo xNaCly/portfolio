@@ -1,9 +1,10 @@
 {
+	"prod": false,
+	"defaultTheme": "dark",
 	"toggledByDefault": {
 		"about": true,
 		"githubStats": false,
 		"skillSet": true
 	},
-	"hidden": ["githubStats"],
-	"defaultTheme": "dark"
+	"hidden": ["githubStats"]
 }
