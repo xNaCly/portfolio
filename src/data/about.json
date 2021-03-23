@@ -23,6 +23,6 @@
 	],
 	"Contact": [
 		{ "Class": "fa fa-github solid", "href": "https://github.com/xNaCly", "icon": "", "alt": "Github" },
-		{ "Class": "material-icons", "href": "mailto://xnacly@gmail.com", "icon": "mail", "alt": "Mail" }
+		{ "Class": "material-icons", "href": "mailto:xnacly@gmail.com", "icon": "mail", "alt": "Mail" }
 	]
 }
