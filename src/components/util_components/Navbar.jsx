@@ -30,7 +30,11 @@ function Navbar() {
 					text="Projects"
 					href="/projects"></Href>
 				<Href
-					className={window.location.pathname === "/blog" ? "Link Link_highlighted" : "Link"}
+					className={
+						window.location.pathname === "/blog" || window.location.pathname.startsWith("/entry")
+							? "Link Link_highlighted"
+							: "Link"
+					}
 					text="Blog"
 					href="/blog"></Href>
 			</div>

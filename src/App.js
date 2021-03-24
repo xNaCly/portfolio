@@ -10,6 +10,7 @@ import Blog from "./components/Blog";
 
 import NotYet from "./components/util_components/NotYet";
 import Footer from "./components/util_components/Footer";
+import BlogEntryExtended from "./components/blog_components/BlogEntryExtended";
 
 function App() {
 	useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
 				<Route component={LandingPage} path="/" exact></Route>
 				<Route component={Projects} path="/projects" exact></Route>
 				<Route component={Blog} path="/blog" exact></Route>
+				<Route component={BlogEntryExtended} path="/entry/:id"></Route>
 				<Route component={NotYet} path="*"></Route>
 			</Switch>
 			<Footer></Footer>

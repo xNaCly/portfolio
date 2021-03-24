@@ -10,7 +10,7 @@ function ProjectCompact({ title, imageSrc, desc, repo, contr, lang }) {
 					{x}
 				</p>
 			))}
-			<code>
+			<code className="code">
 				{lang.map((x) => (
 					<span key={x.slice(0.6)} className="languages">
 						{x}
