@@ -280,7 +280,7 @@ code {
 	border: 0.25rem solid var(--accent);
 }
 .left_navbar_element {
-	font-size: 20pt;
+	font-size: 17pt;
 	display: flex;
 	justify-content: center;
 	align-items: center;
