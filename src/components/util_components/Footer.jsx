@@ -2,7 +2,7 @@ function Footer() {
 	return (
 		<div className="footer">
 			<span>
-				<a className="Link" href="https://github.com/xNaCly/xnacly.github.io">
+				<a className="Link" href="https://github.com/xNaCly/portfolio/">
 					Source
 				</a>
 			</span>
