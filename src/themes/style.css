@@ -323,6 +323,7 @@ code {
 }
 .container_entry {
 	word-wrap: anywhere;
+	word-break: break-all;
 	margin-top: 2rem;
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
