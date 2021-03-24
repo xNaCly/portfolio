@@ -1,6 +1,5 @@
 * {
 	font-family: var(--font), monospace;
-	font-size: 15pt;
 	color: var(--text-color);
 }
 body {
@@ -323,8 +322,8 @@ code {
 	align-items: center;
 }
 .container_entry {
-	word-wrap: anywhere;
-	word-break: break-all;
+	word-wrap: break-word;
+	word-break: break-word;
 	margin-top: 2rem;
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
