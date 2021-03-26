@@ -12,7 +12,7 @@ function ProjectCompact({ title, imageSrc, desc, repo, contr, lang }) {
 			))}
 			<code className="code">
 				{lang.map((x) => (
-					<span key={x.slice(0.6)} className="languages">
+					<span key={x.slice(0.6)} className={`blog_tag tag_${x.toLowerCase()}`}>
 						{x}
 					</span>
 				))}
