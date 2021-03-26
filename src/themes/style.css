@@ -318,6 +318,7 @@ code {
 	padding-left: 0.25rem;
 }
 .blog_header_compact {
+	font-size: 16pt;
 	margin-right: 1rem;
 	margin-left: 1rem;
 }
@@ -336,7 +337,11 @@ code {
 	padding-left: 0.5rem;
 	background-color: var(--background2);
 }
-.container_entry code {
+.container_entry .code {
+	width: 80%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
 	padding: 0.1rem;
 	background-color: var(--background);
 }
@@ -419,5 +424,8 @@ th {
 	}
 	.not_yet_mf {
 		font-size: 25pt;
+	}
+	.entry_container_extended {
+		margin: 0.5rem !important;
 	}
 }

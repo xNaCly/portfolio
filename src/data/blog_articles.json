@@ -13,6 +13,13 @@
 			"content": "- [ ] Replace `//` in `src/data/about.json[contact[1]]`\n - [ ] decrease margin blog info on mobile\n - [ ] rework light-theme\n - [ ] rework dark-theme\n - [ ] update source in footer\n - [ ] Add dynamic `project/:id` route\n   - [ ] render the readme of each project in these\n - [ ] Add a blog page\n   - [ ] serverless function?\n   - [ ] add a component to create blog entries\n - [x] fix mobile view\n - [x] Remove contact page\n - [x] Add contact in form of icons to about\n - [x] Move the content of the about_container to the top of the landingpage\n - [x] Replace Select in Navbar with icons\n   - [x] change theme based on clicked icon (moon, sun)\n \n href:\n\nhttps://dilshankelsen.com/how-to-use-url-parameters-in-react-router/\n\nhttps://www.npmjs.com/package/react-markdown",
 			"author": "magro",
 			"tags": ["Javascript", "React"]
+		},
+		{
+			"title": "Missing Native JS Functions",
+			"createdAt": 1616774132211,
+			"content": "# Missing Native JS functions :)\n```js\nArray {\n\tremove(value: T): this; // removes the value of the array (Notice: it modifies the current array)\n\tflat(depth?: number): T; // returns a new flattened array e.g. [[1,2],[3,4]] -> [1,2,3,4]\n\tfirst(): T; // returns the first element of the array\n\tlast(): T; // returns the last element of the array\n\tfindMap(predicate: (value: T, index: number, obj: T[]) => unknown, map: (value: T) => any): any | undefined; // finds a value in the array and maps it\n\trandom(): T; // returns a random array element\n\tunique(): T[]; // returns a new unique array with distinct values\n\tshuffle(): T[]; // shuffles the current array\n\tinsert(elem: T, index: number): T[]; // insert an element at a specified index\n\tcount(search: RegExp | any): number; // returns total of found items for specified search\n\tsimilarities(arr: T[]): T[]; // returns a new array with elements that are both in this array and in the comparison array\n\tmissing(arr: T[]): T[]; // returns a new array with elements that are in this array, but are missing in the comparison array\n}\n```",
+			"author": "magro",
+			"tags": ["Javascript", "Typescript"]
 		}
 	]
 }

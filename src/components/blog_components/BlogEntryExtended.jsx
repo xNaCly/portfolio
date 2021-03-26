@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Navbar from "../util_components/Navbar";
 
 //! TEMP !-----------
@@ -15,6 +17,12 @@ function BlogEntryExtended({ match }) {
 	useEffect(() => {
 		updateEntry(articles.find((x) => x.createdAt === Number(match.params.id)));
 	}, [match.params.id]);
+
+	const renderers = {
+		code: ({ language, value }) => {
+			return <SyntaxHighlighter style={vscDarkPlus} language={language} children={value} />;
+		},
+	};
 
 	return (
 		<>
@@ -36,7 +44,9 @@ function BlogEntryExtended({ match }) {
 					<p className="languages easter entry_date">~{entry.author}</p>
 				</div>
 				<div className="container_entry">
-					<ReactMarkdown plugins={[gfm]}>{entry.content}</ReactMarkdown>
+					<ReactMarkdown renderers={renderers} plugins={[gfm]}>
+						{entry.content}
+					</ReactMarkdown>
 				</div>
 			</div>
 		</>

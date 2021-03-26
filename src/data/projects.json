@@ -6,7 +6,7 @@
 			"desc": "Betterforums is a simple and easy to understand alternative to conventional social media by focussing on the anonymous aspect of online communication.",
 			"repo": "https://github.com/xNaCly/betterforum",
 			"contr": false,
-			"lang": ["typescript", "javascript", "html", "css", "react", "express"]
+			"lang": ["Typescript", "Javascript", "HTML", "CSS", "React", "Express"]
 		},
 		{
 			"title": "tokenchecker website",
@@ -14,7 +14,7 @@
 			"desc": "simple website to check for a tokens validity (discord) ",
 			"repo": "https://github.com/xNaCly/tokenchecker-website",
 			"contr": false,
-			"lang": ["javascript", "html", "css"]
+			"lang": ["Javascript", "HTML", "CSS"]
 		},
 		{
 			"title": "missing native JS functions",
@@ -22,7 +22,7 @@
 			"desc": "missing native javascript functions that should be the base lib for every JS project.",
 			"repo": "https://github.com/Flam3rboy/missing-native-JS-functions",
 			"contr": true,
-			"lang": ["typescript", "javascript"]
+			"lang": ["Typescript", "Javascript"]
 		},
 		{
 			"title": "Better issues",
@@ -30,7 +30,7 @@
 			"desc": "restbased-cdn to render github issues as images.",
 			"repo": "https://github.com/xNaCly/better-issues",
 			"contr": false,
-			"lang": ["javascript", "express"]
+			"lang": ["Javascript", "Express"]
 		},
 		{
 			"title": "Instagram API wrapper",
@@ -38,7 +38,7 @@
 			"desc": "reverse engineered Instagram webAPI wrapper.",
 			"repo": "https://github.com/xNaCly/InstagramAPIwrapper",
 			"contr": false,
-			"lang": ["python"]
+			"lang": ["Python"]
 		},
 		{
 			"title": "Netflix Discord integration",
@@ -46,7 +46,7 @@
 			"desc": "netflix discord integration (Rich presence).",
 			"repo": "https://github.com/xNaCly/netflix-rpc",
 			"contr": false,
-			"lang": ["javascript"]
+			"lang": ["Javascript"]
 		},
 		{
 			"title": "password generator",
@@ -54,7 +54,7 @@
 			"desc": "a simple password generator written using native web tech.",
 			"repo": "https://github.com/xNaCly/password-gen",
 			"contr": false,
-			"lang": ["javascript", "html", "css"]
+			"lang": ["Javascript", "HTML", "CSS"]
 		},
 		{
 			"title": "semikurs code",
@@ -62,7 +62,7 @@
 			"desc": "simple, educational game to convey the roots of data sec.",
 			"repo": "https://github.com/xNaCly/semikurs-code",
 			"contr": false,
-			"lang": ["python", "flask", "javascript", "html", "css"]
+			"lang": ["Python", "Flask", "Javascript", "HTML", "CSS"]
 		}
 	]
 }
