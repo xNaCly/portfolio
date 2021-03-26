@@ -3,10 +3,17 @@ import Navbar from "./util_components/Navbar";
 import BlogEntryCompact from "./blog_components/BlogEntryCompact";
 
 import { articles as raw_articles } from "../data/blog_articles.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Blog() {
-	const [articles, updateArticles] = useState(raw_articles);
+	const [articles, updateArticles] = useState([]);
+	useEffect(() => {
+		const sorted = raw_articles.sort((a, b) => {
+			return b.createdAt - a.createdAt;
+		});
+		updateArticles(sorted);
+	}, []);
+	console.log(articles);
 	let i = 0;
 	return (
 		<>
