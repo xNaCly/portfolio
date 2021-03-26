@@ -9,7 +9,9 @@ function BlogEntryCompact({ key_, title, createdAt, content, tags }) {
 			<p className="languages easter entry_date">{new Date(createdAt).toUTCString()}</p>
 			<div className="code tag_container">
 				{tags.map((x) => (
-					<span className={`blog_tag tag_${x.toLowerCase()}`}>{x}</span>
+					<span key={x} className={`blog_tag tag_${x.toLowerCase()}`}>
+						{x}
+					</span>
 				))}
 			</div>
 		</div>

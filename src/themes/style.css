@@ -208,6 +208,7 @@ option:hover {
 	background-color: var(--background);
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	margin-right: 0.5rem;
 	margin-left: 0.5rem;
 }
@@ -406,6 +407,27 @@ th {
 	color: #ffdf76;
 }
 /* ------------- */
+.filter_options {
+	display: flex;
+	flex-direction: column;
+}
+.filters {
+	margin-right: 1rem;
+}
+.filter_options_buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.better_button {
+	background-color: var(--background2);
+	padding: 0.5rem;
+	margin: 0.25rem;
+}
+.add_filters {
+	background-color: var(--background2);
+}
 @media only screen and (max-width: 1000px) {
 	#navbar_icon {
 		font-size: 25pt;
