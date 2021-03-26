@@ -7,9 +7,9 @@ function BlogEntryCompact({ key_, title, createdAt, content, tags }) {
 			</Link>
 			<hr className="hr_sec" />
 			<p className="languages easter entry_date">{new Date(createdAt).toUTCString()}</p>
-			<div className="code tag_container">
+			<div className="code tag_container bg_remover">
 				{tags.map((x) => (
-					<span key={x} className={`blog_tag tag_${x.toLowerCase()}`}>
+					<span key={x} className={`blog_tag blog_tag_sec tag_${x.toLowerCase()}`}>
 						{x}
 					</span>
 				))}

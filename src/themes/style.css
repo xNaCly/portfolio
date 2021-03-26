@@ -181,6 +181,12 @@ option {
 option:hover {
 	background-color: var(--background2) !important;
 }
+input {
+	background: var(--background2);
+	border: none;
+	margin: 1rem;
+	padding: 0.5rem;
+}
 .not_yet_mf_container {
 	margin-top: 10rem;
 	display: flex;
@@ -374,7 +380,9 @@ th {
 	margin: 0.25rem;
 	background-color: var(--background2);
 }
-
+.blog_tag_sec {
+	background-color: var(--background);
+}
 .tag_container {
 	display: flex;
 	flex-direction: row;
@@ -426,7 +434,14 @@ th {
 	margin: 0.25rem;
 }
 .add_filters {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 	background-color: var(--background2);
+}
+.bg_remover {
+	background: none;
 }
 @media only screen and (max-width: 1000px) {
 	#navbar_icon {

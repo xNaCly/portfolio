@@ -16,6 +16,8 @@ function Blog() {
 	const [articles, updateArticles] = useState([]);
 	const [filters, updateFilters] = useState([]);
 
+	const [optionsExtendedFlag, updateOptionsExtendedFlag] = useState(false);
+
 	function checkArticle(article) {
 		let check;
 		filters.forEach((x) => {
@@ -37,11 +39,15 @@ function Blog() {
 	}, [filters]);
 
 	return (
-		<>
+		<div>
 			<Navbar />
 			<div className="filter_options">
 				<div className="code tag_container">
-					<span className="filters">Filters: </span>
+					<span
+						onClick={() => updateOptionsExtendedFlag(!optionsExtendedFlag)}
+						className="better_button filters">
+						Filters:
+					</span>
 					{filters[0] &&
 						filters.map((x) => (
 							<span
@@ -55,46 +61,44 @@ function Blog() {
 						))}
 					{!filters[0] && <span className="blog_tag">None</span>}
 				</div>
-				<div className="code tag_container">
-					<div className="code tag_container add_filters">
-						{tags.map((x) => {
-							if (filters.includes(x)) return <></>;
-							return (
+				{optionsExtendedFlag && (
+					<>
+						<div className="code tag_container">
+							<div className="code tag_container add_filters">
+								{tags.map((x) => {
+									if (filters.includes(x)) return <></>;
+									return (
+										<span
+											key={x.slice(0, 6)}
+											onClick={(e) => updateFilters([...filters, e.target.innerText])}
+											className={`blog_tag blog_tag_sec tag_${x.toLowerCase()}`}>
+											{x}
+										</span>
+									);
+								})}
+							</div>
+						</div>
+						<div className="filter_options_buttons">
+							{filters[1] && (
 								<span
-									key={x.slice(0, 6)}
-									onClick={(e) => updateFilters([...filters, e.target.innerText])}
-									className={`blog_tag tag_${x.toLowerCase()}`}>
-									{x}
+									className="better_button"
+									onClick={() => {
+										updateFilters([]);
+										updateArticles(sortArticles());
+									}}>
+									Reset Filters
 								</span>
-							);
-						})}
-					</div>
-				</div>
-				<div className="filter_options_buttons">
-					{filters[1] && (
-						<span
-							className="better_button"
-							onClick={() => {
-								updateFilters([]);
-								updateArticles(sortArticles());
-							}}>
-							Reset Filters
-						</span>
-					)}
-				</div>
+							)}
+						</div>
+					</>
+				)}
 			</div>
 			<div className="blog_entry_container">
 				{articles.map((article, i) => {
 					return <BlogEntryCompact key={article.createdAt} key_={i} {...article}></BlogEntryCompact>;
 				})}
 			</div>
-			{/* <NotYet
-				notyet={true}
-				custom={
-					"This section will contain a blog about my weekly coding adventures,\nnew technologies i discover or just things I'm generaly interested in.\n Stay tuned..."
-				}
-			/> */}
-		</>
+		</div>
 	);
 }
 
