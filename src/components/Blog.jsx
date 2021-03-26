@@ -2,9 +2,11 @@
 import Navbar from "./util_components/Navbar";
 import BlogEntryCompact from "./blog_components/BlogEntryCompact";
 
-import { articles } from "../data/blog_articles.json";
+import { articles as raw_articles } from "../data/blog_articles.json";
+import { useState } from "react";
 
 function Blog() {
+	const [articles, updateArticles] = useState(raw_articles);
 	let i = 0;
 	return (
 		<>
@@ -15,7 +17,6 @@ function Blog() {
 					return <BlogEntryCompact key={article.createdAt} key_={i} {...article}></BlogEntryCompact>;
 				})}
 			</div>
-
 			{/* <NotYet
 				notyet={true}
 				custom={

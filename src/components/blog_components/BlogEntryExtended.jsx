@@ -27,7 +27,12 @@ function BlogEntryExtended({ match }) {
 					<span className="entry_header">{entry.title}</span>
 				</div>
 				<div className="date_container">
-					<p className="languages easter entry_date">{new Date(entry.createdAt).toLocaleString()}</p>
+					<div className="tag_container">
+						{entry.tags.map((x) => (
+							<span className={`blog_tag tag_${x.toLowerCase()}`}>{x}</span>
+						))}
+					</div>
+					<p className="languages easter entry_date">{new Date(entry.createdAt).toUTCString()}</p>
 					<p className="languages easter entry_date">~{entry.author}</p>
 				</div>
 				<div className="container_entry">
