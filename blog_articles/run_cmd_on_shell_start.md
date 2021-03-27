@@ -6,7 +6,7 @@ To execute a command up on starting a bash terminal simply:
 
 ![](https://cdn.discordapp.com/attachments/824925461981298701/825421208627314768/unknown.png)
 
-2. `nano .bashrc`
+2. open the file with: `nano .bashrc`
 
 ![](https://cdn.discordapp.com/attachments/824925461981298701/825421622675505183/unknown.png)
 
