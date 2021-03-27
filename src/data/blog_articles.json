@@ -1,25 +1,18 @@
 {
 	"articles": [
 		{
-			"title": "DUMMY: Instagram Api Wrapper",
-			"createdAt": 1616504823129,
-			"content": "# Refrain from usage on your private instagram account\n# Using this wrapper will propably flag your account !\n\n### Private Instagram API wrapper\n- reverse engineered instagram web-api wrapper\n\n# [Docs](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs)\n\n# Features:\n| Method        | return        | args             |\n|---------------|---------------|------------------|\n| [getPost](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/getPost)        | [PostObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#postobject)           | link             |\n| [likePost](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/likePost)      | [StatusObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#statusobject)  | PostID           |\n| [unlikePost](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/unlikePost)    | [StatusObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#statusobject)  | PostID           |\n| [addComment](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/addComment)    | [CommentObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#commentobject) | PostID, comment   |\n| [removeComment](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/addComment) | [StatusObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#statusobject)  | PostID,CommentID |\n| [follow](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/follow)        | [StatusObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#statusobject)  | Username         |\n| [unfollow](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/unfollow)      | [StatusObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#statusobject)  | Username         |\n| [getUser](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/getUser)          | [UserObject](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs#userobject)    | Username         |\n| [search](https://github.com/xNaCly/InstagramAPIwrapper/tree/master/docs/search)        | UserArray     | string           |\n\n# Planned Features:\n[#1](https://github.com/xNaCly/InstagramAPIwrapper/issues/1)",
-			"author": "magro",
-			"tags": ["Python", "Reverse Engineering"]
+			"title": "How to bridge a WIFI connection to another Device using LAN [Manjaro, xfce]",
+			"content": "# How to bridge a WIFI connection to an other Device using LAN [Manjaro, xfce]\n1. To start off, we start bash and execute `nm-connection-editor`. *(This starts the network manager)*\n\n2. Now click the `+` on the bottom left of the spawned window. \n\n3. Next up select `Ethernet` from the options and click on `Create` in the bottom right. \n\n4. Go to the `IPv4 Settings` and change the method from `Automatic (DHCP)` to `Shared with other computers`.\n\n5. Now click on `Save` on the bottom right and connect a LAN-cable to your other device.\n\n> You should now be able to use the bridged connection.\n\n\n\n***PS:***\n\n> *If your device can't establish a connection to a WIFI, or the Network show WIFI as disabled try running the following command:*\n\n```bash\nnmcli radion wifi on\n```\n\n\n\n*Src:*\n\n> *https://www.reddit.com/r/ManjaroLinux/comments/9rs30y/sharing_wifi_over_ethernet/*",
+			"createdAt": 1616866959115,
+			"tags": ["Linux"],
+			"author": "xnacly"
 		},
 		{
-			"title": "DUMMY: Todo blog",
-			"createdAt": 1616504823259,
-			"content": "- [ ] Replace `//` in `src/data/about.json[contact[1]]`\n - [ ] decrease margin blog info on mobile\n - [ ] rework light-theme\n - [ ] rework dark-theme\n - [ ] update source in footer\n - [ ] Add dynamic `project/:id` route\n   - [ ] render the readme of each project in these\n - [ ] Add a blog page\n   - [ ] serverless function?\n   - [ ] add a component to create blog entries\n - [x] fix mobile view\n - [x] Remove contact page\n - [x] Add contact in form of icons to about\n - [x] Move the content of the about_container to the top of the landingpage\n - [x] Replace Select in Navbar with icons\n   - [x] change theme based on clicked icon (moon, sun)\n \n href:\n\nhttps://dilshankelsen.com/how-to-use-url-parameters-in-react-router/\n\nhttps://www.npmjs.com/package/react-markdown",
-			"author": "magro",
-			"tags": ["Javascript", "React"]
-		},
-		{
-			"title": "Missing Native JS Functions",
-			"createdAt": 1616774132211,
-			"content": "# Missing Native JS functions :)\n```js\nArray {\n\tremove(value: T): this; // removes the value of the array (Notice: it modifies the current array)\n\tflat(depth?: number): T; // returns a new flattened array e.g. [[1,2],[3,4]] -> [1,2,3,4]\n\tfirst(): T; // returns the first element of the array\n\tlast(): T; // returns the last element of the array\n\tfindMap(predicate: (value: T, index: number, obj: T[]) => unknown, map: (value: T) => any): any | undefined; // finds a value in the array and maps it\n\trandom(): T; // returns a random array element\n\tunique(): T[]; // returns a new unique array with distinct values\n\tshuffle(): T[]; // shuffles the current array\n\tinsert(elem: T, index: number): T[]; // insert an element at a specified index\n\tcount(search: RegExp | any): number; // returns total of found items for specified search\n\tsimilarities(arr: T[]): T[]; // returns a new array with elements that are both in this array and in the comparison array\n\tmissing(arr: T[]): T[]; // returns a new array with elements that are in this array, but are missing in the comparison array\n}\n```",
-			"author": "magro",
-			"tags": ["Javascript", "Typescript"]
+			"title": "How to run a shell command on bash terminal spawn",
+			"content": "# How to run a shell command on bash terminal spawn\nTo execute a command up on starting a bash terminal simply:\n\n1. navigate to your home directory (`home/%UserName%`)\n\n   ![](https://cdn.discordapp.com/attachments/824925461981298701/825421208627314768/unknown.png)\n\n2. `nano .bashrc`\n\n![](https://cdn.discordapp.com/attachments/824925461981298701/825421622675505183/unknown.png)\n\n3. press `ctrl+END` to jump to the end of the file\n\n![](https://cdn.discordapp.com/attachments/824925461981298701/825421907356287016/unknown.png)\n\n4. insert your command, in our case `neofetch` (*remember to hit `str-s` to save*)\n\n![](https://cdn.discordapp.com/attachments/824925461981298701/825425518664220682/unknown.png)\n\n5. start a new shell and take a screenshot to flex on [unixporn](https://www.reddit.com/r/unixporn/)\n\n![](https://cdn.discordapp.com/attachments/824925461981298701/825422257031217172/unknown.png)",
+			"createdAt": 1616867072577,
+			"tags": ["Linux"],
+			"author": "xnacly"
 		}
 	]
 }

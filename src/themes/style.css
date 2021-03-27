@@ -416,6 +416,10 @@ th {
 	background-color: #234c6e;
 	color: #ffdf76;
 }
+.tag_linux {
+	background-color: black;
+	color: yellow;
+}
 /* ------------- */
 .filter_options {
 	display: flex;
