@@ -16,6 +16,8 @@ function Blog() {
 	const [articles, updateArticles] = useState([]);
 	const [filters, updateFilters] = useState([]);
 
+	const [search, updateSearch] = useState(undefined);
+
 	const [optionsExtendedFlag, updateOptionsExtendedFlag] = useState(false);
 
 	function checkArticle(article) {
@@ -38,11 +40,29 @@ function Blog() {
 		}
 	}, [filters]);
 
+	useEffect(() => {
+		if (search) {
+			updateArticles(
+				articles.filter((x) => {
+					try {
+						return new RegExp(search, "gi").test(x.title);
+					} catch {
+						return true;
+					}
+				})
+			);
+		} else {
+			updateArticles(sortArticles());
+		}
+	}, [search]);
+
 	return (
 		<div>
 			<Navbar />
 			<div className="filter_options">
 				<div className="code tag_container">
+					<span>Search:</span>
+					<input onChange={(e) => updateSearch(e.target.value)}></input>
 					<span
 						onClick={() => updateOptionsExtendedFlag(!optionsExtendedFlag)}
 						className="better_button filters">
