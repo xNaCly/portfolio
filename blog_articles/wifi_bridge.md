@@ -16,7 +16,7 @@
 
 **_PS:_**
 
-_If your device can't establish a connection to a WIFI, or the Network show WIFI as disabled try running the following
+_If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the following
 command:_
 
 ```bash
