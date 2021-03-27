@@ -7,6 +7,7 @@ import Navbar from "../util_components/Navbar";
 
 //! TEMP !-----------
 import { articles } from "../../data/blog_articles.json";
+import NotYet from "../util_components/NotYet";
 //! -----------------
 
 const gfm = require("remark-gfm");
@@ -17,6 +18,8 @@ function BlogEntryExtended({ match }) {
 	useEffect(() => {
 		updateEntry(articles.find((x) => x.createdAt === Number(match.params.id)));
 	}, [match.params.id]);
+
+	if (!entry) return <NotYet custom="this entry doesnt exist :(" />;
 
 	const renderers = {
 		code: ({ language, value }) => {
