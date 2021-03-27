@@ -12,8 +12,6 @@
 
 > You should now be able to use the bridged connection.
 
-<br>
-
 **_PS:_**
 
 _If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the following
