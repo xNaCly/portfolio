@@ -449,6 +449,9 @@ th {
 .bg_remover {
 	background: none;
 }
+.container_entry img {
+	width: 100%;
+}
 @media only screen and (max-width: 1000px) {
 	#navbar_icon {
 		font-size: 25pt;
