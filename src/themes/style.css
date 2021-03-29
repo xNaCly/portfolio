@@ -26,7 +26,7 @@ a {
 	/* font-style: italic; */
 }
 .hide_underscore {
-	border: none;
+	border: none !important;
 }
 .Link {
 	border-bottom: 0.1rem solid var(--text-color2);
@@ -400,7 +400,12 @@ th {
 	align-items: center;
 	justify-content: center;
 }
-/* tag highligth */
+.container_right_align {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+/* tag highlight */
 .tag_react {
 	background-color: #5ccde9;
 	color: white;
@@ -428,6 +433,10 @@ th {
 .tag_linux {
 	background-color: black;
 	color: yellow;
+}
+.tag_opinion {
+	background-color: red;
+	color: white;
 }
 /* ------------- */
 .filter_options {
@@ -482,5 +491,10 @@ th {
 	}
 	.entry_container_extended {
 		margin: 0.5rem !important;
+	}
+	.container_right_align {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 }

@@ -53,7 +53,7 @@ const LandingPage = () => {
 			<div className="landing_container">
 				<div className="secondary_container">
 					<div className="heading_container">
-						<span className="text_padding Link_highlighted">Skills</span>
+						<span className="text_padding Link_highlighted hide_underscore">Skills</span>
 						{/* <button onClick={() => skillSetVisibleFlag(!skillSetVisible)}>
 							[{skillSetVisible ? "-" : "+"}]
 						</button> */}
