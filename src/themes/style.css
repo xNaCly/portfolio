@@ -21,18 +21,26 @@ body {
 }
 a {
 	color: var(--text-color);
+	text-decoration: none;
+	border-bottom: 0.1rem solid var(--text-color);
 	/* font-style: italic; */
 }
+.hide_underscore {
+	border: none;
+}
 .Link {
+	border-bottom: 0.1rem solid var(--text-color2);
 	color: var(--text-color2);
 	margin-left: 0.5rem;
 	font-style: normal;
 }
 .Link_highlighted {
 	color: var(--accent);
+	border-bottom: 0.1rem solid var(--accent);
 }
 .Link:hover {
 	color: var(--accent2);
+	border-bottom: 0.1rem solid var(--accent2);
 }
 .Link_container {
 	margin-right: 0.25rem;
@@ -356,6 +364,7 @@ code {
 }
 .container_entry a {
 	color: var(--text-color2);
+	border-bottom: 0.1rem dotted var(--text-color2);
 }
 .entry_header {
 	font-size: 30pt;
