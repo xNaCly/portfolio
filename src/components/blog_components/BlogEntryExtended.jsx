@@ -43,13 +43,16 @@ function BlogEntryExtended({ match }) {
 							<span className={`blog_tag tag_${x.toLowerCase()}`}>{x}</span>
 						))}
 					</div>
-					<p className="languages easter entry_date">{new Date(entry.createdAt).toUTCString()}</p>
-					<p className="languages easter entry_date">~{entry.author}</p>
 				</div>
 				<div className="container_entry">
 					<ReactMarkdown renderers={renderers} plugins={[gfm]}>
 						{entry.content}
 					</ReactMarkdown>
+				</div>
+				<div className="container_right_align">
+					<p className="languages easter entry_date">{entry.content.split(" ").length} words</p>
+					<p className="languages easter entry_date">{new Date(entry.createdAt).toUTCString()}</p>
+					<p className="languages easter entry_date">~{entry.author}</p>
 				</div>
 			</div>
 		</>
