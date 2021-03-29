@@ -6,6 +6,17 @@
 		"githubStats": false,
 		"skillSet": true
 	},
-	"tags": ["Typescript", "Javascript", "HTML", "CSS", "React", "Express", "Python", "Reverse Engineering", "Linux"],
+	"tags": [
+		"Typescript",
+		"Javascript",
+		"HTML",
+		"CSS",
+		"React",
+		"Express",
+		"Python",
+		"Reverse Engineering",
+		"Linux",
+		"Opinion"
+	],
 	"hidden": ["githubStats"]
 }
