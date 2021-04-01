@@ -1,10 +1,25 @@
-// import { useEffect } from "react";
-
-import Navbar from "./util_components/Navbar";
 import ProjectCompact from "./project_components/ProjectCompact";
-import { Projects as ProjectsData } from "../data/projects.json";
+import Navbar from "./util_components/Navbar";
+import { useEffect, useState } from "react";
+import { prod } from "../config.json";
+import fetch from "node-fetch";
 
-function Projects() {
+async function getProjects() {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/projects`);
+	return await res.json();
+}
+
+function Projects({ defaultTheme }) {
+	const [projects, updateProjects] = useState([]);
+
+	useEffect(() => {
+		const updateprojects = async () => {
+			const proj = await getProjects();
+			updateProjects(proj.projects);
+		};
+		updateprojects();
+	}, []);
+
 	// TODO: figure out a way to do the up sticky arrow on ios mobile
 	// const [position, updatePos] = useState(0);
 
@@ -14,7 +29,7 @@ function Projects() {
 
 	return (
 		<div>
-			<Navbar></Navbar>
+			<Navbar defaultTheme={defaultTheme} />
 			{
 				// TODO: figure out a way to do the up sticky arrow on ios mobile
 				/* {position > 150 && (
@@ -26,7 +41,7 @@ function Projects() {
 			)} */
 			}
 			<div className="projects_container">
-				{ProjectsData.map((project) => (
+				{projects.map((project) => (
 					<ProjectCompact key={project.repo.slice(0.15)} {...project}></ProjectCompact>
 				))}
 			</div>

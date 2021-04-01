@@ -1,6 +1,5 @@
 import themes from "../themes/themes.json";
 import themeFonts from "../themes/theme_fonts.json";
-import { defaultTheme } from "../data/config.json";
 
 /**
  * @param themeSelected `../themes/theme_fonts.json`
@@ -28,7 +27,7 @@ function injectFontUrl(themeSelected) {
  * @returns `void`
  * @description applies theme variables to the current stylesheet
  */
-function applyTheme(themeSelected) {
+function applyTheme(themeSelected, defaultTheme) {
 	const themeName = themeSelected ?? defaultTheme;
 	const themeValues = themes[themeName];
 	const themeKeys = Object.keys(themeValues);

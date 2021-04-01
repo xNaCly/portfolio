@@ -1,16 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "./util_components/Navbar";
 import SkillSetField from "./landingpage_components/SkillSetField";
 import GithubStats from "./landingpage_components/GithubStats";
-
-import { toggledByDefault, hidden /*, prod*/ } from "../data/config.json";
-import { Skillset, About, GithubStatsHref, Contact } from "../data/about.json";
 import ContactField from "./landingpage_components/ContactField";
 
-const LandingPage = () => {
-	const [githubStatsVisible, setGithubStatsVisibleFlag] = useState(toggledByDefault.githubStats);
-	const [skillSetVisible] = useState(toggledByDefault.skillSet);
+import { prod } from "../config.json";
+import fetch from "node-fetch";
+
+async function getAbout() {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/about`);
+	res = await res.json();
+	return res;
+}
+
+async function getFlags() {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
+	return await res.json();
+}
+
+const LandingPage = ({ defaultTheme }) => {
+	const [githubStatsVisible, setGithubStatsVisibleFlag] = useState(false);
+	const [skillSetVisible, setSkillSetVisible] = useState(false);
+	const [hidden, updateHidden] = useState([]);
+	const [About, updateAbout] = useState("");
+	const [Contact, updateContact] = useState([]);
+	const [Skillset, updateSkillSet] = useState([]);
+	const [GithubStatsHref, updateGithub] = useState([]);
+
+	useEffect(() => {
+		(async () => {
+			const flags = await getFlags();
+			const { toggledByDefault, hidden } = flags.flags[0];
+			setGithubStatsVisibleFlag(toggledByDefault.githubStats);
+			setSkillSetVisible(toggledByDefault.skillSet);
+			updateHidden(hidden);
+
+			let about = await getAbout();
+			about = about.about[0];
+			updateAbout(about.About);
+			updateContact(about.Contact);
+			updateSkillSet(about.Skillset);
+			updateGithub(about.Skillset);
+		})();
+	}, []);
+
 	// const [aboutVisible, setAboutVisibleFlag] = useState(toggledByDefault.about);
 
 	// TODO: figure out a way to do the up sticky arrow on ios mobile
@@ -21,8 +55,9 @@ const LandingPage = () => {
 	// });
 
 	return (
+		// <></>
 		<div>
-			<Navbar></Navbar>
+			<Navbar defaultTheme={defaultTheme} />
 			{
 				// TODO: figure out a way to do the up sticky arrow on ios mobile
 				/* {position > 150 && (
@@ -45,7 +80,7 @@ const LandingPage = () => {
 						))}
 					<div className="icon_container">
 						{Contact.map((x) => (
-							<ContactField {...x} />
+							<ContactField key={x.alt} {...x} />
 						))}
 					</div>
 				</div>
@@ -54,9 +89,6 @@ const LandingPage = () => {
 				<div className="secondary_container">
 					<div className="heading_container">
 						<span className="text_padding Link_highlighted hide_underscore">Skills</span>
-						{/* <button onClick={() => skillSetVisibleFlag(!skillSetVisible)}>
-							[{skillSetVisible ? "-" : "+"}]
-						</button> */}
 					</div>
 					{skillSetVisible && <hr className="hr_full" />}
 					{skillSetVisible && (

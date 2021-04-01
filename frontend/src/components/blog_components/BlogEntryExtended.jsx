@@ -1,22 +1,34 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import Navbar from "../util_components/Navbar";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { prod } from "./../../config.json";
+import { Link } from "react-router-dom";
+import fetch from "node-fetch";
 
-//! TEMP !-----------
-import { articles } from "../../data/blog_articles.json";
+import Navbar from "../util_components/Navbar";
 import NotYet from "../util_components/NotYet";
-//! -----------------
 
 const gfm = require("remark-gfm");
 
+async function getEntry(id) {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/articles/${id}`);
+	return (await res.json()).blog;
+}
+
 function BlogEntryExtended({ match }) {
-	const [entry, updateEntry] = useState(articles.find((x) => x.createdAt === Number(match.params.id)));
+	const [entry, updateEntry] = useState({});
 
 	useEffect(() => {
-		updateEntry(articles.find((x) => x.createdAt === Number(match.params.id)));
+		(async () => {
+			updateEntry(await getEntry(Number(match.params.id)));
+		})();
+	}, []);
+
+	useEffect(() => {
+		(async () => {
+			updateEntry(await getEntry(Number(match.params.id)));
+		})();
 	}, [match.params.id]);
 
 	if (!entry) return <NotYet custom="this entry doesnt exist :(" />;
@@ -35,24 +47,24 @@ function BlogEntryExtended({ match }) {
 					{"<<<"}
 				</Link>
 				<div>
-					<span className="entry_header">{entry.title}</span>
+					<span className="entry_header">{entry?.title}</span>
 				</div>
 				<div className="date_container">
 					<div className="tag_container">
-						{entry.tags.map((x) => (
+						{entry?.tags?.map((x) => (
 							<span className={`blog_tag tag_${x.toLowerCase()}`}>{x}</span>
 						))}
 					</div>
 				</div>
 				<div className="container_entry">
 					<ReactMarkdown renderers={renderers} plugins={[gfm]}>
-						{entry.content}
+						{entry?.content}
 					</ReactMarkdown>
 				</div>
 				<div className="container_right_align">
-					<p className="languages easter entry_date">{entry.content.split(" ").length} words</p>
-					<p className="languages easter entry_date">{new Date(entry.createdAt).toUTCString()}</p>
-					<p className="languages easter entry_date">~{entry.author}</p>
+					<p className="languages easter entry_date">{entry?.content?.split(" ")?.length} words</p>
+					<p className="languages easter entry_date">{new Date(entry?.createdAt)?.toUTCString()}</p>
+					<p className="languages easter entry_date">~{entry?.author}</p>
 				</div>
 			</div>
 		</>

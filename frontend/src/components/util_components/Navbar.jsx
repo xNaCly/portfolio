@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import Href from "./Href";
 
 // import themes from "../../themes/themes.json";
-import { defaultTheme } from "../../data/config.json";
 
-function Navbar() {
+function Navbar({ defaultTheme }) {
 	const [theme, updateTheme] = useState(localStorage.getItem("selected-theme") ?? defaultTheme);
 
 	useEffect(() => {

@@ -1,24 +1,36 @@
 // import NotYet from "./util_components/NotYet";
-import Navbar from "./util_components/Navbar";
 import BlogEntryCompact from "./blog_components/BlogEntryCompact";
-
-import { articles as raw_articles } from "../data/blog_articles.json";
+import Navbar from "./util_components/Navbar";
 import { useEffect, useState } from "react";
-import { tags } from "../data/config.json";
+import { prod } from "../config.json";
+import fetch from "node-fetch";
 
-function sortArticles() {
-	return raw_articles.sort((a, b) => {
+async function getArticles() {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/articles`);
+	return await res.json();
+}
+
+async function getTags() {
+	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
+	return await res.json();
+}
+
+async function sortArticles() {
+	const raw_articles = await getArticles();
+	return raw_articles.blog.sort((a, b) => {
 		return b.createdAt - a.createdAt;
 	});
 }
 
-function Blog() {
+function Blog({ defaultTheme }) {
 	const [articles, updateArticles] = useState([]);
 	const [filters, updateFilters] = useState([]);
 
 	const [search, updateSearch] = useState(undefined);
 
 	const [optionsExtendedFlag, updateOptionsExtendedFlag] = useState(false);
+
+	const [tags, setTags] = useState([]);
 
 	function checkArticle(article) {
 		let check;
@@ -29,36 +41,45 @@ function Blog() {
 	}
 
 	useEffect(() => {
-		updateArticles(sortArticles());
+		const gettags = async () => {
+			let config = await getTags();
+			setTags(config.flags[0].tags);
+		};
+		gettags();
+		sortArticles().then(updateArticles);
 	}, []);
 
 	useEffect(() => {
-		if (filters[0]) {
-			updateArticles(articles.filter(checkArticle));
-		} else {
-			updateArticles(sortArticles());
-		}
+		(async () => {
+			if (filters[0]) {
+				updateArticles(articles.filter(checkArticle));
+			} else {
+				updateArticles(await sortArticles());
+			}
+		})();
 	}, [filters]);
 
 	useEffect(() => {
-		if (search) {
-			updateArticles(
-				articles.filter((x) => {
-					try {
-						return new RegExp(search, "gi").test(x.title);
-					} catch {
-						return true;
-					}
-				})
-			);
-		} else {
-			updateArticles(sortArticles());
-		}
+		(async () => {
+			if (search) {
+				updateArticles(
+					articles.filter((x) => {
+						try {
+							return new RegExp(search, "gi").test(x.title);
+						} catch {
+							return true;
+						}
+					})
+				);
+			} else {
+				updateArticles(await sortArticles());
+			}
+		})();
 	}, [search]);
 
 	return (
 		<div>
-			<Navbar />
+			<Navbar defaultTheme={defaultTheme} />
 			<div className="filter_options">
 				<div className="code tag_container">
 					<span>Search:</span>
@@ -102,9 +123,9 @@ function Blog() {
 							{filters[1] && (
 								<span
 									className="better_button"
-									onClick={() => {
+									onClick={async () => {
 										updateFilters([]);
-										updateArticles(sortArticles());
+										updateArticles(await sortArticles());
 									}}>
 									Reset Filters
 								</span>
