@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import Href from "./Href";
 
-// import themes from "../../themes/themes.json";
-
 function Navbar({ defaultTheme }) {
+	// console.log(defaultTheme); > undefined
 	const [theme, updateTheme] = useState(localStorage.getItem("selected-theme") ?? defaultTheme);
 
 	useEffect(() => {
-		localStorage.setItem("selected-theme", theme);
+		theme && localStorage.setItem("selected-theme", theme);
 	}, [theme]);
 
 	// ! Temp fix for scroll to top not visible on ios mobile
