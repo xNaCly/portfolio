@@ -25,3 +25,4 @@ yarn-error.log*
 
 /*exclude ts build*/
 dist
+backend/src/config.json
