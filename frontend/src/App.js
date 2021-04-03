@@ -19,7 +19,6 @@ function App() {
 			let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
 			res = await res.json();
 			res = res.flags[0].defaultTheme;
-			// console.log(themeSelected, res); > undefined
 			applyTheme(themeSelected, res);
 			defaultTheme = res;
 		};
