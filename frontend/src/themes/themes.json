@@ -1,22 +1,22 @@
 {
 	"light": {
-		"--accent": "#FF6600",
-		"--accent2": "#FF6600",
-		"--background2": "white",
-		"--background": "#F6F6EF",
-		"--text-color": "black",
-		"--text-color2": "grey",
-		"--font": "Verdana, 'JetBrains Mono', monospace",
+		"--accent": "#88c0d0",
+		"--accent2": "#5e81ac",
+		"--background2": "#eceff4",
+		"--background": "white",
+		"--text-color": "#2e3440",
+		"--text-color2": "#3b4252",
+		"--font": "Rubik, monospace",
 		"--code": "grey"
 	},
 	"dark": {
-		"--accent": "#ac4142",
-		"--accent2": "#fd898b",
-		"--background": "#151515",
-		"--background2": "#212121",
-		"--text-color": "#cccccc",
-		"--text-color2": "#e5b567",
-		"--font": "'JetBrains Mono', monospace",
+		"--accent": "#88c0d0",
+		"--accent2": "#5e81ac",
+		"--background2": "#2e3440",
+		"--background": "#3b4252",
+		"--text-color": "#d8dee9",
+		"--text-color2": "#e5e9f0",
+		"--font": "Rubik, monospace",
 		"--code": "grey"
 	}
 }
