@@ -6,12 +6,12 @@ import { prod } from "../config.json";
 import fetch from "node-fetch";
 
 async function getArticles() {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/articles`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/articles`);
 	return await res.json();
 }
 
 async function getTags() {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/config`);
 	return await res.json();
 }
 
@@ -82,8 +82,7 @@ function Blog({ defaultTheme }) {
 			<Navbar defaultTheme={defaultTheme} />
 			<div className="filter_options">
 				<div className="code tag_container">
-					<span>Search:</span>
-					<input onChange={(e) => updateSearch(e.target.value)}></input>
+					<input placeholder="Search" onChange={(e) => updateSearch(e.target.value)}></input>
 					<span
 						onClick={() => updateOptionsExtendedFlag(!optionsExtendedFlag)}
 						className="better_button filters">
@@ -100,7 +99,7 @@ function Blog({ defaultTheme }) {
 								{x}
 							</span>
 						))}
-					{!filters[0] && <span className="blog_tag">None</span>}
+					{!filters[0] && <span className="blog_tag none_tag">None</span>}
 				</div>
 				{optionsExtendedFlag && (
 					<>

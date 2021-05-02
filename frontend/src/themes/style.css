@@ -29,18 +29,19 @@ a {
 	border: none !important;
 }
 .Link {
-	border-bottom: 0.1rem solid var(--text-color2);
+	#border-bottom: 0.1rem solid var(--text-color2);
+	border: none;
 	color: var(--text-color2);
 	margin-left: 0.5rem;
 	font-style: normal;
 }
 .Link_highlighted {
 	color: var(--accent);
-	border-bottom: 0.1rem solid var(--accent);
+	#border-bottom: 0.1rem solid var(--accent);
 }
 .Link:hover {
 	color: var(--accent2);
-	border-bottom: 0.1rem solid var(--accent2);
+	#border-bottom: 0.1rem solid var(--accent2);
 }
 .Link_container {
 	margin-right: 0.25rem;
@@ -339,6 +340,7 @@ code {
 	font-size: 16pt;
 	margin-right: 1rem;
 	margin-left: 1rem;
+	border: none;
 }
 .entry_container_extended {
 	margin: 2rem;
@@ -454,6 +456,8 @@ th {
 }
 .filters {
 	margin-right: 1rem;
+	cursor: pointer;
+	filter: brightness(1.50);
 }
 .filter_options_buttons {
 	display: flex;
@@ -466,6 +470,12 @@ th {
 	border-radius: 0.5rem;
 	padding: 0.5rem;
 	margin: 0.25rem;
+}
+.none_tag {
+	background-color: transparent;
+	border: 0.1rem solid var(--background2);
+	cursor: not-allowed;
+	padding: 0.25rem;
 }
 .add_filters {
 	display: flex;

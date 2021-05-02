@@ -9,13 +9,13 @@ import { prod } from "../config.json";
 import fetch from "node-fetch";
 
 async function getAbout() {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/about`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/about`);
 	res = await res.json();
 	return res;
 }
 
 async function getFlags() {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/config`);
 	return await res.json();
 }
 

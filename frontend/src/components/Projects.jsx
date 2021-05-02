@@ -5,7 +5,7 @@ import { prod } from "../config.json";
 import fetch from "node-fetch";
 
 async function getProjects() {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/projects`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/projects`);
 	return await res.json();
 }
 

@@ -12,7 +12,7 @@ import NotYet from "../util_components/NotYet";
 const gfm = require("remark-gfm");
 
 async function getEntry(id) {
-	let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/articles/${id}`);
+	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/articles/${id}`);
 	return (await res.json()).blog;
 }
 

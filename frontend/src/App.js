@@ -16,7 +16,7 @@ function App() {
 	useEffect(() => {
 		const getTheme = async () => {
 			const themeSelected = localStorage.getItem("selected-theme");
-			let res = await fetch(`${prod ? "" : "http://localhost:8080"}/api/config`);
+			let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/config`);
 			res = await res.json();
 			res = res.flags[0].defaultTheme;
 			applyTheme(themeSelected, res);
