@@ -26,7 +26,7 @@ function Blog({ defaultTheme }) {
 	const [articles, updateArticles] = useState([]);
 	const [filters, updateFilters] = useState([]);
 
-	const [search, updateSearch] = useState(undefined);
+	const [search, updateSearch] = useState();
 
 	const [optionsExtendedFlag, updateOptionsExtendedFlag] = useState(false);
 
@@ -61,17 +61,21 @@ function Blog({ defaultTheme }) {
 
 	useEffect(() => {
 		(async () => {
-			if (search) {
-				updateArticles(
-					articles.filter((x) => {
-						try {
-							return new RegExp(search, "gi").test(x.title);
-						} catch {
-							return true;
-						}
-					})
-				);
-			} else {
+			const regex = new RegExp(search, "gi");
+			console.log(regex, articles);
+			updateArticles(
+				articles.filter((x) => {
+					try {
+						console.log(regex);
+						return regex.test(x.title);
+					} catch {
+						console.log("test");
+						return true;
+					}
+				})
+			);
+			console.log(articles);
+			if (!search) {
 				updateArticles(await sortArticles());
 			}
 		})();
@@ -82,7 +86,16 @@ function Blog({ defaultTheme }) {
 			<Navbar defaultTheme={defaultTheme} />
 			<div className="filter_options">
 				<div className="code tag_container">
-					<input placeholder="Search" onChange={(e) => updateSearch(e.target.value)}></input>
+					<input
+						placeholder="Search"
+						id="search_input"
+						onChange={(e) => updateSearch(e.target.value)}
+						onKeyDown={async (e) => {
+							if (e.key === "Backspace") {
+								document.getElementById("search_input").value = "";
+								updateArticles(await sortArticles());
+							}
+						}}></input>
 					<span
 						onClick={() => updateOptionsExtendedFlag(!optionsExtendedFlag)}
 						className="better_button filters">
