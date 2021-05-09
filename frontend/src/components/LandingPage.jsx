@@ -84,11 +84,11 @@ const LandingPage = ({ defaultTheme }) => {
 								))}
 						</div>
 					</div>
-					{/* <div className="icon_container">
+					<div className="icon_container">
 						{Contact.map((x) => (
 							<ContactField key={x.alt} {...x} />
 						))}
-					</div> */}
+					</div>
 				</div>
 			</div>
 			{/* <div className="landing_container">
