@@ -62,19 +62,15 @@ function Blog({ defaultTheme }) {
 	useEffect(() => {
 		(async () => {
 			const regex = new RegExp(search, "gi");
-			console.log(regex, articles);
 			updateArticles(
 				articles.filter((x) => {
 					try {
-						console.log(regex);
 						return regex.test(x.title);
 					} catch {
-						console.log("test");
 						return true;
 					}
 				})
 			);
-			console.log(articles);
 			if (!search) {
 				updateArticles(await sortArticles());
 			}
