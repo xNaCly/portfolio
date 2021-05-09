@@ -2,6 +2,7 @@
 	"light": {
 		"--accent": "#88c0d0",
 		"--accent2": "#5e81ac",
+		"--background3": "#d8dee9",
 		"--background2": "#eceff4",
 		"--background": "white",
 		"--text-color": "#2e3440",
@@ -12,6 +13,7 @@
 	"dark": {
 		"--accent": "#88c0d0",
 		"--accent2": "#5e81ac",
+		"--background3": "#434c5e",
 		"--background2": "#2e3440",
 		"--background": "#3b4252",
 		"--text-color": "#d8dee9",

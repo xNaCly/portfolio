@@ -18,41 +18,43 @@ function Navbar({ defaultTheme }) {
 
 	return (
 		<div className="navbar">
-			<div className="left_navbar_element">
-				<Href
-					className={window.location.pathname === "/" ? "Link Link_highlighted" : "Link"}
-					text="Home"
-					href="/"></Href>
-				<Href
-					className={window.location.pathname === "/projects" ? "Link Link_highlighted" : "Link"}
-					text="Projects"
-					href="/projects"></Href>
-				<Href
-					className={
-						window.location.pathname === "/blog" || window.location.pathname.startsWith("/entry")
-							? "Link Link_highlighted"
-							: "Link"
-					}
-					text="Blog"
-					href="/blog"></Href>
-			</div>
-			<div className="right_navbar_element">
-				{position > 200 && (
+			<div className="navbar_2">
+				<div className="left_navbar_element">
+					<Href
+						className={window.location.pathname === "/" ? "Link Link_highlighted" : "Link"}
+						text="Home"
+						href="/"></Href>
+					<Href
+						className={window.location.pathname === "/projects" ? "Link Link_highlighted" : "Link"}
+						text="Projects"
+						href="/projects"></Href>
+					<Href
+						className={
+							window.location.pathname === "/blog" || window.location.pathname.startsWith("/entry")
+								? "Link Link_highlighted"
+								: "Link"
+						}
+						text="Blog"
+						href="/blog"></Href>
+				</div>
+				<div className="right_navbar_element">
+					{position > 200 && (
+						<button
+							className="material-icons md-48 scroll_to_top_temp"
+							onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+							arrow_upward
+						</button>
+					)}
 					<button
-						className="material-icons md-48 scroll_to_top_temp"
-						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-						arrow_upward
+						className="material-icons"
+						id="navbar_icon"
+						onClick={() => {
+							updateTheme(theme === "light" ? "dark" : "light");
+							window.location.reload();
+						}}>
+						{theme !== "dark" ? "dark_mode" : "light_mode"}
 					</button>
-				)}
-				<button
-					className="material-icons"
-					id="navbar_icon"
-					onClick={() => {
-						updateTheme(theme === "light" ? "dark" : "light");
-						window.location.reload();
-					}}>
-					{theme !== "dark" ? "dark_mode" : "light_mode"}
-				</button>
+				</div>
 			</div>
 		</div>
 	);

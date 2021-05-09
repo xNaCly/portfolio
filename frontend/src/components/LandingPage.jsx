@@ -7,6 +7,7 @@ import ContactField from "./landingpage_components/ContactField";
 
 import { prod } from "../config.json";
 import fetch from "node-fetch";
+import ProgressBar from "./project_components/ProgressBar";
 
 async function getAbout() {
 	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/about`);
@@ -70,22 +71,27 @@ const LandingPage = ({ defaultTheme }) => {
 			}
 			<div className="landing_container">
 				<div className="about">
-					<img alt="pp" className="avatar_img" src="https://avatars0.githubusercontent.com/u/47723417" />
-					{About.replace("AGE", new Date().getFullYear() - 2003)
-						.split("\n")
-						.map((x) => (
-							<p key={x.slice(0, 6)} className="text_padding">
-								{x}
-							</p>
-						))}
-					<div className="icon_container">
+					<div className="about_">
+						<img alt="pp" className="avatar_img" src="https://avatars0.githubusercontent.com/u/47723417" />
+						<div>
+							{About.replace("AGE", new Date().getFullYear() - 2003)
+								.split("\n")
+
+								.map((x) => (
+									<p key={x.slice(0, 6)} className="text_padding">
+										{x}
+									</p>
+								))}
+						</div>
+					</div>
+					{/* <div className="icon_container">
 						{Contact.map((x) => (
 							<ContactField key={x.alt} {...x} />
 						))}
-					</div>
+					</div> */}
 				</div>
 			</div>
-			<div className="landing_container">
+			{/* <div className="landing_container">
 				<div className="secondary_container">
 					<div className="heading_container">
 						<span className="text_padding Link_highlighted hide_underscore">Skills</span>
@@ -111,6 +117,40 @@ const LandingPage = ({ defaultTheme }) => {
 						{githubStatsVisible && GithubStatsHref.map((x) => <GithubStats href={x} />)}
 					</div>
 				)}
+			</div> */}
+			<div className="progress_wrapper">
+				<div className="progess_container">
+					<h1>Languages:</h1>
+					<ProgressBar text="German" progress={100}></ProgressBar>
+					<ProgressBar text="English" progress={90}></ProgressBar>
+					<ProgressBar text="Spanish" progress={15}></ProgressBar>
+					<ProgressBar text="French" progress={10}></ProgressBar>
+				</div>
+				<div className="progess_container">
+					<h1>Technologies:</h1>
+					<ProgressBar text={"HTML & CSS"} progress={90}></ProgressBar>
+					<ProgressBar text="Javascript" progress={75}></ProgressBar>
+					<ProgressBar text="Typescript" progress={70}></ProgressBar>
+					<ProgressBar text="Python" progress={70}></ProgressBar>
+				</div>
+			</div>
+			<div className="progress_wrapper">
+				<div className="progess_container">
+					<h1>Frameworks:</h1>
+					<ProgressBar text="React.js" progress={70}></ProgressBar>
+					<ProgressBar text="Node-fetch" progress={70}></ProgressBar>
+					<ProgressBar text="Express.js" progress={60}></ProgressBar>
+					<ProgressBar text="Quick.db" progress={40}></ProgressBar>
+					<ProgressBar text="Puppeteer" progress={30}></ProgressBar>
+				</div>
+				<div className="progess_container">
+					<h1>Other:</h1>
+					<ProgressBar text="VS-code" progress={85}></ProgressBar>
+					<ProgressBar text="Git, Github" progress={80}></ProgressBar>
+					<ProgressBar text="Node.js" progress={75}></ProgressBar>
+					<ProgressBar text="Bash" progress={70}></ProgressBar>
+					<ProgressBar text="Nvim, vim" progress={50}></ProgressBar>
+				</div>
 			</div>
 		</div>
 	);
