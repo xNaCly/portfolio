@@ -7,6 +7,7 @@
 		"--background": "white",
 		"--text-color": "#2e3440",
 		"--text-color2": "#3b4252",
+		"--text-color3": "#949eb4",
 		"--font": "Rubik, monospace",
 		"--code": "grey"
 	},
@@ -18,6 +19,7 @@
 		"--background": "#3b4252",
 		"--text-color": "#d8dee9",
 		"--text-color2": "#e5e9f0",
+		"--text-color3": "#949eb4",
 		"--font": "Rubik, monospace",
 		"--code": "grey"
 	}

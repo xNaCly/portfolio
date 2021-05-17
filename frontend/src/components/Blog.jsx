@@ -120,7 +120,7 @@ function Blog({ defaultTheme }) {
 										<span
 											key={x.slice(0, 6)}
 											onClick={(e) => updateFilters([...filters, e.target.innerText])}
-											className={`blog_tag blog_tag_sec tag_${x.toLowerCase()}`}>
+											className={`blog_tag tag_${x.toLowerCase()}`}>
 											{x}
 										</span>
 									);

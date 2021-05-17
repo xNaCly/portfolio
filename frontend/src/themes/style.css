@@ -7,6 +7,9 @@
 * {
 	font-family: var(--font), monospace;
 	color: var(--text-color);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 body {
 	background-color: var(--background);
@@ -160,15 +163,14 @@ button {
 	word-wrap: break-word;
 	background-color: var(--background2);
 	margin: 1rem;
-	text-align: center;
+	text-align: left;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	justify-content: space-between;
 	border-radius: 1rem;
 	width: 25%;
-	height: 45rem;
-	padding-bottom: 1rem;
+	min-height: 20rem;
 	transition: linear box-shadow 300ms;
 }
 .project_container:hover {
@@ -263,8 +265,12 @@ code {
 	display: flex;
 	align-items: center;
 }
+.material-icons {
+	text-decoration: none;
+	border: none;
+}
 .material-icons:hover {
-	color: var(--text-color2);
+	color: var(--text-color3);
 	cursor: pointer;
 }
 #navbar_icon {
@@ -367,9 +373,11 @@ code {
 	padding-bottom: 0.25rem;
 	padding-right: 0.25rem;
 	padding-left: 0.25rem;
+	color: var(--text-color3) !important;
 }
 .blog_header_compact {
-	font-size: 16pt;
+	font-weight: 900 !important;
+	font-size: 1.5rem;
 	margin-right: 1rem;
 	margin-left: 1rem;
 	border: none;
@@ -430,11 +438,12 @@ th {
 	padding: 0.5rem;
 	margin: 0.25rem;
 	cursor: pointer;
+	user-select: none;
 	border-radius: 0.5rem;
-	background-color: var(--background2);
+	background-color: var(--background);
 }
 .blog_tag_sec {
-	background-color: var(--background);
+	background-color: var(--background2);
 }
 .tag_container {
 	display: flex;
@@ -575,7 +584,37 @@ th {
 	display: flex;
 	align-items: center;
 }
-@media only screen and (max-width: 1000px) {
+.tag_container_project {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: transparent;
+	margin: 0.5rem;
+	padding: 0.5rem;
+}
+.project_tech {
+	margin: 0.2rem;
+}
+.project_header {
+	text-align: left !important;
+	font-weight: 900 !important;
+	font-size: 1.5rem;
+}
+.project_content {
+	color: var(--text-color3);
+	font-weight: 100 !important;
+	font-size: medium;
+}
+.project_tag {
+	cursor: inherit;
+	user-select: none;
+}
+.header_container_project {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 1rem;
+}
+@media only screen and (max-width: 1200px) {
 	#navbar_icon {
 		font-size: 20pt;
 	}
