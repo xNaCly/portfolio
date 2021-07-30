@@ -134,8 +134,14 @@ const LandingPage = ({ defaultTheme }) => {
 			<div className="progress_wrapper">
 				<div className="progess_container">
 					<h1>Languages:</h1>
-					<ProgressBar text="German" progress={100}></ProgressBar>
-					<ProgressBar text="English" progress={90}></ProgressBar>
+					<ProgressBar
+						text="German"
+						progress={100}
+						progress_text={"Native Speaker"}></ProgressBar>
+					<ProgressBar
+						text="English"
+						progress={90}
+						progress_text={"C1 - Advanced"}></ProgressBar>
 					<ProgressBar text="Spanish" progress={15}></ProgressBar>
 					<ProgressBar text="French" progress={10}></ProgressBar>
 				</div>
@@ -152,9 +158,9 @@ const LandingPage = ({ defaultTheme }) => {
 			<div className="progress_wrapper">
 				<div className="progess_container">
 					<h1>Frameworks:</h1>
-					<ProgressBar text="React.js" progress={70}></ProgressBar>
 					<ProgressBar text="Node-fetch" progress={70}></ProgressBar>
 					<ProgressBar text="Express.js" progress={60}></ProgressBar>
+					<ProgressBar text="React.js" progress={40}></ProgressBar>
 					<ProgressBar text="Quick.db" progress={20}></ProgressBar>
 					<ProgressBar text="Puppeteer" progress={20}></ProgressBar>
 				</div>

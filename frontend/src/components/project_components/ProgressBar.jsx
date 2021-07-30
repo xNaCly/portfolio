@@ -1,15 +1,20 @@
-function ProgressBar({ text, progress }) {
+function ProgressBar({ text, progress, progress_text }) {
 	let color = "";
-	let progress_text = "";
 	if (progress <= 24) {
 		color = "var(--danger)";
-		progress_text = "Beginner";
+		if (!progress_text) {
+			progress_text = "Beginner";
+		}
 	} else if (25 <= progress && progress <= 49) {
 		color = "var(--warning)";
-		progress_text = "Intermediate";
+		if (!progress_text) {
+			progress_text = "Intermediate";
+		}
 	} else if (50 <= progress) {
 		color = "var(--success)";
-		progress_text = "Advanced";
+		if (!progress_text) {
+			progress_text = "Advanced";
+		}
 	}
 
 	return (
