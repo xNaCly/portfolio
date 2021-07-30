@@ -10,13 +10,17 @@ import fetch from "node-fetch";
 import ProgressBar from "./project_components/ProgressBar";
 
 async function getAbout() {
-	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/about`);
+	let res = await fetch(
+		`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/about`
+	);
 	res = await res.json();
 	return res;
 }
 
 async function getFlags() {
-	let res = await fetch(`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/config`);
+	let res = await fetch(
+		`${prod ? "https://xnacly.me" : "http://localhost:8080"}/api/config`
+	);
 	return await res.json();
 }
 
@@ -72,13 +76,22 @@ const LandingPage = ({ defaultTheme }) => {
 			<div className="landing_container">
 				<div className="about">
 					<div className="about_">
-						<img alt="pp" className="avatar_img" src="https://avatars0.githubusercontent.com/u/47723417" />
+						<img
+							alt="pp"
+							className="avatar_img"
+							src="https://avatars0.githubusercontent.com/u/47723417"
+						/>
 						<div>
-							{About.replace("AGE", new Date().getFullYear() - 2003)
+							{About.replace(
+								"AGE",
+								new Date().getFullYear() - 2003
+							)
 								.split("\n")
 
 								.map((x) => (
-									<p key={x.slice(0, 6)} className="text_padding">
+									<p
+										key={x.slice(0, 6)}
+										className="text_padding">
 										{x}
 									</p>
 								))}
@@ -128,7 +141,9 @@ const LandingPage = ({ defaultTheme }) => {
 				</div>
 				<div className="progess_container">
 					<h1>Technologies:</h1>
-					<ProgressBar text={"HTML & CSS"} progress={90}></ProgressBar>
+					<ProgressBar
+						text={"HTML & CSS"}
+						progress={90}></ProgressBar>
 					<ProgressBar text="Javascript" progress={75}></ProgressBar>
 					<ProgressBar text="Typescript" progress={70}></ProgressBar>
 					<ProgressBar text="Python" progress={70}></ProgressBar>
@@ -140,16 +155,16 @@ const LandingPage = ({ defaultTheme }) => {
 					<ProgressBar text="React.js" progress={70}></ProgressBar>
 					<ProgressBar text="Node-fetch" progress={70}></ProgressBar>
 					<ProgressBar text="Express.js" progress={60}></ProgressBar>
-					<ProgressBar text="Quick.db" progress={40}></ProgressBar>
-					<ProgressBar text="Puppeteer" progress={30}></ProgressBar>
+					<ProgressBar text="Quick.db" progress={20}></ProgressBar>
+					<ProgressBar text="Puppeteer" progress={20}></ProgressBar>
 				</div>
 				<div className="progess_container">
 					<h1>Other:</h1>
 					<ProgressBar text="VS-code" progress={85}></ProgressBar>
 					<ProgressBar text="Git, Github" progress={80}></ProgressBar>
 					<ProgressBar text="Node.js" progress={75}></ProgressBar>
-					<ProgressBar text="Bash" progress={70}></ProgressBar>
-					<ProgressBar text="Nvim, vim" progress={50}></ProgressBar>
+					<ProgressBar text="Bash" progress={45}></ProgressBar>
+					<ProgressBar text="Nvim, vim" progress={45}></ProgressBar>
 				</div>
 			</div>
 		</div>

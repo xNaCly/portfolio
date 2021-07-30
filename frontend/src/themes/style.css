@@ -611,7 +611,7 @@ th {
 	justify-content: space-between;
 	padding-right: 1rem;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1500px) {
 	#navbar_icon {
 		font-size: 20pt;
 	}
