@@ -20,5 +20,3 @@ export default {
   name: "StyleShowcase"
 };
 </script>
-
-<style></style>

@@ -41,11 +41,12 @@ body {
   background-color: var(--background);
   transition: background-color 0.3s;
 }
-code {
+code:not(div pre>code) {
   font-family: "Roboto Mono", monospace;
   color: var(--text-sec);
   background-color: var(--background-sec);
-  padding: 0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 a {
   color: var(--primary);

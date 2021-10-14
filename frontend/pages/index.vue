@@ -1,5 +1,8 @@
 <template>
-  <StyleShowcase />
+  <div>
+    <StyleShowcase />
+    <ArticleOverview />
+  </div>
 </template>
 
 <script>
