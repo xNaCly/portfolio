@@ -11,6 +11,7 @@
     <a style="display: block" href="/">Link</a>
     <button class="button">Default Button</button>
     <button class="button primary">Primary Button</button>
+    <button class="button secondary">Secondary Button</button>
   </div>
 </template>
 
