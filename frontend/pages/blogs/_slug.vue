@@ -1,7 +1,10 @@
 <template>
-  <article>
-    <nuxt-content :document="article" />
-  </article>
+  <div>
+    <Navbar />
+    <article>
+      <nuxt-content :document="article" />
+    </article>
+  </div>
 </template>
 <script>
 export default {
