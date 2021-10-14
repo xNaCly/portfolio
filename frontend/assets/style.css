@@ -20,14 +20,14 @@
 }
 * {
   box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   color: var(--text);
   background-color: var(--background);
 }
 code {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Roboto Mono", monospace;
   color: var(--text-secondary);
   background-color: var(--background-sec);
   padding: 0.25rem;
