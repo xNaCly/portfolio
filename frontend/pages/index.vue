@@ -1,5 +1,5 @@
 <template>
-  <Landing />
+  <StyleShowcase />
 </template>
 
 <script>

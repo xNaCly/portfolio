@@ -1,23 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
 :root {
-  /* Colorscheme: */
-  --hover-opacity: 0.5;
-  
   --background: #ffffff;
-  --background-sec: #edf2f7;
+  --background-sec: #e5e9f0;
   
   --primary: #00c58e;
   --secondary: #00a4d4;
   
-  --text: #2f495e;
-  --text-secondary: #606f7b;
-  --text-third: #606f7b50;
+  --text: #4c566a;
+  --text-secondary: #434c5e;
+  --text-third: #3b425250;
 
   --primary-hover:  #00ad7c;
   --secondary-hover: #0099C5;
-  --background-sec-hover: #d6d9dd;
+  --background-sec-hover: #4C566A50;
 }
+
+.dark-mode {
+   --background: #2E3440;
+   --background-sec: #4C566A;
+   
+   --primary: #00c58e;
+   --secondary: #00a4d4;
+   
+   --text: #E5E9F0;
+   --text-secondary: #D8DEE9;
+   --text-third: #606f7b50;
+ 
+   --primary-hover:  #00ad7c;
+   --secondary-hover: #0099C5;
+   --background-sec-hover: #4C566A50;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -25,10 +39,11 @@
 body {
   color: var(--text);
   background-color: var(--background);
+  transition: background-color 0.3s;
 }
 code {
   font-family: "Roboto Mono", monospace;
-  color: var(--text-secondary);
+  color: var(--text-sec);
   background-color: var(--background-sec);
   padding: 0.25rem;
 }
