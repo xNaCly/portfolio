@@ -2,6 +2,8 @@
 title: Bridge WIFI connection via LAN
 description: This article showcases how to bridge a WIFI connection in detail
 os: linux (manjaro)
+author: xnacly
+timetoread: 1min
 ---
 
 # How to bridge a WIFI connection to another Device using LAN [Manjaro, xfce]
