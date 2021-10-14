@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <NuxtLink to="/">/home</NuxtLink>
-    <NuxtLink to="/blog">/blog</NuxtLink>
-    <NuxtLink to="/projects">/projects</NuxtLink>
+  <div class="navbar">
+    <NuxtLink class="link" to="/">/home</NuxtLink>
+    <NuxtLink class="link" to="/blog">/blog</NuxtLink>
+    <NuxtLink class="link" to="/projects">/projects</NuxtLink>
+    <a href="https://github.com/xnacly">/.github</a>
   </div>
 </template>
 <script>

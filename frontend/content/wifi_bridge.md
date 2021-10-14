@@ -1,12 +1,11 @@
 ---
 title: Bridge WIFI connection via LAN
-description: This article showcases how to bridge a WIFI connection in detail
+description: This article showcases how to bridge a WIFI connection in detail using xfce
 os: linux (manjaro)
 author: xnacly
-timetoread: 1min
+timetoread: 1 min
+writtenat: October 14, 2021
 ---
-
-# How to bridge a WIFI connection to another Device using LAN [Manjaro, xfce]
 
 1. To start off, we start bash and execute `nm-connection-editor`. _(This starts the network manager)_
 
@@ -22,8 +21,7 @@ timetoread: 1min
 
 **_PS:_**
 
-_If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the following
-command:_
+- If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the following command:
 
 ```bash
 nmcli radion wifi on

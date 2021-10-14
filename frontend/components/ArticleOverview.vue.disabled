@@ -1,5 +1,5 @@
 <!-- this shit doesnt work and i have no idea why - ps. fuck vue-->
-<!-- fuck this tutorial, doesnt work: nuxtjs.org/tutorial/creating-blog-with-nuxt-content -->
+<!-- fuck this tutorial, doesnt work: https://nuxtjs.org/tutorials/creating-blog-with-nuxt-content -->
 <template>
   <div>
     <h1>Blog Posts</h1>
