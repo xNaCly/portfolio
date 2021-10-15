@@ -43,6 +43,11 @@ export default {
   },
 
   content: {
-    liveEdit: false
+    liveEdit: false,
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
+      }
+    }
   }
 }

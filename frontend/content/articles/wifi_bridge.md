@@ -5,6 +5,7 @@ os: linux (manjaro)
 author: xnacly
 timetoread: 1 min
 writtenat: October 14, 2021
+nottags: manjaro#wifi#lan#hotspot
 ---
 
 1. To start off, we start bash and execute `nm-connection-editor`. _(This starts the network manager)_
