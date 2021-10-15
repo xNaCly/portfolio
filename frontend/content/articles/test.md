@@ -19,7 +19,7 @@ _italicized text_
 
 1. First item
 2. Second item
-3. Third item
+3. Third item[^5]
 
 - First item
 - Second item
@@ -58,7 +58,10 @@ _italicized text_
 function test(param) {
   console.log(param);
 }
-["A", "B", "C"].map(x => x.toLowerCase()).filter(y => typeof y === "string").forEach(e => console.log(e));
+["A", "B", "C"]
+  .map(x => x.toLowerCase())
+  .filter(y => typeof y === "string")
+  .forEach(e => console.log(e));
 ```
 
 ```py
@@ -86,3 +89,4 @@ Here's a sentence with a footnote. [^4]
 [^2]: This is the footnote.
 [^3]: This is the footnote.
 [^4]: This is the footnote.
+[^5]: This is the footnote.

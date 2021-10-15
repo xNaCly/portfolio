@@ -49,13 +49,13 @@ code:not(div pre > code) {
 }
 a {
   color: var(--text);
-  text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: var(--text-secondary);
 }
 .link {
   color: var(--primary);
+  text-decoration: none;
 }
 .link:hover {
   color: var(--primary-hover);
