@@ -2,7 +2,7 @@
   <div>
     <Navbar />
     <StyleShowcase />
-    <!--<ArticleOverview />-->
+    <Footer />
   </div>
 </template>
 

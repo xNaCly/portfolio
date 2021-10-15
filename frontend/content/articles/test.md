@@ -80,10 +80,10 @@ echo "copied files"
 
 ## Footnotes
 
-Here's a sentence with a footnote. [^1]
-Here's a sentence with a footnote. [^2]
-Here's a sentence with a footnote. [^3]
-Here's a sentence with a footnote. [^4]
+- Here's a sentence with a footnote. [^1]
+- Here's a sentence with a footnote. [^2]
+- Here's a sentence with a footnote. [^3]
+- Here's a sentence with a footnote. [^4]
 
 [^1]: This is the footnote.
 [^2]: This is the footnote.
