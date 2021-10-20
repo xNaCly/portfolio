@@ -3,7 +3,7 @@
     <Navbar />
     <div class="article-container">
       <div class="article">
-        <NuxtLink class="link" to="/blog"
+        <NuxtLink class="link " to="/blog"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -14,13 +14,13 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="feather feather-corner-left-up"
+            class="feather feather-arrow-left"
           >
-            <polyline points="14 9 9 4 4 9" />
-            <path d="M20 20h-7a4 4 0 0 1-4-4V4" /></svg
+            <line x1="19" y1="12" x2="5" y2="12" />
+            <polyline points="12 19 5 12 12 5" /></svg
           >../</NuxtLink
         >
-        <div class="tag-container">
+        <div class="tag-container fade-in">
           <span
             v-for="tag in article.nottags.split('#')"
             :key="tag"
@@ -44,16 +44,26 @@
             >{{ tag }}</span
           >
         </div>
-        <h1 class="article-header">
+        <div class="toc-container">
+          <h2>Table of Contents:</h2>
+          <div class="toc-link-container">
+            <ul>
+              <li v-for="link of article.toc" :key="link.id">
+                <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h1 class="article-header fade-in">
           {{ article.title }}
         </h1>
-        <span class="article-subtitle"
+        <span class="article-subtitle reveal-text"
           >{{ article.writtenat }} • {{ article.timetoread }} read</span
         >
-        <hr class="article-seperator" />
-        <nuxt-content :document="article" />
-        <hr class="article-seperator" />
-        <span class="article-subtitle">
+        <hr class="article-seperator fade-in" />
+        <nuxt-content :document="article" class="fade-in" />
+        <hr class="article-seperator fade-in" />
+        <span class="article-subtitle fade-in">
           Published {{ article.writtenat }} by
           <span class="article-author"
             ><a :href="'https://github.com/' + article.author">{{

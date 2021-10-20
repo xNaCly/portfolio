@@ -1,11 +1,11 @@
 <template>
   <div class="navbar">
     <div class="navbar-user-container">
-      <img
-        src="https://avatars.githubusercontent.com/u/47723417?v=4"
+      <!-- <img
+        src="https://notion-emojis.s3-us-west-2.amazonaws.com/v0/svg-twitter/1f575-fe0f.svg"
         class="navbar-userimage"
-      />
-      <span class="navbar-usernamee">xnacly</span>
+      /> -->
+      <span class="navbar-username">xnacly</span>
     </div>
     <NuxtLink class="link" to="/">/home</NuxtLink>
     <NuxtLink class="link" to="/blog">/blog</NuxtLink>
@@ -58,7 +58,9 @@
 export default {
   methods: {
     changeColor: function() {
-      if (this.$colorMode.preference === "light") {
+      if (!this.$colorMode.preference) {
+        this.$colorMode.preference = "light";
+      } else if (this.$colorMode.preference === "light") {
         return (this.$colorMode.preference = "dark");
       } else {
         return (this.$colorMode.preference = "light");
