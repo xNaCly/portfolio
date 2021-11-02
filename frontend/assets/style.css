@@ -8,34 +8,27 @@
   --background: #f8f9fa;
   --background-sec: #eeeeee;
 
-  --primary: #88c0d0;
-  --secondary: #81a1c1;
+  --primary: #62bfed;
 
-  --text: #4c566a;
-  --text-secondary: #434c5e;
-  --text-third: #3b425250;
+  --text: #011627;
+  --text-secondary: #aea3b0;
+  --text-third: #e3d0d8;
 
-  --text-hover: #a3b3d3;
-
-  --primary-hover: #74a5b3;
-  --secondary-hover: #647e97;
-  --background-sec-hover: #4c566a50;
+  --primary-hover: #56aad4;
+  --background-sec-hover: #bcabae50;
 }
 .dark-mode {
-  --background: #2e3440;
-  --background-sec: #3b4252;
+  --background: #1c2438;
+  --background-sec: #283044;
 
-  --primary: #a3be8c;
-  --secondary: #afbea2;
+  --primary: #f26df9;
 
   --text: #f5f3ed;
   --text-secondary: #bdae93;
   --text-third: #51535c;
 
-  --text-hover: #343a47;
+  --primary-hover: #d862df;
 
-  --primary-hover: #889e74;
-  --secondary-hover: #89957f;
   --background-sec-hover: #504a4850;
 }
 * {
@@ -62,7 +55,7 @@ a:hover {
   color: var(--text-secondary);
 }
 .link {
-  color: var(--secondary);
+  color: var(--primary);
   text-decoration: none;
 }
 .link svg {
@@ -73,7 +66,7 @@ a:hover {
   align-items: center;
 }
 .link:hover {
-  color: var(--secondary-hover);
+  color: var(--primary-hover);
 }
 .navbar {
   display: flex;
@@ -83,7 +76,6 @@ a:hover {
 }
 .navbar .link {
   margin-right: 1.5rem;
-  color: var(--secondary);
 }
 .badge,
 .button {
@@ -110,17 +102,10 @@ a:hover {
   background-color: var(--primary);
   box-shadow: inset 0 -4px 0 var(--primary-hover);
 }
-.secondary {
-  color: var(--background);
-  background-color: var(--secondary);
-  box-shadow: inset 0 -4px 0 var(--secondary-hover);
-}
 .primary:active {
   box-shadow: inset 0 -2px 0 var(--primary-hover);
 }
-.secondary:active {
-  box-shadow: inset 0 -2px 0 var(--secondary-hover);
-}
+
 /* article css rules */
 blockquote {
   background-color: var(--background-sec);
@@ -248,9 +233,6 @@ div.article div.nuxt-content h5 a {
   justify-content: center;
   align-items: center;
 }
-.primary-fg {
-  color: var(--primary) !important;
-}
 .article-header {
   margin-top: 0.25rem;
 }
@@ -258,7 +240,8 @@ div.article div.nuxt-content h5 a {
   margin-left: 0.25rem;
 }
 .toc-link-container ul {
-  list-style-type: lower-roman;
+  margin-left: 0.25rem;
+  list-style-type: decimal-leading-zero;
 }
 /* text reveal animation */
 .fade-in {
@@ -336,7 +319,7 @@ div.article div.nuxt-content h5 a {
   }
 }
 /* media querys*/
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
   .article,
   .article-previews-container {
     margin: 0;

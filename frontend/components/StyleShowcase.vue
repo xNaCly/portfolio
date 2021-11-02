@@ -13,7 +13,6 @@
     <div style="display: flex; align-items: center;">
       <button class="button">Default Button</button>
       <button class="button primary">Primary Button</button>
-      <button class="button secondary">Secondary Button</button>
     </div>
     <div style="display: flex; align-items: center;">
       <span class="badge">Badge</span>
