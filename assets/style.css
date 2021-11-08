@@ -165,8 +165,8 @@ pre {
 .article {
 	max-width: 100%;
 	overflow: auto;
-	word-wrap: break-word;
-	word-break: keep-all;
+	word-wrap: normal;
+	/* word-break: keep-all; */
 	margin: 24rem;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -239,14 +239,19 @@ div.article div.nuxt-content h5 a {
 .icon-project-header {
 	margin-left: 0.25rem;
 }
+.toc-link-container {
+	padding-left: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
 .toc-link-container ul {
-	margin-left: 0.25rem;
 	list-style-type: decimal-leading-zero;
 }
 .projects-container {
 	display: grid;
-	margin-right: 14rem;
-	margin-left: 14rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 0.5rem;
 }
 .project {
 	padding: 0.5rem;
@@ -355,4 +360,9 @@ div.article div.nuxt-content h5 a {
 		width: 100%;
 		display: block;
 	}
+	/* .toc-link-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	} */
 }
