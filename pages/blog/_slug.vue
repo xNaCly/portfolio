@@ -34,8 +34,10 @@
 							stroke-linejoin="round"
 							class="feather feather-tag"
 						>
-							<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-							<line x1="7" y1="7" x2="7.01" y2="7" /></svg
+							<line x1="4" y1="9" x2="20" y2="9" />
+							<line x1="4" y1="15" x2="20" y2="15" />
+							<line x1="10" y1="3" x2="8" y2="21" />
+							<line x1="16" y1="3" x2="14" y2="21" /></svg
 						>{{ tag }}</span
 					>
 				</div>
