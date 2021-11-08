@@ -1,13 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <div class="article-previews-container">
-      <div
-        v-for="project of projects"
-        :key="project.title"
-        class="article-preview"
-      >
-        <p class="article-preview-title reveal-text">
+    <div class="projects-container">
+      <div v-for="project of projects" :key="project.title" class="project">
+        <p class="project-title reveal-text">
           <a :href="project.href" class="link link-flex">
             {{ project.title }}
             <svg
@@ -30,7 +26,7 @@
             </svg>
           </a>
         </p>
-        <p class="article-preview-desc fade-in">
+        <p class="project-desc fade-in">
           {{ project.description }}
         </p>
       </div>

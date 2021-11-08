@@ -243,6 +243,19 @@ div.article div.nuxt-content h5 a {
   margin-left: 0.25rem;
   list-style-type: decimal-leading-zero;
 }
+.projects-container {
+  display: grid;
+  margin-right: 14rem;
+  margin-left: 14rem;
+}
+.project {
+  padding: 0.5rem;
+  background-color: var(--background-sec);
+  border-radius: 0.25rem;
+}
+.project-title {
+  margin: 0;
+}
 /* text reveal animation */
 .fade-in {
   animation-delay: var(--delay2, 2s);
