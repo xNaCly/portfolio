@@ -21,13 +21,13 @@ _italicized text_
 2. Second item
 3. Third item[^5]
 
-- First item
-- Second item
-- Third item
+-   First item
+-   Second item
+-   Third item
 
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
+-   [x] Write the press release
+-   [ ] Update the website
+-   [ ] Contact the media
 
 ## Code, link, image, table
 
@@ -48,20 +48,21 @@ _italicized text_
 
 ```json
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+	"firstName": "John",
+	"lastName": "Smith",
+	"age": 25
 }
 ```
 
 ```js
 function test(param) {
-  console.log(param);
+	console.log(param);
 }
+
 ["A", "B", "C"]
-  .map(x => x.toLowerCase())
-  .filter(y => typeof y === "string")
-  .forEach(e => console.log(e));
+	.map((x) => x.toLowerCase())
+	.filter((y) => typeof y === "string")
+	.forEach((e) => console.log(e));
 ```
 
 ```py
@@ -80,10 +81,10 @@ echo "copied files"
 
 ## Footnotes
 
-- Here's a sentence with a footnote. [^1]
-- Here's a sentence with a footnote. [^2]
-- Here's a sentence with a footnote. [^3]
-- Here's a sentence with a footnote. [^4]
+-   Here's a sentence with a footnote. [^1]
+-   Here's a sentence with a footnote. [^2]
+-   Here's a sentence with a footnote. [^3]
+-   Here's a sentence with a footnote. [^4]
 
 [^1]: This is the footnote.
 [^2]: This is the footnote.
