@@ -3,7 +3,7 @@ title: Bridge WIFI connection via LAN
 description: This article showcases how to bridge a WIFI connection in detail using xfce
 os: linux (manjaro)
 author: xnacly
-timetoread: 1 min
+timetoread: 2 min
 writtenat: October 14, 2021
 nottags: manjaro#wifi#lan#hotspot
 ---
@@ -22,10 +22,13 @@ nottags: manjaro#wifi#lan#hotspot
 
 **_PS:_**
 
-- If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the following command:
+-   If your device can't establish a connection to a WIFI, or the Network shows WIFI as disabled try running the
+    following command:
 
 ```bash
 nmcli radion wifi on
 ```
 
-_Src:_ _https://www.reddit.com/r/ManjaroLinux/comments/9rs30y/sharing_wifi_over_ethernet/_
+Link to Source[^1]
+
+[^1]: https://www.reddit.com/r/ManjaroLinux/comments/9rs30y/sharing_wifi_over_ethernet/_

@@ -4,7 +4,7 @@ description: A guide to wifi, touchpad support and more on your macbook pro 2012
 author: xnacly
 timetoread: 10 min
 writtenat: December 27, 2021
-nottags: linux#arch
+nottags: archlinux#wifi
 ---
 
 ## Enable tap to click
@@ -24,11 +24,9 @@ EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf;
 systemctl restart lightdm
 ```
 
-_Source_ [^1]
+Link to Source [^1]
 
 ## Get wireless running (the GUI method)
-
-_Source_[^2]
 
 -   install [`yay`](https://github.com/Jguer/yay#installation)
 -   install [`broadcom-wl`](https://wiki.archlinux.org/title/Broadcom_wireless#broadcom-wl)
@@ -39,6 +37,8 @@ _Source_[^2]
 -   install and run [`nm-connection-editor`](https://archlinux.org/packages/extra/x86_64/nm-connection-editor/)
 -   add a new connection in the bottom left and choose `WIFI`
 -   enter your wifi ssid and password, disable ipv6 (_optional_)
+
+Link to Source[^2]
 
 ## Change screen brightness
 
