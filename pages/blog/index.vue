@@ -39,6 +39,11 @@
 
 <script>
 export default {
+	head() {
+		return {
+			title: "Blog - xnacly",
+		};
+	},
 	async asyncData({ $content }) {
 		const posts = await $content("articles")
 			.only(["title", "description", "writtenat", "slug", "timetoread"])
