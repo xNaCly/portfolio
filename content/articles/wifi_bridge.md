@@ -1,10 +1,9 @@
 ---
 title: Bridge WIFI connection via LAN
 description: This article showcases how to bridge a WIFI connection in detail using xfce
-os: linux (manjaro)
 author: xnacly
 timetoread: 2 min
-writtenat: October 14, 2021
+writtenat: 2021-10-14
 nottags: manjaro#wifi#lan#hotspot
 ---
 

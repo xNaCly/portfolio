@@ -75,6 +75,8 @@
 export default {
 	async asyncData({ $content, params }) {
 		const article = await $content("articles", params.slug).fetch();
+		let date = new Date(article.writtenat);
+		article.writtenat = date.toLocaleDateString();
 		return { article };
 	},
 	head() {

@@ -47,8 +47,32 @@ export default {
 	async asyncData({ $content }) {
 		const posts = await $content("articles")
 			.only(["title", "description", "writtenat", "slug", "timetoread"])
-			.sortBy("createdAt", "asc")
+			.sortBy("writtenat", "desc")
 			.fetch();
+
+		const MONTHS = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"Dezember",
+		];
+
+		posts.map((x) => {
+			let date = new Date(x.writtenat);
+			let day = date.getDate();
+			let month = MONTHS[date.getMonth()];
+			let year = date.getFullYear();
+
+			return (x.writtenat = `${month} ${day},  ${year}`);
+		});
 
 		return {
 			posts,

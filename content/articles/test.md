@@ -3,7 +3,7 @@ title: Testing all features of md
 description: This article showcases all features of markdown
 author: xnacly
 timetoread: 10 min
-writtenat: October 15, 2021
+writtenat: 2021-01-01
 nottags: github#nuxt#markdown
 ---
 
