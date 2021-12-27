@@ -2,7 +2,7 @@
 title: Getting started with Arch on a Macbook pro 2012 (9,2)
 description: A guide to wifi, touchpad support and more on your macbook pro 2012 using arch
 author: xnacly
-timetoread: 10 min
+timetoread: 3 min
 writtenat: 2021-12-27
 nottags: archlinux#wifi
 ---

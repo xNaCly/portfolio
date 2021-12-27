@@ -41,8 +41,15 @@
 						>{{ tag }}</span
 					>
 				</div>
+				<h1 class="article-header fade-in">
+					{{ article.title }}
+				</h1>
+				<span class="article-subtitle reveal-text"
+					>{{ article.writtenat }} • {{ article.timetoread }} read</span
+				>
+				<hr class="article-seperator fade-in" />
 				<div class="toc-container" v-if="!!article.toc.length">
-					<h2>Table of Contents:</h2>
+					<h3>Table of Contents:</h3>
 					<div class="toc-link-container">
 						<ul>
 							<li v-for="link of article.toc" :key="link.id">
@@ -51,13 +58,6 @@
 						</ul>
 					</div>
 				</div>
-				<h1 class="article-header fade-in">
-					{{ article.title }}
-				</h1>
-				<span class="article-subtitle reveal-text"
-					>{{ article.writtenat }} • {{ article.timetoread }} read</span
-				>
-				<hr class="article-seperator fade-in" />
 				<nuxt-content :document="article" class="fade-in" />
 				<hr class="article-seperator fade-in" />
 				<span class="article-subtitle fade-in">
