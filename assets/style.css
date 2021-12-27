@@ -325,6 +325,9 @@ div.article div.nuxt-content h5 a {
 }
 /* media querys*/
 @media only screen and (max-width: 1200px) {
+	.footnotes li {
+		word-break: break-word;
+	}
 	.article,
 	.article-previews-container {
 		align-items: flex-start;
