@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Navbar />
 		<div class="article-previews-container">
 			<div>
 				<div v-for="article of posts" :key="article.slug" class="article-preview">
@@ -33,7 +32,6 @@
 				</div>
 			</div>
 		</div>
-		<Footer />
 	</div>
 </template>
 

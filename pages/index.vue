@@ -1,10 +1,8 @@
 <template>
 	<div>
-		<Navbar />
 		<div class="homepage-container">
 			<HomepageAbout />
 		</div>
-		<Footer />
 	</div>
 </template>
 

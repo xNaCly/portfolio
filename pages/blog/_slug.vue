@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<Navbar />
 		<div class="article-container">
 			<div class="article">
 				<NuxtLink class="link" to="/blog"
@@ -68,7 +67,6 @@
 				</span>
 			</div>
 		</div>
-		<Footer />
 	</div>
 </template>
 <script>

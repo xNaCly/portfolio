@@ -35,6 +35,7 @@ export default {
 
 	content: {
 		liveEdit: false,
+		fullTextSearchFields: ["title", "description"],
 		markdown: {
 			prism: {
 				theme: "prism-themes/themes/prism-vsc-dark-plus.css",
