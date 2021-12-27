@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <Navbar />
-    <StyleShowcase />
-    <Footer />
-  </div>
+	<div>
+		<Navbar />
+		<div class="homepage-container">
+			<HomepageAbout />
+		</div>
+		<Footer />
+	</div>
 </template>
 
 <script>
