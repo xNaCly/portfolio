@@ -80,10 +80,6 @@ a:hover {
 .link:hover {
 	color: var(--primary-hover);
 }
-.navbar .link {
-	margin-right: 1.5rem;
-}
-
 .badge,
 .button {
 	display: inline-flex;
@@ -112,7 +108,14 @@ a:hover {
 .primary:active {
 	box-shadow: inset 0 -2px 0 var(--primary-hover);
 }
-
+.icon {
+	stroke: var(--primary);
+	transition: opacity 1s;
+	opacity: 1;
+}
+.icon:hover {
+	stroke: var(--primary-hover);
+}
 /* article css rules */
 blockquote {
 	background-color: var(--background-sec);
@@ -157,7 +160,6 @@ blockquote {
 	background-color: var(--primary);
 	margin-left: 0;
 	margin-right: 0.5rem;
-	/* border-radius: 1.25rem; */
 	box-shadow: inset 0 -4px 0 var(--primary-hover);
 	cursor: unset;
 }
@@ -181,13 +183,6 @@ pre {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
 }
-
-.homepage-link {
-	display: flex;
-	align-items: center;
-	margin: 0.5rem;
-}
-
 div.article div.nuxt-content h1 a,
 div.article div.nuxt-content h2 a,
 div.article div.nuxt-content h3 a,
@@ -195,30 +190,124 @@ div.article div.nuxt-content h4 a,
 div.article div.nuxt-content h5 a {
 	display: none !important;
 }
-.footer {
+/*Homepage css roles*/
+.homepage-link {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	position: relative;
-	bottom: 0;
-	margin-top: 3rem;
+	margin: 0.5rem;
 }
-.footer span {
+.homepage-container {
+	margin-left: 14rem;
+	margin-right: 14rem;
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	/* align-items: center; */
+}
+.about-container {
+	user-select: none;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15rem;
+}
+.custom-codeblock {
+	font-family: "Fira Code", monospace;
+}
+.custom-codeblock * {
+	margin: 0;
+}
+.custom-codeblock span {
+	color: var(--primary);
+}
+.custom-codeblock p {
+	color: var(--text-third);
+}
+.custom-codeblock .tabbed {
+	padding-left: 1rem;
+}
+.custom-codeblock .tabbed_2 {
+	padding-left: 2rem;
+}
+.navigator,
+.colorpalette {
+	user-select: none;
+	margin-top: 7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	background-color: var(--background);
+	box-shadow: var(--shadow) 0px 5px 10px;
+}
+.colorpalette {
+	background-color: var(--background-sec);
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	margin-top: 0.5rem;
+	position: relative;
+	top: 3px;
+	left: -80px;
+}
+.colorpalette div {
+	margin: 0.5rem;
+	height: 3rem;
+	width: 3rem;
+	box-shadow: var(--shadow) 0px 5px 10px;
+	border-radius: 0.5rem;
+	border: 0.1rem solid transparent;
+}
+.colorpalette div:hover {
+	transform: scale(1.1);
+}
+.navigator_header {
+	margin-top: 0;
+}
+.background_0 {
+	background-color: var(--text);
+}
+.background_1 {
+	background-color: var(--text-secondary);
+}
+.background_3 {
+	background-color: var(--text-third);
+}
+.primary_0 {
+	background-color: var(--primary);
+}
+.primary_1 {
+	background-color: var(--primary-hover);
+}
+.about-secondary-container p:not(.about-description) {
+	font-size: larger;
+	font-weight: bold;
+	margin-top: 0.5rem;
 	margin-bottom: 0.5rem;
 }
+.about-description {
+	font-size: smaller;
+	margin: 0;
+}
+.about-name {
+	font-weight: 900;
+	font-size: 3rem;
+	margin: 0;
+}
+.about-name-sub {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin: 0;
+}
 
-.icon {
-	stroke: var(--primary);
-	transition: opacity 1s;
-	opacity: 1;
+.about-contact-container {
+	margin-top: 0.5rem;
 }
-.icon:hover {
-	stroke: var(--primary-hover);
-}
-.navbar .icon {
-	margin-left: 1.5rem;
-	cursor: pointer;
-}
+
+/*Article Preview roles*/
 .article-preview {
 	box-shadow: var(--shadow) 0px 5px 10px;
 	background-color: var(--background-sec);
@@ -377,127 +466,6 @@ div.article div.nuxt-content h5 a {
 		transform: scaleX(0);
 	}
 }
-.homepage-container {
-	margin-left: 14rem;
-	margin-right: 14rem;
-	margin-bottom: 1rem;
-	display: flex;
-	flex-direction: column;
-	/* justify-content: center; */
-	/* align-items: center; */
-}
-
-.about-container {
-	user-select: none;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 15rem;
-}
-
-.custom-codeblock {
-	font-family: "Fira Code", monospace;
-}
-.custom-codeblock * {
-	margin: 0;
-}
-.custom-codeblock span {
-	color: var(--primary);
-}
-.custom-codeblock p {
-	color: var(--text-third);
-}
-
-.custom-codeblock .tabbed {
-	padding-left: 1rem;
-}
-.custom-codeblock .tabbed_2 {
-	padding-left: 2rem;
-}
-
-.navigator,
-.colorpalette {
-	user-select: none;
-	margin-top: 7rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	padding: 1.5rem;
-	border-radius: 0.5rem;
-	background-color: var(--background);
-	box-shadow: var(--shadow) 0px 5px 10px;
-}
-
-.colorpalette {
-	background-color: var(--background-sec);
-	display: flex;
-	flex-direction: row;
-	margin: 0;
-	margin-top: 0.5rem;
-	position: relative;
-	top: 3px;
-	left: -80px;
-}
-
-.colorpalette div {
-	margin: 0.5rem;
-	height: 3rem;
-	width: 3rem;
-	box-shadow: var(--shadow) 0px 5px 10px;
-	border-radius: 0.5rem;
-	border: 0.1rem solid transparent;
-}
-
-.colorpalette div:hover {
-	transform: scale(1.1);
-}
-
-.navigator_header {
-	margin-top: 0;
-}
-
-.background_0 {
-	background-color: var(--text);
-}
-.background_1 {
-	background-color: var(--text-secondary);
-}
-.background_3 {
-	background-color: var(--text-third);
-}
-.primary_0 {
-	background-color: var(--primary);
-}
-.primary_1 {
-	background-color: var(--primary-hover);
-}
-
-.about-secondary-container p:not(.about-description) {
-	font-size: larger;
-	font-weight: bold;
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-}
-.about-description {
-	font-size: smaller;
-	margin: 0;
-}
-.about-name {
-	font-weight: 900;
-	font-size: 3rem;
-	margin: 0;
-}
-.about-name-sub {
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 1.5rem;
-	margin: 0;
-}
-
-.about-contact-container {
-	margin-top: 0.5rem;
-}
-
 /* media querys*/
 @media only screen and (max-width: 1000px) {
 	.about-container {
@@ -534,19 +502,6 @@ div.article div.nuxt-content h5 a {
 		padding: 0.5rem;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
-	}
-	.navbar-user-container {
-		display: none;
-	}
-	.navbar {
-		margin: 0;
-		/* padding: 0; */
-	}
-	.navbar .link {
-		margin-right: 1rem;
-	}
-	.navbar .icon {
-		margin-left: 1rem;
 	}
 	.article-previews-container.homepage-article {
 		min-width: 100%;

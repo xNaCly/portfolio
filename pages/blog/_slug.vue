@@ -2,7 +2,7 @@
 	<div>
 		<div class="article-container">
 			<div class="article">
-				<NuxtLink class="link" to="/blog"
+				<NuxtLink class="link link-flex" to="/blog"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
