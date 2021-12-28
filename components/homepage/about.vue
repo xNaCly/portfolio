@@ -5,6 +5,7 @@
 				<p class="about-description">Hi, I'm</p>
 				<h1 class="about-name">MATTEO</h1>
 				<h2 class="about-name-sub">a versatile full-stack developer</h2>
+				<h2 class="about-name-sub">and tech enthusiast</h2>
 			</div>
 			<div class="about-contact-container">
 				<a href="https://github.com/xnacly" class="link"
