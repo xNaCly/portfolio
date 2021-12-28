@@ -31,7 +31,6 @@
 						{{ article.description }}
 					</p>
 				</div>
-				<NuxtLink to="/blog" class="link">View all</NuxtLink>
 			</div>
 		</div>
 	</div>

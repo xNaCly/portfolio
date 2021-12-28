@@ -46,7 +46,7 @@
 		</div>
 		<div class="about-rightside">
 			<div class="navigator">
-				<h2 class="navigator_header">About me:</h2>
+				<h2 class="navigator_header">About:</h2>
 				<div class="custom-codeblock">
 					<p>1<span class="tabbed">const Author = {</span></p>
 					<p>2<span class="tabbed_2">name: "Matteo",</span></p>
