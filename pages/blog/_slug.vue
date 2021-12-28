@@ -2,7 +2,7 @@
 	<div>
 		<div class="article-container">
 			<div class="article">
-				<NuxtLink class="link" to="/blog"
+				<NuxtLink class="link" to="/"
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -17,7 +17,7 @@
 					>
 						<line x1="19" y1="12" x2="5" y2="12" />
 						<polyline points="12 19 5 12 12 5" /></svg
-					>../</NuxtLink
+					>Back</NuxtLink
 				>
 				<div class="tag-container fade-in">
 					<span v-for="tag in article.nottags.split('#')" :key="tag" class="badge"
