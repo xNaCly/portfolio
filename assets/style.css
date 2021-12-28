@@ -334,11 +334,7 @@ div.article div.nuxt-content h5 a {
 }
 .article-preview.homepage-article {
 	min-width: 100%;
-	position: relative;
 	left: -80px;
-}
-.article-preview:hover {
-	left: -100px;
 }
 .article-preview-title {
 	margin: 0;
