@@ -8,7 +8,8 @@ export default {
 		meta: [
 			{ charset: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
-			{ hid: "description", name: "description", content: "" },
+			{ hid: "og:description", property: "og:description", content: "xnacly's portfolio" },
+			{ hid: "og:image", property: "og:image", content: "/favicon.ico" },
 			{ name: "format-detection", content: "telephone=no" },
 			{ name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
 		],
@@ -45,5 +46,8 @@ export default {
 	colorMode: {
 		preference: "system",
 		fallback: "light",
+	},
+	server: {
+		host: "0.0.0.0",
 	},
 };

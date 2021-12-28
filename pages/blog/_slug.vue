@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="article-container">
+		<div data-aos="fade-down" class="article-container">
 			<div class="article">
 				<NuxtLink class="link link-flex" to="/blog"
 					><svg
@@ -57,7 +57,7 @@
 						</ul>
 					</div>
 				</div>
-				<nuxt-content :document="article" class="fade-in" />
+				<nuxt-content :document="article" data-aos="fade-down" class="fade-in" />
 				<hr class="article-seperator fade-in" />
 				<span class="article-subtitle fade-in">
 					Published {{ article.writtenat }} by

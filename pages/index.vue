@@ -2,9 +2,14 @@
 	<div>
 		<div class="homepage-container">
 			<HomepageAbout />
-			<div class="article-previews-container homepage-article">
+			<div data-aos="fade-up-right" class="article-previews-container homepage-article">
 				<h2 class="navigator_header">Blog:</h2>
-				<div v-for="article of posts" :key="article.slug" class="article-preview homepage-article">
+				<div
+					v-for="article of posts"
+					:key="article.slug"
+					data-aos="fade-right"
+					class="article-preview homepage-article"
+				>
 					<p class="article-preview-title primary-fg reveal-text">
 						<NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="link link-flex">
 							{{ article.title }}
@@ -37,7 +42,10 @@
 </template>
 
 <script>
+import aosMixin from "../mixins/aos";
 export default {
+	name: "index",
+	mixins: [aosMixin],
 	async asyncData({ $content }) {
 		const posts = await $content("articles")
 			.only(["title", "description", "writtenat", "slug", "timetoread"])
