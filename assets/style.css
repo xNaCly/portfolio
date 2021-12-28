@@ -177,8 +177,14 @@ pre {
 	word-wrap: normal;
 	/* word-break: keep-all; */
 	margin: 24rem;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.homepage-link {
+	display: flex;
+	align-items: center;
+	margin: 0.5rem;
 }
 
 div.article div.nuxt-content h1 a,
@@ -213,10 +219,15 @@ div.article div.nuxt-content h5 a {
 	cursor: pointer;
 }
 .article-preview {
-	margin-left: 0.25rem;
+	box-shadow: var(--shadow) 0px 5px 10px;
+	max-width: fit-content;
+	background-color: var(--background-sec);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
 }
 .article-preview-title {
-	margin-top: 2rem;
+	margin: 0;
 	margin-bottom: 0.25rem;
 	font-weight: bold;
 	font-size: larger;
@@ -233,15 +244,26 @@ div.article div.nuxt-content h5 a {
 	margin-top: 0.5rem;
 }
 .article-preview-subtitle {
+	display: flex;
+	align-items: center;
 	font-size: small;
 }
+.article-preview-subtitle svg {
+	margin-right: 0.25rem;
+}
 .article-previews-container {
-	margin-right: 14rem;
-	margin-left: 14rem;
+	margin-top: 8rem;
+	margin-bottom: 2rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+}
+.article-previews-header-container {
+	margin-top: 3rem;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
+	justify-content: flex-start;
 }
 .article-header {
 	margin-top: 0.25rem;
@@ -343,6 +365,7 @@ div.article div.nuxt-content h5 a {
 }
 
 .about-container {
+	user-select: none;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 15rem;
@@ -353,8 +376,14 @@ div.article div.nuxt-content h5 a {
 }
 .custom-codeblock * {
 	margin: 0;
+}
+.custom-codeblock span {
 	color: var(--primary);
 }
+.custom-codeblock p {
+	color: var(--text-third);
+}
+
 .custom-codeblock .tabbed {
 	padding-left: 1rem;
 }
@@ -383,7 +412,8 @@ div.article div.nuxt-content h5 a {
 	margin: 0;
 	margin-top: 0.5rem;
 	position: relative;
-	left: -50px;
+	top: 3px;
+	left: -80px;
 }
 
 .colorpalette div {
@@ -444,11 +474,19 @@ div.article div.nuxt-content h5 a {
 .about-contact-container {
 	margin-top: 2rem;
 }
-@media only screen and (max-width: 400px) {
+
+@media only screen and (max-width: 500px) {
+	.article,
+	.article-previews-container {
+		height: fit-content;
+	}
+	.colorpalette {
+		display: none;
+	}
 }
 
 /* media querys*/
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
 	.about-container {
 		flex-direction: column;
 		align-items: center;
@@ -469,6 +507,7 @@ div.article div.nuxt-content h5 a {
 	.article-previews-container {
 		align-items: flex-start;
 		margin: 0;
+		height: fit-content;
 	}
 	.article {
 		padding: 0.5rem;
