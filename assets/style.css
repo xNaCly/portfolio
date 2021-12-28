@@ -5,7 +5,7 @@
 	--delay: 0;
 	--delay2: 1;
 	--duration: 500ms;
-	--duration2: 1200ms;
+	--duration2: 600ms;
 	--iterations: 1;
 	--background: #f8f9fa;
 	--background-sec: #f8f9fa;
@@ -413,7 +413,7 @@ div.article div.nuxt-content h5 a {
 
 /* text reveal animation */
 .fade-in {
-	animation-delay: var(--delay2, 2s);
+	animation-delay: var(--delay2, 1s);
 	transition-timing-function: ease-in;
 	animation-duration: var(--duration2, 800ms);
 	animation-name: FadeIn;

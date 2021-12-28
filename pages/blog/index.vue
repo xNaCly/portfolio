@@ -1,5 +1,5 @@
 <template>
-	<div class="fade-in">
+	<div data-aos="fade-up" class="fade-in">
 		<div class="article-previews-header-container">
 			<h1>Blog:</h1>
 			<NuxtLink to="/" class="link">Home</NuxtLink>
