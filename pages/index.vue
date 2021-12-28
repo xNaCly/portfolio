@@ -37,6 +37,18 @@
 					</p>
 				</div>
 			</div>
+			<div data-aos="fade-up-left" class="projects-container-container">
+				<h2 class="navigator_header">Projects:</h2>
+				<div class="projects-container">
+					<div data-aos="fade-left" v-for="project of projects" :key="project.title" class="project-card">
+						<img class="project-card-image" :src="project.img" />
+						<h3 class="project-card-title">
+							<a class="link" :href="project.url">{{ project.title }}</a>
+						</h3>
+						<p class="project-card-desc">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -47,6 +59,7 @@ export default {
 	name: "index",
 	mixins: [aosMixin],
 	async asyncData({ $content }) {
+		const projects = await $content("projects").fetch();
 		const posts = await $content("articles")
 			.only(["title", "description", "writtenat", "slug", "timetoread"])
 			.sortBy("writtenat", "desc")
@@ -80,9 +93,11 @@ export default {
 		});
 
 		posts.splice(2);
+		// projects.splice(3);
 
 		return {
 			posts,
+			projects,
 		};
 	},
 };

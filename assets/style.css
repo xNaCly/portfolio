@@ -316,7 +316,7 @@ div.article div.nuxt-content h5 a {
 
 .about-contact-container * {
 	margin-top: 0.5rem;
-	transition: all 0.25s ease-out;
+	transition: all 0.3s ease-out;
 }
 .about-contact-container a:hover svg {
 	transform: scale(1.25);
@@ -324,20 +324,21 @@ div.article div.nuxt-content h5 a {
 
 /*Article Preview roles*/
 .article-preview {
+	position: relative;
 	box-shadow: var(--shadow) 0px 5px 10px;
 	background-color: var(--background-sec);
 	border-radius: 0.5rem;
 	padding: 1rem;
 	margin-bottom: 1rem;
-	transition: all 0.25s ease-out;
-}
-.article-preview:hover {
-	transform: scale(1.1);
+	transition: all 0.3s ease-out !important;
 }
 .article-preview.homepage-article {
 	min-width: 100%;
 	position: relative;
 	left: -80px;
+}
+.article-preview:hover {
+	left: -100px;
 }
 .article-preview-title {
 	margin: 0;
@@ -381,7 +382,6 @@ div.article div.nuxt-content h5 a {
 	padding: 1.5rem;
 	margin: 0;
 	margin-top: 8rem;
-	margin-bottom: 5rem;
 	justify-content: flex-start;
 	align-items: flex-start;
 	max-width: 50%;
@@ -409,6 +409,63 @@ div.article div.nuxt-content h5 a {
 }
 .toc-link-container ul {
 	list-style-type: decimal-leading-zero;
+}
+
+/*projects rules*/
+.projects-container-container {
+	margin-top: 8rem;
+	margin-left: 8rem;
+	margin-bottom: 4rem;
+	width: fit-content;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	background-color: var(--background);
+	box-shadow: var(--shadow) 0px 5px 10px;
+}
+.projects-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.project-card {
+	margin: 0.5rem;
+	width: 20rem;
+	border-radius: 0.5rem;
+	word-wrap: break-word;
+	background-color: var(--background-sec);
+	box-shadow: var(--shadow) 0px 5px 10px;
+	transition: all 0.5s ease-out !important;
+	border: 1px solid transparent;
+}
+
+.project-card:hover {
+	box-shadow: 0px 0px 10px 3px var(--primary);
+}
+
+.project-card-image {
+	transition: all 0.5s ease-out !important;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	margin-bottom: 0.5rem;
+	width: 100%;
+}
+
+.project-card-title,
+.project-card-desc {
+	margin: 0;
+	padding: 0;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.project-card-title {
+	margin-bottom: 0.25rem;
+	cursor: pointer;
+}
+
+.project-card-desc {
+	color: var(--text-secondary);
+	margin-bottom: 0.5rem;
 }
 
 /* text reveal animation */
@@ -488,6 +545,17 @@ div.article div.nuxt-content h5 a {
 
 /* media querys*/
 @media only screen and (max-width: 1000px) {
+	.projects-container-container {
+		margin: 0;
+		padding: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	.project-card {
+		margin: 0;
+		margin-bottom: 1rem;
+		width: fit-content;
+	}
 	.about-container {
 		flex-direction: column;
 		align-items: center;
