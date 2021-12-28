@@ -1,6 +1,6 @@
 ---
 title: Bridge WIFI connection via LAN
-description: This article showcases how to bridge a WIFI connection in detail using xfce
+description: This article showcases how to bridge a WIFI connection
 author: xnacly
 timetoread: 2 min
 writtenat: 2021-10-14
