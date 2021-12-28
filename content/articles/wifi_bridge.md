@@ -1,6 +1,6 @@
 ---
 title: Bridge WIFI connection via LAN
-description: This article showcases how to bridge a WIFI connection
+description: How to bridge a WIFI connection to LAN
 author: xnacly
 timetoread: 2 min
 writtenat: 2021-10-14

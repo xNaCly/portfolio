@@ -316,7 +316,7 @@ div.article div.nuxt-content h5 a {
 	margin-bottom: 1rem;
 }
 .article-preview.homepage-article {
-	max-width: fit-content;
+	min-width: 100%;
 	position: relative;
 	left: -80px;
 }
