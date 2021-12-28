@@ -336,6 +336,11 @@ div.article div.nuxt-content h5 a {
 	min-width: 100%;
 	left: -80px;
 }
+
+.article-preview.homepage-article:hover {
+	left: -100px;
+}
+
 .article-preview-title {
 	margin: 0;
 	margin-bottom: 0.25rem;
@@ -409,6 +414,8 @@ div.article div.nuxt-content h5 a {
 
 /*projects rules*/
 .projects-container-container {
+	position: relative;
+	right: 0;
 	margin-top: 8rem;
 	margin-left: 8rem;
 	margin-bottom: 4rem;
@@ -416,7 +423,11 @@ div.article div.nuxt-content h5 a {
 	padding: 1.5rem;
 	border-radius: 0.5rem;
 	background-color: var(--background);
+	transition: all 0.5s ease-out !important;
 	box-shadow: var(--shadow) 0px 5px 10px;
+}
+.projects-container-container:hover {
+	right: -20px;
 }
 .projects-container {
 	display: flex;
@@ -432,10 +443,6 @@ div.article div.nuxt-content h5 a {
 	box-shadow: var(--shadow) 0px 5px 10px;
 	transition: all 0.5s ease-out !important;
 	border: 1px solid transparent;
-}
-
-.project-card:hover {
-	box-shadow: 0px 0px 10px 3px var(--primary);
 }
 
 .project-card-image {
