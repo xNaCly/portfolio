@@ -430,6 +430,8 @@ div.article div.nuxt-content h5 a {
 	right: -20px;
 }
 .projects-container {
+	min-width: fit-content;
+	max-width: max-content;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -469,6 +471,52 @@ div.article div.nuxt-content h5 a {
 .project-card-desc {
 	color: var(--text-secondary);
 	margin-bottom: 0.5rem;
+}
+
+/* timeline roles */
+.timeline-container {
+	box-shadow: var(--shadow) 0px 5px 10px;
+	max-width: fit-content;
+	border-radius: 0.5rem;
+	background-color: var(--background);
+	padding: 1.5rem;
+	margin-top: 8rem;
+	margin-bottom: 8rem;
+	transition: all 1s ease-in !important;
+}
+.timeline {
+	display: flex;
+	align-items: center;
+}
+.timeline-left {
+	padding-right: 1rem;
+}
+.timeline-right {
+	border-left: 1px solid var(--text-third);
+}
+.timeline p {
+	cursor: pointer;
+}
+.timeline p:not(.timeline p:last-child) {
+	margin-bottom: 5rem;
+}
+.timeline-right p::before {
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid var(--primary);
+	content: "-";
+	margin-right: 0.5rem;
+	color: var(--primary);
+}
+.timeline-more-info {
+	box-shadow: var(--shadow) 0px 5px 10px;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: var(--background-sec);
+	opacity: 0;
+}
+.timeline-right p:hover .timeline-more-info {
+	opacity: 1;
 }
 
 /* text reveal animation */

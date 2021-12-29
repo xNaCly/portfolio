@@ -49,6 +49,7 @@
 					</div>
 				</div>
 			</div>
+			<HomepageTimeline />
 		</div>
 	</div>
 </template>
