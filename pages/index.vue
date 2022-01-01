@@ -41,11 +41,9 @@
 				<h2 class="navigator_header">Projects:</h2>
 				<div class="projects-container">
 					<div data-aos="fade-left" v-for="project of projects" :key="project.title" class="project-card">
-						<img class="project-card-image" :src="project.img" />
-						<h3 class="project-card-title">
-							<a class="link" :href="project.url">{{ project.title }}</a>
-						</h3>
-						<p class="project-card-desc">{{ project.description }}</p>
+						<a :href="project.href">
+							<img class="project-card-image" :src="project.img" />
+						</a>
 					</div>
 				</div>
 			</div>
