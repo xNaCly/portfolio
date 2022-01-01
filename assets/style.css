@@ -477,7 +477,9 @@ div.article div.nuxt-content h5 a {
 	border-left: 1px solid var(--text-third);
 }
 .timeline p {
-	cursor: pointer;
+	user-select: none;
+	display: flex;
+	flex-direction: column;
 }
 .timeline p:not(.timeline p:last-child) {
 	margin-bottom: 5rem;
@@ -491,14 +493,11 @@ div.article div.nuxt-content h5 a {
 	color: var(--primary);
 }
 .timeline-more-info {
-	box-shadow: var(--shadow) 0px 5px 10px;
-	padding: 0.5rem;
-	border-radius: 0.5rem;
-	background-color: var(--background-sec);
-	opacity: 0;
+	margin-left: 0.5rem;
+	color: var(--text-secondary);
 }
-.timeline-right p:hover .timeline-more-info {
-	opacity: 1;
+.timeline-right p:hover {
+	color: var(--primary);
 }
 
 /* text reveal animation */

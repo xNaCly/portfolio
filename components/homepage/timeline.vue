@@ -8,10 +8,14 @@
 			</div>
 			<div class="timeline-right">
 				<p>
-					Grundschule
+					Elementary School
 					<span class="timeline-more-info">started school</span>
 				</p>
-				<p>Gymnasium</p>
+				<p>
+					Gymnasium
+
+					<span class="timeline-more-info">Friedrich-Wilhelm Gymnasium Königs Wusterhausen</span>
+				</p>
 			</div>
 		</div>
 	</div>
