@@ -434,6 +434,8 @@ div.article div.nuxt-content h5 a {
 	max-width: max-content;
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .project-card {
@@ -469,34 +471,37 @@ div.article div.nuxt-content h5 a {
 .timeline {
 	display: flex;
 	align-items: center;
-}
-.timeline-left {
-	padding-right: 1rem;
-}
-.timeline-right {
+	flex-direction: column;
 	border-left: 1px solid var(--text-third);
 }
-.timeline p {
-	user-select: none;
+
+.timeline-item {
 	display: flex;
-	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
 }
-.timeline p:not(.timeline p:last-child) {
-	margin-bottom: 5rem;
-}
-.timeline-right p::before {
-	margin: 0;
-	padding: 0;
-	border-left: 1px solid var(--primary);
+
+.timeline-item::before {
 	content: "-";
-	margin-right: 0.5rem;
+	padding-right: 0.25rem;
 	color: var(--primary);
 }
-.timeline-more-info {
+
+.timeline p {
+	display: flex;
+	flex-direction: column;
 	margin-left: 0.5rem;
-	color: var(--text-secondary);
 }
-.timeline-right p:hover {
+
+.timeline-item span {
+	color: var(--text-secondary);
+	font-size: 0.8rem;
+}
+
+.timeline-item h3 {
+	margin: 0;
+	padding: 0;
 	color: var(--primary);
 }
 
