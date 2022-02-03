@@ -8,10 +8,17 @@ export default {
 		meta: [
 			{ charset: "utf-8" },
 			{ name: "viewport", content: "width=device-width, initial-scale=1" },
-			{ hid: "og:description", property: "og:description", content: "xnacly's portfolio" },
+			{ hid: "og:site_name", property: "og:site_name", content: "xnacly" },
+			{
+				hid: "og:description",
+				property: "og:description",
+				content: "a versatile full-stack developer and tech enthusiast",
+			},
 			{ hid: "og:image", property: "og:image", content: "/favicon.ico" },
 			{ name: "format-detection", content: "telephone=no" },
 			{ name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+			{ name: "theme-color", media: "(prefers-color-scheme: light)", content: "#00aaff" },
+			{ name: "theme-color", media: "(prefers-color-scheme: dark)", content: "#8875ff" },
 		],
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
 	},
