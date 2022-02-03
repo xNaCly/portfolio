@@ -4,10 +4,10 @@ description: A guide to wifi, touchpad support and more on your macbook pro 2012
 author: xnacly
 timetoread: 10 min
 writtenat: 2021-12-27
-nottags: archlinux#wifi
+nottags: archlinux#wifi#i3#wm
 ---
 
-## Enable tap to click
+## Enable tap to click and natural scrolling
 
 -   install [`libinput`](https://wiki.archlinux.org/title/Libinput)
 -   paste the following in your shell:
@@ -20,6 +20,7 @@ echo 'Section "InputClass"
         MatchDevicePath "/dev/input/event*"
         Driver "libinput"
         Option "Tapping" "on"
+        Option "NaturalScrolling" "on"
 EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf;
 systemctl restart lightdm
 ```
@@ -40,9 +41,33 @@ Link to Source [^1]
 
 Link to Source[^2]
 
-## Change screen brightness
+## Change screen and keyboard backlight brightness
 
-## Change keyboard backlight brightness
+-   install [`brightnessctl`](https://archlinux.org/packages/community/x86_64/brightnessctl/) and
+    [`xev`](https://archlinux.org/packages/extra/x86_64/xorg-xev/)
+-   check what keys your macbook uses to manage the screen and keyboard backlight brightness:
+
+    ```bash
+    xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+    ```
+
+    -   press the keys for screen brightness and keyboard brightness
+    -   copy the key names
+    -   Paste them in your `i3 config`:
+
+    _Keyboard backlight:_
+
+    ```
+    bindsym XF86KbdBrightnessUp exec brightnessctl --device='smc::kbd_backlight' set +10
+    bindsym XF86KbdBrightnessDown exec brightnessctl --device='smc::kbd_backlight' set 10-
+    ```
+
+    _Screenbrightness:_
+
+    ```
+    bindsym XF86MonBrightnessUp exec brightnessctl set +300
+    bindsym XF86MonBrightnessDown exec brightnessctl set 300-
+    ```
 
 [^1]: https://unix.stackexchange.com/questions/337008/activate-tap-to-click-on-touchpad
 [^2]: https://wiki.archlinux.org/title/Network_configuration/Wireless
