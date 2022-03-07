@@ -1,5 +1,5 @@
 <template>
-	<div class="skillset" data-aos="fade-left">
+	<div class="skillset" data-aos="fade-down">
 		<div class="skillset-title">
 			{{ capitalise(title) }}
 			<span class="skillset-experience">{{ formatTime(date) }}</span>

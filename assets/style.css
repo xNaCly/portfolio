@@ -480,8 +480,14 @@ div.article div.nuxt-content h5 a {
 	flex-direction: column;
 }
 
+.skillset-seperator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .skillset {
-	position: relative;
+	user-select: none;
 	box-shadow: var(--shadow) 0px 5px 10px;
 	display: flex;
 	align-items: center;
@@ -489,10 +495,10 @@ div.article div.nuxt-content h5 a {
 	border-radius: 0.5rem;
 	padding: 0.75rem;
 	background-color: var(--background-sec);
-	margin-bottom: 0.5rem;
+	margin: 0.5rem;
 	height: fit-content;
 	transition: all 0.3s ease-out !important;
-	right: -30px;
+	position: relative;
 }
 
 .skillset-title {
@@ -506,16 +512,24 @@ div.article div.nuxt-content h5 a {
 	font-style: italic;
 }
 
-.skillset:hover {
-	right: -40px;
-}
-
 .skillset-badge {
 	color: var(--text);
 	font-size: smaller;
 	margin-left: 1rem;
 }
 
+.skillset-left {
+	left: -20px;
+}
+.skillset-right {
+	right: -20px;
+}
+.skillset-left:hover {
+	left: -40px;
+}
+.skillset-right:hover {
+	right: -40px;
+}
 .skillset-badge-expert {
 	background-color: var(--expert);
 	box-shadow: inset 0 -4px 0 var(--expert-darker);
@@ -610,8 +624,18 @@ div.article div.nuxt-content h5 a {
 
 /* media querys*/
 @media only screen and (max-width: 1000px) {
+	.skillset-seperator {
+		flex-wrap: wrap;
+	}
+	.skillset-right,
+	.skillset-left {
+		right: 0;
+		left: 0;
+	}
 	.skillset-wrapper {
 		margin: 3rem 0 10rem 0;
+		justify-content: center;
+		align-items: center;
 	}
 	.projects-container-container {
 		margin: 0;
