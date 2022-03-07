@@ -1,7 +1,7 @@
 <template>
-	<div class="skillset-wrapper">
+	<div class="skillset-wrapper" data-aos="fade-left">
 		<h2 class="navigator_header">Skillset:</h2>
-		<div class="skillset-container skillsets-languages" data-aos="fade-left">
+		<div class="skillset-container skillsets-languages">
 			<SkillsetItem
 				v-for="skill in skills"
 				:title="skill.title"
