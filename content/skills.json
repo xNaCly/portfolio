@@ -1,0 +1,34 @@
+{
+	"skills": [
+		{
+			"title": "javascript",
+			"level": "advanced",
+			"date": "2019-06-30"
+		},
+		{
+			"title": "c",
+			"level": "intermediate",
+			"date": "2021-09-01"
+		},
+		{
+			"title": "python",
+			"level": "advanced",
+			"date": "2020-05-06"
+		},
+		{
+			"title": "java",
+			"level": "beginner",
+			"date": "2021-10-01"
+		},
+		{
+			"title": "sh",
+			"level": "intermediate",
+			"date": "2020-10-01"
+		},
+		{
+			"title": "HTML & CSS",
+			"level": "expert",
+			"date": "2019-07-30"
+		}
+	]
+}
