@@ -37,7 +37,7 @@
 					</p>
 				</div>
 			</div>
-			<div data-aos="fade-up-left" class="projects-container-container">
+			<!-- <div data-aos="fade-up-left" class="projects-container-container">
 				<h2 class="navigator_header">Projects:</h2>
 				<div class="projects-container">
 					<div data-aos="fade-left" v-for="project of projects" :key="project.title" class="project-card">
@@ -46,8 +46,8 @@
 						</a>
 					</div>
 				</div>
-			</div>
-			<HomepageTimeline />
+			</div> -->
+			<HomepageSkillset />
 		</div>
 	</div>
 </template>
