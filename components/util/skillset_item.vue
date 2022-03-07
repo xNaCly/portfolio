@@ -20,7 +20,6 @@ export default {
 		formatTime: function (timestamp) {
 			let string = "";
 			let days = (Date.now() - new Date(timestamp)) / (1000 * 3600 * 24);
-			console.log(new Date(timestamp), days);
 
 			if (days > 360) {
 				string = `${(days / 360).toFixed(1)} years`;
