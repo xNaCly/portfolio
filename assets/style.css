@@ -513,7 +513,7 @@ div.article div.nuxt-content h5 a {
 }
 
 .skillset-badge {
-	color: var(--text);
+	color: #353535;
 	font-size: smaller;
 	margin-left: 1rem;
 }
