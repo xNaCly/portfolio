@@ -54,10 +54,11 @@ code {
 	font-family: "Fira Code", monospace;
 }
 html {
-	background-color: var(--background-sec);
 	height: 100%;
 }
 body {
+	background-color: var(--background-sec);
+	background-size: 400% 400%;
 	font-family: "Montserrat", sans-serif;
 	margin: 0;
 	color: var(--text);
@@ -285,6 +286,7 @@ div.article div.nuxt-content h5 a {
 	transform: scale(1.25);
 }
 .navigator_header {
+	user-select: none;
 	margin-top: 0;
 }
 .background_0 {
@@ -421,6 +423,9 @@ div.article div.nuxt-content h5 a {
 .toc-link-container ul {
 	list-style-type: decimal-leading-zero;
 }
+.toc3 {
+	margin-left: 1rem;
+}
 
 /*projects rules*/
 .projects-container-container {
@@ -471,6 +476,7 @@ div.article div.nuxt-content h5 a {
 .skillset-wrapper {
 	margin: 5rem 0 2rem 70%;
 	box-shadow: var(--shadow) 0px 5px 10px;
+	border-radius: 0.5rem;
 	background-color: var(--background);
 	padding: 1.5rem;
 	width: fit-content;
@@ -504,6 +510,8 @@ div.article div.nuxt-content h5 a {
 .skillset-title {
 	display: flex;
 	flex-direction: column;
+	width: fit-content;
+	margin-right: 2rem;
 }
 
 .skillset-experience {
@@ -515,7 +523,6 @@ div.article div.nuxt-content h5 a {
 .skillset-badge {
 	color: #353535;
 	font-size: smaller;
-	margin-left: 1rem;
 }
 
 .skillset-left {
