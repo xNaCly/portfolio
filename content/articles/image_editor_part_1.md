@@ -1,15 +1,32 @@
 ---
-title: "Image editor in C: the setup"
+title: "Image editor in C: Part I"
 description: Writing a basic image editor as a comp science project, Part I
 author: xnacly
-timetoread: 0 min
+timetoread: 15 min
 writtenat: 2022-03-08
 nottags: c#gcc#programming#computer science
 ---
 
-## Overview
+I am currently majoring in applied computer science at [DHBW](https://www.dhbw.de/startseite). In the first Semester, we
+have to submit the first programming project, which is an image editor in C conforming to the PGM standard. It is split
+in three subtasks and is to be finished till late March.
 
-### Task
+|       Task I        |        Task II        | Task III |
+| :-----------------: | :-------------------: | :------: |
+| methods in `_pgm.h` | methods in `_image.h` |   TUI    |
+
+### Grading
+
+| x                         | Points        |
+| ------------------------- | ------------- |
+| Task I                    | 15            |
+| Task II                   | 15            |
+| Task III                  | 10            |
+| Robustness & compilablity | 5             |
+| Comments & structure      | 5             |
+| **Total**                 | **50 Points** |
+
+### Project description:
 
 The `PGM` editor should implement the `Portable GrayMap` standard, which I will explain in the next chapter. It should
 also include methods to manipulate Images in the `PGM`-format. The following functions are required by the lecturer. :
@@ -94,12 +111,63 @@ After reading two dozen blogs and a lot of trial and error, i settled on the fol
 includes several image manipulation methods
 
 ```c
+/**
+ * @file _image.h
+ * @author xnacly
+ * @brief includes several image manipulation methods
+ * @date 2022-02-21
+ */
+
+#ifndef _IMAGE_H_INCLUDED
+#define _IMAGE_H_INCLUDED
+#include "../pgm/_pgm.h"
+// used for: copyImage, createImage
+#include "../util/_util.h"
+// used for: compare
+
+#define PI 3.141592
+
+/**
+ * @brief Applies the median filter to the given image
+ * @param img
+ */
 Image *median(Image *img);
+
+/**
+ * @brief Applies the gauss filter to the given image
+ * @param img
+ */
 Image *gauss(Image *img);
+
+/**
+ * @brief Modifies the image using the laplace-operator
+ * @param img
+ */
 Image *laplace(Image *img);
+
+/**
+ * @brief Modifies the Image using the thresholding method
+ * @param img
+ * @param threshold
+ */
 Image *threshold(Image *img, int threshold);
+
+/**
+ * @brief Scales the given Image to the width and height specified
+ * @param img
+ * @param width
+ * @param height
+ */
 Image *scale(Image *img, int width, int height);
-Image *rotate(Image *img, double angle, int brightness);
+
+/**
+ * @brief Rotates the Image to the given angle
+ * @param img
+ * @param angle
+ * @param brigthness
+ */
+Image *rotate(Image *img, double angle, int brigthness);
+#endif
 ```
 
 ### `_pgm.(c|h)`
@@ -107,11 +175,66 @@ Image *rotate(Image *img, double angle, int brightness);
 handles everything regarding images in the .pgm standard
 
 ```c
+/**
+ * @file _pgm.h
+ * @brief handles everything regarding images in the .pgm standard
+ * http://netpbm.sourceforge.net/doc/pgm.html (Plain PGM)
+ * @author xnacly
+ * @date 2022-02-21
+ */
+#ifndef _PGM_H_INCLUDED
+#define _PGM_H_INCLUDED
+
+#define MAX_BRIGHT 255
+
+/**
+ * @brief struct to store PGM-image data in
+ */
+typedef struct {
+  int width;
+  int height;
+  int **data; // 2d pointer: Brightness values
+} Image;
+
+/**
+ * @brief creates an Image with given width and height, set every pixel to the
+ * default_brightness
+ * @param width
+ * @param height
+ * @param default_brightness
+ * @return *Image
+ */
 Image *createImage(int width, int height, int default_brightness);
+
+/**
+ * @brief frees the memory taken up by the given Image pointer
+ * @param img_pointer Image pointer created with createImage()
+ */
 void freeImage(Image *img_pointer);
+
+/**
+ * @brief  copys the image from the given pointer to a new pointer
+ * @param img_pointer Image pointer created with createImage()
+ * @return *Image
+ */
 Image *copyImage(Image *img_pointer);
+
+/**
+ * @brief loads image from filesystem with given file name (without extension)
+ * @param file_name
+ * @return *Image
+ */
 Image *loadImage(char file_name[]);
+
+/**
+ * @brief saves the given pointer in a .pgm file with the given name
+ * @param file_name
+ * @param img_pointer Image pointer created with createImage()
+ * @return 0 or 1
+ */
 int saveImage(char file_name[], Image *img_pointer);
+
+#endif
 ```
 
 ### `_util.(c|h)`
@@ -120,11 +243,72 @@ provides utility methods and defines ANSI macros for colored output, as well as 
 handling
 
 ```c
-int compare(const void *a, const void *b); // used for field sorting
+/*
+ * _util.h provides utility methods
+ */
+#ifndef _UTIL_H_INCLUDED
+#define _UTIL_H_INCLUDED
+
+#include "../pgm/_pgm.h"
+
+#define ANSI_COLOR_RED "\x1b[91m"
+#define ANSI_COLOR_GREEN "\x1b[92m"
+#define ANSI_COLOR_YELLOW "\x1b[93m"
+#define ANSI_STYLE_BOLD "\x1b[1m"
+#define ANSI_RESET "\x1b[0m"
+
+enum {
+  SELECTION_LOAD = 0,
+  SELECTION_MEDIAN_FILTER,
+  SELECTION_GAUSS_FILTER,
+  SELECTION_LAPLACE_OPERATOR,
+  SELECTION_THRESHOLD,
+  SELECTION_SCALE,
+  SELECTION_ROTATE,
+  SELECTION_SAVE,
+  SELECTION_EXIT, // ALWAYS LATEST AVAILABLE OPTION ;)
+  SELECTION_INVALID =
+      9999 // MAKE SURE THAT THIS WILL RUN INTO THE INVALID SECTION ;)
+};
+
+/**
+ * used for qsort
+ * @param a
+ * @param b
+ * @return
+ */
+int compare(const void *a, const void *b);
+
+/**
+ * @brief converts string to integer
+ * @param text
+ * @return integer
+ */
 int toInt(const char *text);
+
+/**
+ * @brief exits the program and prints the given text highlighted red
+ * @param text
+ */
 void throw_error(char text[]);
+
+/**
+ * @brief prints the given text highlighted yellow, differs from throw_error by
+ * not exiting the program.
+ * @param text
+ */
 void throw_warning(char text[]);
+
+/**
+ * @brief checks if the selection meets certian criteria
+ * @param selection
+ * @param arr_size size of the array containing possible inputs
+ * @param edited_unsaved_image_in_memory
+ * @param image_in_memory
+ */
 int check_is_option_valid(int selection, int image_in_memory);
+#endif
+
 ```
 
 ### `main.c`
