@@ -141,7 +141,7 @@ blockquote {
 	font-weight: bold;
 }
 .article-seperator {
-	color: var(--background-sec);
+	color: var(--text-third);
 }
 .article-subtitle {
 	font-size: smaller;
