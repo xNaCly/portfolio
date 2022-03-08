@@ -108,7 +108,11 @@ After reading two dozen blogs and a lot of trial and error, i settled on the fol
    └── main.c
 ```
 
-### `_image.(c|h)`
+### Files:
+In the following I will try to explain the file contents and what they do.
+_The how to the what will follow in the next parts of this series._
+
+#### `_image.(c|h)`
 
 includes several image manipulation methods
 
@@ -172,7 +176,7 @@ Image *rotate(Image *img, double angle, int brigthness);
 #endif
 ```
 
-### `_pgm.(c|h)`
+#### `_pgm.(c|h)`
 
 handles everything regarding images in the .pgm standard
 
@@ -239,7 +243,7 @@ int saveImage(char file_name[], Image *img_pointer);
 #endif
 ```
 
-### `_util.(c|h)`
+#### `_util.(c|h)`
 
 provides utility methods and defines ANSI macros for colored output, as well as an enum for the main menu selection
 handling
@@ -313,7 +317,7 @@ int check_is_option_valid(int selection, int image_in_memory);
 
 ```
 
-### `main.c`
+#### `main.c`
 
 takes care of printing the main menu and handling user input, runs the functions implemented in the 'libs'
 
