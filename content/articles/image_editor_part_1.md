@@ -7,6 +7,8 @@ writtenat: 2022-03-08
 nottags: c#gcc#programming#computer science
 ---
 
+## Project Overview
+
 I am currently majoring in applied computer science at [DHBW](https://www.dhbw.de/startseite). In the first Semester, we
 have to submit the first programming project, which is an image editor in C conforming to the PGM standard. It is split
 in three subtasks and is to be finished till late March.
@@ -26,12 +28,12 @@ in three subtasks and is to be finished till late March.
 | Comments & structure      | 5             |
 | **Total**                 | **50 Points** |
 
-### Project description:
+### Project description
 
 The `PGM` editor should implement the `Portable GrayMap` standard, which I will explain in the next chapter. It should
 also include methods to manipulate Images in the `PGM`-format. The following functions are required by the lecturer. :
 
-#### Regarding Images:
+#### Regarding Images
 
 1. create an image structure
 2. free the memory of an image structure
