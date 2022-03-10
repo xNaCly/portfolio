@@ -68,7 +68,7 @@ third line contains the max. brightness possible in the image. Line 3 till the E
 values. The specification allows for comments between the first line (format indicator) and the second line (dimension
 definition), prefixed with `#` .
 
-#### Beispiel:
+#### Example:
 
 ```
 P2
@@ -109,8 +109,9 @@ After reading two dozen blogs and a lot of trial and error, i settled on the fol
 ```
 
 ### Files:
-In the following I will try to explain the file contents and what they do.
-_The how to the what will follow in the next parts of this series._
+
+In the following I will try to explain the file contents and what they do. _The how to the what will follow in the next
+parts of this series._
 
 #### `_image.(c|h)`
 

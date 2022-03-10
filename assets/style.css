@@ -68,8 +68,8 @@ body {
 code:not(div pre > code) {
 	color: var(--text);
 	background-color: var(--background-third);
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
+	border-radius: 0.25rem;
+	padding-right: 0.2rem;
 }
 a {
 	color: var(--text);
@@ -239,6 +239,9 @@ div.article div.nuxt-content h5 a {
 }
 .custom-codeblock .tabbed_2 {
 	padding-left: 2rem;
+}
+table {
+	width: 100%;
 }
 .navigator,
 .colorpalette {
@@ -415,13 +418,14 @@ div.article div.nuxt-content h5 a {
 	margin-left: 0.25rem;
 }
 .toc-link-container {
-	padding-left: 1rem;
+	/* padding-left: 1rem; */
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
 .toc-link-container ul {
-	list-style-type: decimal-leading-zero;
+	margin: 0;
+	list-style-type: none;
 }
 .toc3 {
 	margin-left: 1rem;

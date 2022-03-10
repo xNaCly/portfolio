@@ -1,12 +1,12 @@
 <template>
-	<div data-aos="fade-up" class="fade-in">
+	<div class="fade-in">
 		<div class="article-previews-header-container">
 			<h1>Blog:</h1>
 			<NuxtLink to="/" class="link">Home</NuxtLink>
 		</div>
 		<div class="article-previews-container">
 			<div>
-				<div v-for="article of posts" :key="article.slug" data-aos="fade-right" class="article-preview">
+				<div v-for="article of posts" :key="article.slug" class="article-preview">
 					<p class="article-preview-title primary-fg reveal-text">
 						<NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }" class="link link-flex">
 							{{ article.title }}
