@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="wave" v-bind:class="`wave_${$colorMode.value}`">
 		<div class="homepage-container">
 			<HomepageAbout />
 			<div data-aos="fade-up-right" class="article-previews-container homepage-article">
@@ -49,6 +49,7 @@
 			</div> -->
 			<HomepageSkillset />
 		</div>
+		<div class="bottom_wave" v-bind:class="`bottom_wave_${$colorMode.value}`"></div>
 	</div>
 </template>
 
@@ -101,3 +102,4 @@ export default {
 	},
 };
 </script>
+<style></style>

@@ -88,7 +88,7 @@ arrow operator (`->`).
 Right in the next line, we have a rather complicated line of code which allocates the double pointer to, again, allow us
 to store data in it. Let's take a closer look at this line of code by splitting it in three parts:
 
--   `img->data =`: _assigns everything right of `=` to the `data` variable in the `img` pointer_
+-   `img->data =`: assigns everything right of `=` to the `data` variable in the `img` pointer
 -   `(int **)`: `malloc` returns `void*`, therefore we need to cast this pointer into a double `int` pointer
 -   `malloc(height * sizeof(int *))`
 
@@ -118,7 +118,7 @@ loops over the columns of the field we just allocated and allocates each one of 
 
 ```c
 img->data[i] = (int *)malloc(width * sizeof(int));
-// cast *void into *int, allocate as many item as there pixels are for each height, e.g.: 0-1080, 1-1080, 2-1080
+// cast *void into *int, allocate as many items as there are pixels for each height, e.g.: 0-1080, 1-1080, 2-1080
 ```
 
 The second loop assigns the default value specified in the function parameter `default_brightness` to every pixel in the
@@ -284,7 +284,7 @@ brightness
 fprintf(file, "P2\n%d %d\n%d\n", img_pointer->width, img_pointer->height, MAX_BRIGHT);
 ```
 
-`*MAX_BRIGHT`is a macro in`_util.h`which I defined to be`255`.
+`*MAX_BRIGHT` is a macro in `_util.h` which I defined to be `255`.
 
 To write all the pixel data into the file, we just loop over every pixel again and write the data to the file.:
 
