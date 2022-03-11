@@ -386,6 +386,75 @@ pre:
 
     creates the build dir, due to me being lazy
 
+### Updated, more complicated Makefile
+
+I won't explain too much here, due to the extensive comments and the explaining I've done before. If you are interested
+in learning more about `Makefiles`, take a look [here](https://www.gnu.org/software/make/manual/make.html).
+
+New features:
+
+-   more compiler flags
+-   better structure
+-   comments
+-   dynamic (can compile even if i add new source files)
+-   made build steps dependent on the pre target
+
+```makefile
+# compiler flags
+MANDATORY_FLAGS := -fdiagnostics-color=always  \
+									-Wall \
+									-Wpedantic \
+									-std=c99
+
+									# use color in diagnostics
+									# enables all construction warnings
+									# enable all warnings demanded by ISO C
+									# follow ANSI C99
+
+MY_FLAGS := -Wextra \
+						-Werror \
+						-Wshadow \
+						-Wundef \
+						-fno-common \
+
+						# set of warnings and errors not covered by -Wall
+						# all warnings cause errors
+						# warnings for shadowing variables
+						# warnings for undefined macros
+						# warnings for global variables
+
+BUILD_DIR := ./build
+SRC_DIR := ./src
+
+# finds all source files in /src/*
+FILES := $(shell find $(SRC_DIR) -name "*.c")
+
+COMPILE := $(MANDATORY_FLAGS) $(MY_FLAGS) $(FILES) -lm -o $(BUILD_DIR)/main.out
+
+# run the previously built executable
+run: main
+	$(BUILD_DIR)/main.out
+
+# compile the executable
+main: pre
+	gcc -O2 $(COMPILE)
+
+# compiles executable with debugging info and runs it with the GNU-debugger (gdb)
+debug: pre
+	gcc -g3 $(COMPILE)
+	gdb $(BUILD_DIR)/main.out
+
+# creates build dir, only if its not created yet
+pre:
+	mkdir -p $(BUILD_DIR)
+
+# removes build and test files/dirs
+.PHONY: clean
+clean:
+	rm -rf $(BUILD_DIR)
+	rm -f test.pgm
+```
+
 > ##### PS:
 >
 > The next part will focus on the methods found in `_pgm.(c|h)` and some general issues I found myself having while
