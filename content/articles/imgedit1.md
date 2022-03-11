@@ -32,6 +32,38 @@ in three subtasks and is to be finished till late March.
 
 The `PGM` editor should implement the `Portable GrayMap` standard, which I will explain in the next chapter. It should
 also include methods to manipulate Images in the `PGM`-format. The following functions are required by the lecturer. :
+### README
+```
+pgmE - portable graymap Editor
+==========
+pgmE is an extremely fast, small and efficient editor which implements the pgm standard.
+
+Requirements
+------------
+In order to build you need:
+    - make
+    - gcc
+
+Running pgmE
+------------
+Start it by running:
+    
+    make run
+
+This will compile pgmE.
+
+Features
+------------
+- load pgm images
+- save pgm images
+- edit pgm images:
+    - median filter
+    - gauss operator
+    - laplace operator
+    - resize
+    - rotate
+    - threshold operato
+```
 
 #### Regarding Images
 
