@@ -142,6 +142,9 @@ a:hover {
 	stroke: var(--primary-hover);
 }
 /* article css rules */
+.article-container {
+	margin-bottom: 2rem;
+}
 blockquote {
 	background-color: var(--background-sec);
 	border: 1px solid var(--text-third);
