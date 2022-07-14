@@ -163,5 +163,72 @@ After putting everything together, the app should look like this:
 
 Congrats, you implemented submitting on enter :)
 
+Full code:
+
+```java
+import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventType;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+class UserEvent extends Event {
+    public static final EventType<UserEvent> _KEY_ENTER = new EventType<>(ANY, "_KEY_ENTER");
+    public UserEvent(EventType<? extends Event> eventType){
+        super(eventType);
+    }
+}
+
+public class Demo extends Application {
+    Scene s;
+
+
+    private Parent createContent() {
+        Button b = new Button("Submit");
+        b.addEventHandler(UserEvent._KEY_ENTER, this::event_handler);
+        b.setOnMousePressed(this::event_handler);
+
+        TextField tf = new TextField("Placeholder");
+        tf.setId("textarea-main");
+        tf.setOnKeyPressed(k -> {
+            if(k.getCode() == KeyCode.ENTER) b.fireEvent(new UserEvent(UserEvent._KEY_ENTER));
+        });
+
+        return new VBox(tf, b);
+    }
+
+    private void event_handler(Event e) {
+        TextField t = (TextField) this.s.lookup("#textarea-main");
+        switch (e.getEventType().getName()) {
+            case "_KEY_ENTER":
+            case "MOUSE_PRESSED": {
+                System.out.println(t.getText().trim());
+                break;
+            }
+            default:
+                System.out.println("Unknown Event");
+        }
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        this.s = new Scene(createContent(), 500, 500);
+        primaryStage.setScene(this.s);
+        primaryStage.setTitle("Demo");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
 [^1]: https://fxdocs.github.io/docs/html5/#_event_handling
 [^2]: https://openjfx.io/
