@@ -59,7 +59,6 @@ export default {
 	name: "index",
 	mixins: [aosMixin],
 	async asyncData({ $content }) {
-		const projects = await $content("projects").fetch();
 		const posts = await $content("articles")
 			.only(["title", "description", "writtenat", "slug", "timetoread"])
 			.sortBy("writtenat", "desc")
@@ -92,12 +91,8 @@ export default {
 			return (x.writtenat = `${day_name}, ${month} ${day}th  ${year}`);
 		});
 
-		posts.splice(2);
-		// projects.splice(3);
-
 		return {
 			posts,
-			projects,
 		};
 	},
 };

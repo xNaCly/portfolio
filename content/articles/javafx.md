@@ -1,8 +1,8 @@
 ---
 title: "Custom events and submitting on enter using JavaFx"
-description: Creating and handling custom events in javafx to handle submitting on enter
+description: Creating custom events in javafx to handle submitting on enter in TextFields
 author: xnacly
-timetoread:
+timetoread: 4min
 writtenat: 2022-07-14
 nottags: java#javafx#gui
 ---

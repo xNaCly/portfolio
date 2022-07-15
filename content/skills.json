@@ -1,5 +1,44 @@
 {
-	"skills": [
+	"r_language": [
+		{
+			"title": "German",
+			"level": "Native",
+			"date": "2003-01-01"
+		},
+		{
+			"title": "English",
+			"level": "expert",
+			"date": "2013-01-01"
+		}
+	],
+	"os": [
+		{
+			"title": "Windows",
+			"level": "advanced",
+			"date": "2016-11-01"
+		},
+		{
+			"title": "Debian",
+			"level": "advanced",
+			"date": "2021-11-01"
+		},
+		{
+			"title": "Ubuntu",
+			"level": "advanced",
+			"date": "2020-11-01"
+		},
+		{
+			"title": "Arch-Linux",
+			"level": "advanced",
+			"date": "2021-11-01"
+		},
+		{
+			"title": "FreeBSD",
+			"level": "beginner",
+			"date": "2022-04-01"
+		}
+	],
+	"languages": [
 		{
 			"title": "javascript",
 			"level": "advanced",
@@ -17,7 +56,7 @@
 		},
 		{
 			"title": "java",
-			"level": "beginner",
+			"level": "intermediate",
 			"date": "2021-10-01"
 		},
 		{
@@ -29,6 +68,142 @@
 			"title": "HTML & CSS",
 			"level": "expert",
 			"date": "2019-07-30"
+		},
+		{
+			"title": "SQL",
+			"level": "intermediate",
+			"date": "2021-11-01"
+		},
+		{
+			"title": "Rust",
+			"level": "beginner",
+			"date": "2022-05-01"
+		},
+		{
+			"title": "PHP",
+			"level": "intermediate",
+			"date": "2022-04-01"
+		},
+		{
+			"title": "Markdown",
+			"level": "expert",
+			"date": "2020-04-01"
+		},
+		{
+			"title": "JSON",
+			"level": "expert",
+			"date": "2020-04-01"
+		},
+		{
+			"title": "Latex",
+			"level": "advanced",
+			"date": "2021-09-01"
+		},
+		{
+			"title": "Typescript",
+			"level": "intermediate",
+			"date": "2021-05-01"
+		},
+		{
+			"title": "Sass",
+			"level": "expert",
+			"date": "2021-01-01"
+		},
+		{
+			"title": "Go",
+			"level": "beginner",
+			"date": "2022-05-01"
+		}
+	],
+	"skills": [
+		{
+			"title": "Docker",
+			"level": "intermediate",
+			"date": "2021-06-01"
+		},
+		{
+			"title": "git",
+			"level": "advanced",
+			"date": "2020-08-01"
+		},
+		{
+			"title": "bash",
+			"level": "advanced",
+			"date": "2020-08-01"
+		},
+		{
+			"title": "github",
+			"level": "advanced",
+			"date": "2020-08-01"
+		},
+		{
+			"title": "vscode",
+			"level": "expert",
+			"date": "2020-05-01"
+		},
+		{
+			"title": "Neovim",
+			"level": "advanced",
+			"date": "2021-05-01"
+		},
+		{
+			"title": "Clion",
+			"level": "intermediate",
+			"date": "2022-03-01"
+		},
+		{
+			"title": "Intellij",
+			"level": "beginner",
+			"date": "2022-05-01"
+		},
+		{
+			"title": "Eclipse",
+			"level": "beginner",
+			"date": "2021-11-01"
+		}
+	],
+	"other": [
+		{
+			"title": "apache",
+			"level": "intermediate",
+			"date": "2022-03-01"
+		},
+		{
+			"title": "make",
+			"level": "intermediate",
+			"date": "2022-01-01"
+		},
+		{
+			"title": "express.js",
+			"level": "advanced",
+			"date": "2020-01-01"
+		},
+		{
+			"title": "node.js",
+			"level": "advanced",
+			"date": "2019-06-30"
+		},
+		{
+			"title": "vue.js",
+			"level": "intermediate",
+			"date": "2021-07-01"
+		},
+		{
+			"title": "react",
+			"level": "advanced",
+			"date": "2021-01-01"
+		}
+	],
+	"db": [
+		{
+			"title": "mongodb",
+			"level": "advanced",
+			"date": "2021-01-01"
+		},
+		{
+			"title": "SQLite",
+			"level": "advanced",
+			"date": "2022-01-01"
 		}
 	]
 }

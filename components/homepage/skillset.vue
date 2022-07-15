@@ -1,46 +1,87 @@
 <template>
 	<div class="skillset-wrapper" data-aos="fade-down">
-		<h2 class="navigator_header">Skillset:</h2>
-		<div class="skillset-seperator">
-			<div class="skillset-container skillsets-languages">
-				<SkillsetItem
-					v-for="skill in skills1"
-					:title="skill.title"
-					:key="skill.date"
-					:date="skill.date"
-					:level="skill.level"
-					:class="'skillset-left'"
-				/>
-			</div>
-			<div class="skillset-container skillsets-languages">
-				<SkillsetItem
-					v-for="skill in skills2"
-					:title="skill.title"
-					:key="skill.date"
-					:date="skill.date"
-					:level="skill.level"
-					:class="'skillset-right'"
-				/>
-			</div>
+		<h2>Skillset:</h2>
+		<h3 class="navigator_header">Languages:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in r_language"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+			/>
+		</div>
+		<h3 class="navigator_header">Operating systems:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in os"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+			/>
+		</div>
+		<h3 class="navigator_header">Frameworks and build systems:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in other"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+			/>
+		</div>
+		<h3 class="navigator_header">Tools:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in skills"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+				:class="'skillset-right'"
+			/>
+		</div>
+		<h3 class="navigator_header">Programming-, markup and query languages:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in languages"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+			/>
+		</div>
+		<h3 class="navigator_header">Databases:</h3>
+		<div class="skillset-container">
+			<SkillsetItem
+				v-for="skill in db"
+				:title="skill.title"
+				:key="skill.date"
+				:date="skill.date"
+				:level="skill.level"
+			/>
 		</div>
 	</div>
 </template>
 <script>
 import SkillsetItem from "../util/skillset_item.vue";
-import { skills as skills_ } from "../../content/skills.json";
-skills_.sort((a, b) => {
-	// if (a.level < b.level) return -1;
-	// if (a.level > b.level) return 1;
-	// return 0;
+import { skills, languages, other, os, r_language, db } from "../../content/skills.json";
+
+function sort(a, b) {
 	return new Date(a.date) - new Date(b.date);
-});
+}
 
 export default {
 	name: "Skillset",
 	data() {
 		return {
-			skills1: [skills_[0], skills_[1], skills_[2]],
-			skills2: [skills_[3], skills_[4], skills_[5]],
+			skills: skills.sort(sort),
+			languages: languages.sort(sort),
+			other: other.sort(sort),
+			os: os.sort(sort),
+			r_language: r_language.sort(sort),
+			db: db.sort(sort),
 		};
 	},
 	components: {

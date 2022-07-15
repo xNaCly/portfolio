@@ -217,6 +217,9 @@ div.article div.nuxt-content h4 a,
 div.article div.nuxt-content h5 a {
 	display: none !important;
 }
+div.article div.nuxt-content img {
+	max-width: 100%;
+}
 /*Homepage css roles*/
 .homepage-link {
 	display: flex;
@@ -370,6 +373,7 @@ table {
 
 .article-preview.homepage-article:hover {
 	left: -100px;
+	box-shadow: var(--shadow) 0px 10px 10px;
 }
 
 .article-preview-title {
@@ -494,22 +498,18 @@ table {
 
 /* skillset roles */
 .skillset-wrapper {
-	margin: 5rem 0 2rem 60%;
+	margin: 5rem 0 2rem 40%;
+	width: 70%;
 	box-shadow: var(--shadow) 0px 5px 10px;
 	border-radius: 0.5rem;
 	background-color: var(--background);
 	padding: 1.5rem;
-	width: fit-content;
+	/* width: fit-content; */
 }
 .skillset-container {
-	display: flex;
-	flex-direction: column;
-}
-
-.skillset-seperator {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-bottom: 1rem;
 }
 
 .skillset {
@@ -519,12 +519,16 @@ table {
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 0.5rem;
-	padding: 0.75rem;
+	padding: 1rem;
 	background-color: var(--background-sec);
 	margin: 0.5rem;
 	height: fit-content;
 	transition: all 0.3s ease-out !important;
-	position: relative;
+}
+
+.skillset:hover {
+	color: var(--primary);
+	box-shadow: var(--shadow) 0px 10px 10px;
 }
 
 .skillset-title {
@@ -545,18 +549,6 @@ table {
 	font-size: smaller;
 }
 
-.skillset-left {
-	left: -20px;
-}
-.skillset-right {
-	right: -20px;
-}
-.skillset-left:hover {
-	left: -40px;
-}
-.skillset-right:hover {
-	right: -40px;
-}
 .skillset-badge-expert {
 	background-color: var(--expert);
 	box-shadow: inset 0 -4px 0 var(--expert-darker);
@@ -651,6 +643,10 @@ table {
 
 /* media querys*/
 @media only screen and (max-width: 1000px) {
+	.skillset-container {
+		display: flex;
+		flex-direction: column;
+	}
 	.skillset-seperator {
 		flex-wrap: wrap;
 	}
