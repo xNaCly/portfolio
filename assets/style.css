@@ -626,28 +626,11 @@ table {
 	.homepage-article {
 		position: inherit;
 	}
-	.skillset-right,
-	.skillset-left {
-		right: 0;
-		left: 0;
-		position: inherit;
-	}
 	.skillset-wrapper {
 		margin: 3rem 0 10rem 0;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
-	}
-	.projects-container-container {
-		margin: 0;
-		padding: 1.5rem;
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
-	.project-card {
-		margin: 0;
-		margin-bottom: 1rem;
-		width: fit-content;
 	}
 	.about-container {
 		flex-direction: column;
@@ -709,6 +692,13 @@ table {
 	}
 	.about-container {
 		margin-top: 2rem;
+	}
+	.skillset-wrapper {
+		padding: 0;
+	}
+	.skillset-wrapper h3,
+	h2 {
+		margin-left: 0.5rem;
 	}
 }
 
