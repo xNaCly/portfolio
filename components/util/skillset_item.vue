@@ -1,10 +1,19 @@
 <template>
 	<div class="skillset" data-aos="fade-down">
+		<img
+			v-if="img"
+			:src="`https://raw.githubusercontent.com/devicons/devicon/master/icons/${get_prefix(img)}/${img}.svg`"
+			alt="test"
+		/>
 		<div class="skillset-title">
 			{{ capitalise(title) }}
 			<span class="skillset-experience">{{ formatTime(date) }}</span>
 		</div>
-		<div class="badge skillset-badge" :class="`skillset-badge-${level}`">{{ capitalise(level) }}</div>
+		<div>
+			<div class="badge skillset-badge" :class="`skillset-badge-${level}`">
+				{{ capitalise(level) }}
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -31,7 +40,10 @@ export default {
 
 			return string;
 		},
+		get_prefix: function (string) {
+			return string.split("-")[0];
+		},
 	},
-	props: ["title", "level", "date"],
+	props: ["title", "level", "date", "img"],
 };
 </script>

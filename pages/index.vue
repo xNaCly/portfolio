@@ -37,19 +37,11 @@
 					</p>
 				</div>
 			</div>
-			<!-- <div data-aos="fade-up-left" class="projects-container-container">
-				<h2 class="navigator_header">Projects:</h2>
-				<div class="projects-container">
-					<div data-aos="fade-left" v-for="project of projects" :key="project.title" class="project-card">
-						<a :href="project.href">
-							<img class="project-card-image" :src="project.img" />
-						</a>
-					</div>
-				</div>
-			</div> -->
-			<HomepageSkillset />
+			<div class="skillset-wrapper-wrapper">
+				<HomepageSkillset />
+			</div>
 		</div>
-		<div class="bottom_wave" v-bind:class="`bottom_wave_${$colorMode.value}`"></div>
+		<HomepageFooter />
 	</div>
 </template>
 

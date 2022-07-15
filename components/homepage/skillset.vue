@@ -1,16 +1,6 @@
 <template>
 	<div class="skillset-wrapper" data-aos="fade-down">
 		<h2>Skillset:</h2>
-		<h3 class="navigator_header">Languages:</h3>
-		<div class="skillset-container">
-			<SkillsetItem
-				v-for="skill in r_language"
-				:title="skill.title"
-				:key="skill.date"
-				:date="skill.date"
-				:level="skill.level"
-			/>
-		</div>
 		<h3 class="navigator_header">Operating systems:</h3>
 		<div class="skillset-container">
 			<SkillsetItem
@@ -19,6 +9,8 @@
 				:key="skill.date"
 				:date="skill.date"
 				:level="skill.level"
+				:img="skill.img"
+				:img_pre="skill.img_pre"
 			/>
 		</div>
 		<h3 class="navigator_header">Frameworks and build systems:</h3>
@@ -29,6 +21,8 @@
 				:key="skill.date"
 				:date="skill.date"
 				:level="skill.level"
+				:img="skill.img"
+				:img_pre="skill.img_pre"
 			/>
 		</div>
 		<h3 class="navigator_header">Tools:</h3>
@@ -39,7 +33,8 @@
 				:key="skill.date"
 				:date="skill.date"
 				:level="skill.level"
-				:class="'skillset-right'"
+				:img="skill.img"
+				:img_pre="skill.img_pre"
 			/>
 		</div>
 		<h3 class="navigator_header">Programming-, markup and query languages:</h3>
@@ -50,6 +45,8 @@
 				:key="skill.date"
 				:date="skill.date"
 				:level="skill.level"
+				:img="skill.img"
+				:img_pre="skill.img_pre"
 			/>
 		</div>
 		<h3 class="navigator_header">Databases:</h3>
@@ -60,13 +57,15 @@
 				:key="skill.date"
 				:date="skill.date"
 				:level="skill.level"
+				:img="skill.img"
+				:img_pre="skill.img_pre"
 			/>
 		</div>
 	</div>
 </template>
 <script>
 import SkillsetItem from "../util/skillset_item.vue";
-import { skills, languages, other, os, r_language, db } from "../../content/skills.json";
+import { skills, languages, other, os, db } from "../../content/skills.json";
 
 function sort(a, b) {
 	return new Date(a.date) - new Date(b.date);
@@ -80,7 +79,6 @@ export default {
 			languages: languages.sort(sort),
 			other: other.sort(sort),
 			os: os.sort(sort),
-			r_language: r_language.sort(sort),
 			db: db.sort(sort),
 		};
 	},
