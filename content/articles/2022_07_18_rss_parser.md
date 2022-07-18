@@ -142,8 +142,8 @@ error handling is done by having a catch console erroring every error occurring.
 ### The problem with child elements p.I
 
 If you think about it, at this point we can parse line by line and easily extract content such as the title,
-description, link and other stuff. But what about a child element such `item` title, link and description. How do we
-know if we are currently in a child context. To fix this problem we just introduce two new variables:
+description, link and other stuff. But what about a child element such as `item` title, link and description. How do we
+know if we are currently in a child context. To fix this problem we introduce two new variables:
 
 ```js
 /**/
