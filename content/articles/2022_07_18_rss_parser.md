@@ -200,24 +200,18 @@ $: npm start
 ['', 'link', 'https://www.nytimes.com', '/link', '']
 ```
 
-As you can see we conviniently have the tag type/name at the index `1` of the array and the content at the index `2` of
+As you can see we conveniently have the tag type/name at the index `1` of the array and the content at the index `2` of
 the array.
 
 ### Do i like this tag?
 
-Now we need to somehow check what tags we need and don't need. I personally think i won't need tags like these:
+Sometimes one can find XML tags like the following with additional attributes. Personally i don't need the attributes,
+so i will only use the tag name as the key:
 
 ```xml
-<dc:creator>J. David Goodman and Edgar Sandoval</dc:creator>
 <guid isPermaLink="true">https://www.nytimes.com/2022/07/17/us/politics/climate-change-manchin-biden.html</guid>
-<atom:link href="https://www.nytimes.com/2022/07/17/us/politics/climate-change-manchin-biden.html" rel="standout" />
+<category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Robb Elementary School (Uvalde, Tex)</category>
 ```
-
-In general i don't want any tags with `"`, `'`, `:`, `=` and tags of type `channel`, furthermore i obviously want the
-tag to have some kind of content.
-
-To check if the tag in the current iteration of the loop is matching our criteria, we need to write a small condition
-and only go further if the condition `isTag` is met:
 
 ```js
 /**/
@@ -227,20 +221,23 @@ let itemObj = {};
 res.forEach((el) => {
 	el = el.split(TAG_REGEX);
 
-	let isTag = !(
-		el[1]?.includes("'") ||
-		el[1]?.includes('"') ||
-		el[1]?.includes("=") ||
-		el[1]?.includes(":") ||
-		el[1] === "channel"
-	);
+	if (el[1].includes(" ")) el[1] = el[1].split(" ")[0];
 
-	if (isTag) {
-		/* parse here */
-	}
+	/* parse here */
 
 	/**/
 });
+```
+
+Splitting the tag name at the space converts the above into the following json:
+
+```js
+{
+  /**/
+  guid: "",
+  category: "",
+  /**/
+}
 ```
 
 ### The (not so) hard part
@@ -255,12 +252,10 @@ let lastImportantKey = "";
 let itemObj = {};
 
 res.forEach((el) => {
-	/*split line and check if tag is okay*/
+	/*split line */
 
-	if (isTag) {
-		if (el[2]) {
-			feed[el[1]] = el[2];
-		}
+	if (el[2]) {
+		feed[el[1]] = el[2];
 	}
 
 	/**/
@@ -304,20 +299,18 @@ let lastImportantKey = "";
 let itemObj = {};
 
 res.forEach((el) => {
-	/*split line and check if tag is okay*/
+	/*split line */
 
-	if (isTag) {
-		if (el[1] === "item" || el[1] === "image") lastImportantKey = el[1];
-		else if (el[1] === "/item" || el[1] === "/image") {
-			lastImportantKey = "";
-			if (el[1] === "/image") feed.image = itemObj;
-			else feed.items.push(itemObj);
-			itemObj = {};
-		}
-		if (el[2]) {
-			if (lastImportantKey === "item" || lastImportantKey === "image") itemObj[el[1]] = el[2];
-			else feed[el[1]] = el[2];
-		}
+	if (el[1] === "item" || el[1] === "image") lastImportantKey = el[1];
+	else if (el[1] === "/item" || el[1] === "/image") {
+		lastImportantKey = "";
+		if (el[1] === "/image") feed.image = itemObj;
+		else feed.items.push(itemObj);
+		itemObj = {};
+	}
+	if (el[2]) {
+		if (lastImportantKey === "item" || lastImportantKey === "image") itemObj[el[1]] = el[2];
+		else feed[el[1]] = el[2];
 	}
 
 	/**/
@@ -391,27 +384,19 @@ async function parse_rss(url) {
 	res.forEach((el) => {
 		el = el.split(TAG_REGEX);
 
-		let isTag = !(
-			el[1].includes("'") ||
-			el[1].includes('"') ||
-			el[1].includes("=") ||
-			el[1]?.includes(":") ||
-			el[1] === "channel"
-		);
+		if (el[1].includes(" ")) el[1] = el[1].split(" ")[0];
 
-		if (isTag) {
-			if (el[1] === "item" || el[1] === "image") lastImportantKey = el[1];
-			else if (el[1] === "/item" || el[1] === "/image") {
-				lastImportantKey = "";
-				if (el[1] === "/image") feed.image = itemObj;
-				else feed.items.push(itemObj);
-				itemObj = {};
-			}
+		if (el[1] === "item" || el[1] === "image") lastImportantKey = el[1];
+		else if (el[1] === "/item" || el[1] === "/image") {
+			lastImportantKey = "";
+			if (el[1] === "/image") feed.image = itemObj;
+			else feed.items.push(itemObj);
+			itemObj = {};
+		}
 
-			if (el[2]) {
-				if (lastImportantKey === "item" || lastImportantKey === "image") itemObj[el[1]] = el[2];
-				else feed[el[1]] = el[2];
-			}
+		if (el[2]) {
+			if (lastImportantKey === "item" || lastImportantKey === "image") itemObj[el[1]] = el[2];
+			else feed[el[1]] = el[2];
 		}
 	});
 
