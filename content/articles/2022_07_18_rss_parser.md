@@ -37,20 +37,28 @@ Take for example the following XML:
   <channel>
     <title>NYT &gt; Top Stories</title>
     <link>https://www.nytimes.com</link>
+    <atom:link href="https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" rel="self" type="application/rss+xml" />
+    <description />
     <language>en-us</language>
     <copyright>Copyright 2022 The New York Times Company</copyright>
-    <lastBuildDate>Mon, 18 Jul 2022 05:28:35 +0000</lastBuildDate>
-    <pubDate>Mon, 18 Jul 2022 05:00:05 +0000</pubDate>
+    <lastBuildDate>Mon, 18 Jul 2022 10:33:55 +0000</lastBuildDate>
+    <pubDate>Mon, 18 Jul 2022 10:06:46 +0000</pubDate>
     <image>
       <title>NYT &gt; Top Stories</title>
       <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
       <link>https://www.nytimes.com</link>
     </image>
     <item>
-      <title>Texas House Report on Uvalde School Shooting Finds ‘Systemic Failures’</title>
-      <link>https://www.nytimes.com/2022/07/17/us/uvalde-shooting-report.html</link>
-      <guid isPermaLink="true">https://www.nytimes.com/2022/07/17/us/uvalde-shooting-report.html</guid>
-      <description>The decision to finally confront the gunman was made by a small group of officers and could have been made far earlier, the report found.</description>
+      <title>Heat Wave In Texas and Central Plains Could Be the Hottest Yet</title>
+      <link>https://www.nytimes.com/2022/06/25/us/heat-wave-texas-oklahoma-plains.html</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2022/06/25/us/heat-wave-texas-oklahoma-plains.html</guid>
+      <atom:link href="https://www.nytimes.com/2022/06/25/us/heat-wave-texas-oklahoma-plains.html" rel="standout" />
+      <description></description>
+      <dc:creator>Isabella Grullón Paz</dc:creator>
+      <pubDate>Mon, 18 Jul 2022 04:10:13 +0000</pubDate>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2022/07/16/multimedia/-weather-us-heat-2/-weather-us-heat-2-moth.jpg" width="151" />
+      <media:credit>Shelby Tauber/Reuters</media:credit>
+      <media:description>A dried-up riverbed of the Trinity River in Dallas on Tuesday. In the coming week, parts of Texas could see their hottest temperatures of the summer yet.</media:description>
     </item>
   </channel>
 </rss>
@@ -70,18 +78,22 @@ should present the data in JSON as follows:
 {
 	"items": [
 		{
-			"title": "Texas House Report on Uvalde School Shooting Finds ‘Systemic Failures’",
-			"link": "https://www.nytimes.com/2022/07/17/us/uvalde-shooting-report.html",
-			"description": "The decision to finally confront the gunman was made by a small group of officers and could have been made far earlier, the report found.",
-			"pubDate": "Mon, 18 Jul 2022 01:34:31 +0000"
+			"title": "Heat Wave In Texas and Central Plains Could Be the Hottest Yet",
+			"link": "https://www.nytimes.com/2022/06/25/us/heat-wave-texas-oklahoma-plains.html",
+			"guid": "https://www.nytimes.com/2022/06/25/us/heat-wave-texas-oklahoma-plains.html",
+			"description": " ",
+			"dc:creator": "Isabella Grullón Paz",
+			"pubDate": "Mon, 18 Jul 2022 04:10:13 +0000",
+			"media:credit": "Shelby Tauber/Reuters",
+			"media:description": "A dried-up riverbed of the Trinity River in Dallas on Tuesday. In the coming week, parts of Texas could see their hottest temperatures of the summer yet."
 		}
 	],
 	"title": "NYT &gt; Top Stories",
 	"link": "https://www.nytimes.com",
 	"language": "en-us",
 	"copyright": "Copyright 2022 The New York Times Company",
-	"lastBuildDate": "Mon, 18 Jul 2022 07:43:43 +0000",
-	"pubDate": "Mon, 18 Jul 2022 07:43:08 +0000",
+	"lastBuildDate": "Mon, 18 Jul 2022 10:33:55 +0000",
+	"pubDate": "Mon, 18 Jul 2022 10:06:46 +0000",
 	"image": {
 		"title": "NYT &gt; Top Stories",
 		"url": "https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png",
@@ -266,15 +278,21 @@ If you run this you will notice some issues...
 
 ```json
 {
-	"items": [],
-	"title": "In Rome, a New Museum for Recovered Treasures Before They Return Home",
-	"link": "https://www.nytimes.com/2022/07/17/arts/design/rome-museum-recovered-treasures.html",
-	"language": "en-us",
-	"copyright": "Copyright 2022 The New York Times Company",
-	"lastBuildDate": "Mon, 18 Jul 2022 08:58:48 +0000",
-	"pubDate": "Sun, 17 Jul 2022 19:45:54 +0000",
-	"url": "https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png",
-	"description": "The Museum of Rescued Art showcases antiquities that were looted or otherwise lost before they go back to institutions in the regions from which they were taken."
+  "items": [],
+  "title": "In Rome, a New Museum for Recovered Treasures Before They Return Home",
+  "link": "https://www.nytimes.com/2022/07/17/arts/design/rome-museum-recovered-treasures.html",
+  "language": "en-us",
+  "copyright": "Copyright 2022 The New York Times Company",
+  "lastBuildDate": "Mon, 18 Jul 2022 10:28:54 +0000",
+  "pubDate": "Sun, 17 Jul 2022 19:45:54 +0000",
+  "url": "https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png",
+  "guid": "https://www.nytimes.com/2022/07/17/arts/design/rome-museum-recovered-treasures.html",
+  "description": "The Museum of Rescued Art showcases antiquities that were looted or otherwise lost before they go back to institutions in the regions from which they were taken.",
+  "dc:creator": "Elisabetta Povoledo",
+  "media:credit": "Gianni Cipriano for The New York Times",
+  "media:description": "The Museum of Rescued Art in Rome, which opened last month, is focusing attention on the many art
+works that have been salvaged, some from natural disasters and others from thieves.",
+  "category": "Museum of Rescued Art"
 }
 ```
 
@@ -343,15 +361,16 @@ parse_rss("https://www.spiegel.de/schlagzeilen/tops/index.rss").then((_) => {
 			"description": "Wieder rollt eine Welle heißer Luft über die iberische Halbinsel und über Westeuropa. In der kommenden Woche erreicht sie Deutschland. Wir werden lernen müssen, mit Hitze, Dürre und Bränden zu leben.",
 			"category": "Wissenschaft",
 			"guid": "https://www.spiegel.de/wissenschaft/mensch/klimakrise-die-hitze-sucht-europa-heim-a-89aa1152-ed32-40af-9606-8fd6573423f2",
-			"pubDate": "Thu, 14 Jul 2022 10:25:33 +0200"
+			"pubDate": "Thu, 14 Jul 2022 10:25:33 +0200",
+			"content:encoded": "Wieder rollt eine Welle heißer Luft über die iberische Halbinsel und über Westeuropa. In der kommenden Woche erreicht sie Deutschland. Wir werden lernen müssen, mit Hitze, Dürre und Bränden zu leben."
 		}
 	],
 	"title": "DER SPIEGEL - Schlagzeilen - Tops",
 	"link": "https://www.spiegel.de/",
 	"description": "Deutschlands führende Nachrichtenseite. Alles Wichtige aus Politik, Wirtschaft, Sport, Kultur, Wissenschaft, Technik und mehr.",
 	"language": "de",
-	"pubDate": "Mon, 18 Jul 2022 11:24:52 +0200",
-	"lastBuildDate": "Mon, 18 Jul 2022 11:24:52 +0200",
+	"pubDate": "Mon, 18 Jul 2022 12:30:03 +0200",
+	"lastBuildDate": "Mon, 18 Jul 2022 12:30:03 +0200",
 	"image": {
 		"title": "DER SPIEGEL",
 		"link": "https://www.spiegel.de/",
