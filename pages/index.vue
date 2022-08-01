@@ -41,7 +41,6 @@
 				<HomepageSkillset />
 			</div>
 		</div>
-		<HomepageFooter />
 	</div>
 </template>
 
