@@ -51,36 +51,16 @@ export default {
 	name: "index",
 	mixins: [aosMixin],
 	async asyncData({ $content }) {
-		const posts = await $content("articles")
-			.only(["title", "description", "writtenat", "slug", "timetoread"])
-			.sortBy("writtenat", "desc")
-			.fetch();
-
-		const MONTHS = [
-			"January",
-			"February",
-			"March",
-			"April",
-			"May",
-			"June",
-			"July",
-			"August",
-			"September",
-			"October",
-			"November",
-			"Dezember",
-		];
-
-		const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-		posts.map((x) => {
-			let date = new Date(x.writtenat);
-			let day = date.getDate();
-			let day_name = DAYS[date.getDay()];
-			let month = MONTHS[date.getMonth()];
-			let year = date.getFullYear();
-
-			return (x.writtenat = `${day_name}, ${month} ${day}th  ${year}`);
+		const posts = (
+			await $content("articles")
+				.only(["title", "description", "writtenat", "slug", "timetoread"])
+				.sortBy("writtenat", "desc")
+				.fetch()
+		).map((x) => {
+			return {
+				...x,
+				writtenat: new Date(x.writtenat).toLocaleDateString(),
+			};
 		});
 
 		return {
