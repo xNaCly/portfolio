@@ -203,8 +203,8 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	word-wrap: normal;
-	margin-left: 14rem;
-	margin-right: 14rem;
+	margin-left: 19rem;
+	margin-right: 19rem;
 	margin-top: 3rem;
 }
 div.article div.nuxt-content h1 a,
@@ -216,6 +216,9 @@ div.article div.nuxt-content h5 a {
 }
 div.article div.nuxt-content img {
 	max-width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 /*Homepage css roles*/
 .homepage-link {
@@ -608,6 +611,34 @@ table {
 	}
 }
 
+@media only screen and (max-width: 1200px) {
+	.article,
+	.article-previews-container {
+		margin: 0;
+		height: fit-content;
+	}
+	.article-previews-container {
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+	}
+	.article-preview.homepage-article {
+		/* width: fit-content; */
+		left: 0;
+	}
+	.article {
+		padding: 0.5rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.article-previews-container.homepage-article {
+		min-width: 100%;
+	}
+	.article-subtitle {
+		width: 100%;
+		display: block;
+	}
+}
 /* media querys*/
 @media only screen and (max-width: 1000px) {
 	.skillset-container {
@@ -642,35 +673,12 @@ table {
 	.footnotes li {
 		word-break: break-word;
 	}
-	.article,
-	.article-previews-container {
-		margin: 0;
-		height: fit-content;
-	}
-	.article-previews-container {
-		align-items: center;
-		justify-content: center;
-		margin: 0;
-	}
-	.article-preview.homepage-article {
-		/* width: fit-content; */
-		left: 0;
-	}
-	.article {
-		padding: 0.5rem;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
-	}
-	.article-previews-container.homepage-article {
-		min-width: 100%;
-	}
-	.article-subtitle {
-		width: 100%;
-		display: block;
-	}
 }
 
 @media only screen and (max-width: 500px) {
+	body {
+		font-size: 11pt;
+	}
 	.article,
 	.article-previews-container {
 		height: fit-content;
