@@ -51,6 +51,9 @@
 code {
 	font-family: "Fira Code", monospace;
 }
+pre {
+	border-radius: 0.5rem;
+}
 html {
 	height: 100%;
 }
@@ -215,6 +218,7 @@ div.article div.nuxt-content h5 a {
 	display: none !important;
 }
 div.article div.nuxt-content img {
+	border-radius: 0.25rem;
 	max-width: 100%;
 	display: block;
 	margin-left: auto;
