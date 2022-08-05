@@ -78,6 +78,9 @@ export default {
 	async asyncData({ $content, params }) {
 		const article = await $content("articles", params.slug).fetch();
 		article.writtenat = new Date(article.writtenat).toLocaleDateString();
+		if (!article) {
+			return error({ statusCode: 404, message: "Article not found" });
+		}
 		return { article };
 	},
 	head() {
