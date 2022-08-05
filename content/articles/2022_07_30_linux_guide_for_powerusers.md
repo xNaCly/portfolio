@@ -129,7 +129,7 @@ now describe a simplified way to install your operating system:
 
 3. Download a minimal version of one of the three editions (I picked gnome).
     > For simplicitie’s sake, we will not check the authenticity of the downloaded distro, one should however always
-    > check this before installing a distro on bare metalFor simplicities sake we will not check the authe
+    > check this before installing a distro on bare metal.
 4. Start Virtual Box and click on `new`
 
 ![virtual box new vm](linux/vb_1.webp)
@@ -164,7 +164,7 @@ with the following attributes (you will be asked for these in the next few windo
 
 12. Now click on `start`
 
-13. Wait till the system boots (you should some logs), click on `launch installer` and go trough it.
+13. Wait till the system boots (you should see some logs), click on `launch installer` and go trough it.
 
 -   Location: go with the default
 -   Keyboard: go with your keyboard layout
@@ -172,11 +172,15 @@ with the following attributes (you will be asked for these in the next few windo
 -   Users: fill the input fields, choose a password you can remember (for vms i always use root) and check the box which
     says `Use the same password for the administrator account`
 
-14. Hit install and install now in the next prompt
+14. Hit install and install now in the next prompt.
+15. Check the `restart now` box and click on `✓Done` (the vm will now reboot into the freshly installed os)
+16. Login with your very strong password from 13. and explore the system:
+
+![manjaro result](linux/manjaro_result.webp)
 
 ### What do we need, how do we get it?
 
-### Do you want a DE?
+#### Do you want a DE?
 
 ### Configuring your system
 
