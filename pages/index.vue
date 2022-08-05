@@ -52,15 +52,19 @@ export default {
 	async asyncData({ $content }) {
 		const posts = (
 			await $content("articles")
-				.only(["title", "description", "writtenat", "slug", "timetoread"])
+				.only(["title", "description", "writtenat", "slug", "timetoread", "draft"])
 				.sortBy("writtenat", "desc")
 				.fetch()
-		).map((x) => {
-			return {
-				...x,
-				writtenat: new Date(x.writtenat).toLocaleDateString(),
-			};
-		});
+		)
+			.filter((x) => {
+				return !x.draft;
+			})
+			.map((x) => {
+				return {
+					...x,
+					writtenat: new Date(x.writtenat).toLocaleDateString(),
+				};
+			});
 
 		return {
 			posts,
