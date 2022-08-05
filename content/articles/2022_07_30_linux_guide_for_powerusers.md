@@ -8,17 +8,19 @@ nottags: linux#guide#i3wm
 draft: true
 ---
 
-# What to expect
+## What to expect
+
+This guide is meant as a loose inspiration for a poweruser looking to switch to linux. It showcases window manager,
+terminal, i3blocks, i3status, nvim, wallpapers and dunst configuration, basic package manager usage and some information
+about everything you need to know to really configure a powerusers system.
 
 ## Getting started with the Lingo
 
-![xkcd_languages](https://imgs.xkcd.com/comics/language_development.png)
+![xkcd_languages](https://imgs.xkcd.com/comics/language_development.webp)
 
 ### What is all this stuff…
 
 #### Linux (+-/GNU)
-
-![linux](https://www.kernel.org/theme/images/logos/tux.png)
 
 Linux is the kernel of your distro, written in C and Assembly by Linus Torvalds and thousands of contributors.
 
@@ -52,7 +54,7 @@ one and switching between them is very easy.
 
 #### Package manager
 
-![xkcd_install_script](https://imgs.xkcd.com/comics/universal_install_script.png)
+![xkcd_install_script](https://imgs.xkcd.com/comics/universal_install_script.webp)
 
 A package manager is a tool which installes, removes and updates installed software for you. No more going to a random
 website and downloading an `*.exe` file only to have your hdd bricked after disabling the antivirus and running the
@@ -68,14 +70,14 @@ the distribution: `pacman`.
 
 #### Desktop environment (DE) vs window manager (WM)
 
-A desktop environment such as [GNOME]() bundles a file manager, terminal, window manager, settings and more into the
-GNOME package. Everything in it is thightly integrated and applications in the bundle often look similar and depend on
-the same libraries. A `de` handles almost everything the user interacts with inside the GUI, such as volume managment,
-connecting to networks, automounting drives, themeing
+A desktop environment such as [GNOME](https://www.gnome.org/) bundles a file manager, terminal, window manager, settings
+and more into the GNOME package. Everything in it is thightly integrated and applications in the bundle often look
+similar and depend on the same libraries. A `de` handles almost everything the user interacts with inside the GUI, such
+as volume managment, connecting to networks, mounting drives, themeing and other.
 
 ### Which distro to choose?
 
-![xkcd_oses](https://imgs.xkcd.com/comics/operating_systems.png)
+![xkcd_oses](https://imgs.xkcd.com/comics/operating_systems.webp)
 
 I love pacman and getting new software updates fast, therefore i personally use Arch Linux, which can sometimes require
 knowledge or some time to maintain. The distro we intend to use is based on arch linux, but has a lot of preconfigured
@@ -86,8 +88,8 @@ software, making it interesting for beginners and advanced users.
 > Manjaro is not superior or inferior to any other Linux distribution, they all do the same. Manjaro has its own package
 > manager, themes, tools and custom Kernels.
 
-The above was taken from the manjaro download page and i agree wholeheartedly. Roll a die and pick a random distro, it
-won't really matter.
+The above was taken from the manjaro download page and i agree wholeheartedly with the first part. Roll a die and pick a
+random distro, it won't really matter.
 
 #### Rolling release vs Stable release (Continuous delivery)
 
@@ -102,21 +104,77 @@ I personally never had stability issues on arch linux and ppas annoy the shit ou
 
 Relevant:
 
-![arch_meme](linux/arch.jpg)
+![arch_meme](linux/arch.webp)
 
 ## Using Linux
 
-As said before, this in this tutorial we will be using Manjaro due to the following reasons:
+As said before, in this tutorial we will be using Manjaro due to it:
 
--   arch based
-    -   rolling release
-    -   pacman and yay
--   fully configured system (yes bloat, idc its a beginners tutorial)
--   its linux
+-   being based on arch
+    -   having rolling release updates
+    -   having pacman and yay installed
+-   containing a fully configured system (yes bloat, idc its a beginners tutorial)
+-   (ofc) being linux
 
 ### Installing
 
-Before installing on real hardware i would recommend you to spin up a virtual machine and install manjaro there.
+Before installing on real hardware i would recommend you to spin up a virtual machine and install Manjaro there. I will
+now describe a simplified way to install your operating system:
+
+1. Install [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads) (select `Windows hosts`)
+2. Head to the manjaro download page [here](https://manjaro.org/download), scroll down till you see the
+   `OFFICIAL EDITIONS` badge.
+
+![manjaro_download](linux/manjaro_download.webp)
+
+3. Download a minimal version of one of the three editions (I picked gnome).
+    > For simplicitie’s sake, we will not check the authenticity of the downloaded distro, one should however always
+    > check this before installing a distro on bare metalFor simplicities sake we will not check the authe
+4. Start Virtual Box and click on `new`
+
+![virtual box new vm](linux/vb_1.webp)
+
+5. Name your box with whatever you want, and select `Type: Linux` and `Version: Arch Linux (64-bit)`
+
+![virtual box new vm name and type](linux/vb_2.webp)
+
+6. Go with the default for `memory size`:
+
+![virtual box new vm memory](linux/vb_3.webp)
+
+7. You want to create a new hard drive:
+
+![virtual box new vm hard drive](linux/vb_4.webp)
+
+with the following attributes (you will be asked for these in the next few windows):
+
+-   VDI (VirtualBox Disk Image)
+-   dynamically allocated
+-   25GB
+
+8. Hit enter and you have your vm
+9. Head to `Settings->System->Boot Order` and move the `Hard Disk` option to the top of the list (this allows the vm to
+   boot into the operating system after installation and reboot)
+
+10. Go to `Settings->Storage` and add a new iso by following this image:
+
+![virtual box new vm add iso](linux/vb_5.webp)
+
+11. Click on `open->choose->ok`
+
+12. Now click on `start`
+
+13. Wait till the system boots (you should some logs), click on `launch installer` and go trough it.
+
+-   Location: go with the default
+-   Keyboard: go with your keyboard layout
+-   Partions: select `Erase disk`
+-   Users: fill the input fields, choose a password you can remember (for vms i always use root) and check the box which
+    says `Use the same password for the administrator account`
+
+14. Hit install and install now in the next prompt
+
+### What do we need, how do we get it?
 
 ### Do you want a DE?
 
@@ -124,12 +182,10 @@ Before installing on real hardware i would recommend you to spin up a virtual ma
 
 #### Filesystem
 
-fhs[^99]
-
 ## Dot(.) files
+
+My configuration is public and can be accessed [here](https://github.com/xNaCly/dotfiles)
 
 [^foss]: https://en.wikipedia.org/wiki/Free_and_open-source_software
 [^rolling_release]: https://en.wikipedia.org/wiki/Rolling_release
-[^manjaro_download]: https://endeavouros.com/latest-release/
-[^99]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 [^gnu/linux_controversy]: https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy
