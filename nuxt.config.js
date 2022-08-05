@@ -53,8 +53,12 @@ export default {
 
 	content: {
 		liveEdit: false,
-		fullTextSearchFields: ["title", "description"],
+		useCache: true,
 		markdown: {
+			toc: {
+				depth: 5,
+				searchDepth: 5,
+			},
 			prism: {
 				theme: "prism-themes/themes/prism-darcula.css",
 			},
