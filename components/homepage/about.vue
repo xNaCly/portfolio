@@ -1,6 +1,6 @@
 <template>
 	<div class="about-container fade-in">
-		<div data-aos="fade-right" class="about-leftside">
+		<div class="about-leftside">
 			<div>
 				<p class="about-description">Hi, I'm</p>
 				<h1 class="about-name">MATTEO</h1>
@@ -27,7 +27,7 @@
 				</a>
 			</div>
 		</div>
-		<div class="about-rightside" data-aos="fade-left">
+		<div class="about-rightside">
 			<div class="navigator">
 				<h2 class="navigator_header">About:</h2>
 				<div class="custom-codeblock">
@@ -40,7 +40,7 @@
 					<p>5<span class="tabbed_2">for_hire: false</span></p>
 					<p>6<span class="tabbed">}</span></p>
 				</div>
-				<div data-aos="fade-left" class="colorpalette">
+				<div class="colorpalette">
 					<div class="background_0"></div>
 					<div class="background_1"></div>
 					<div class="background_3"></div>

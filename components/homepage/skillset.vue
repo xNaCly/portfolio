@@ -1,5 +1,5 @@
 <template>
-	<div class="skillset-wrapper" data-aos="fade-down">
+	<div class="skillset-wrapper">
 		<h2>Skillset:</h2>
 		<h3 class="navigator_header">Operating systems:</h3>
 		<div class="skillset-container">

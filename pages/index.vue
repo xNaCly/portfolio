@@ -2,7 +2,7 @@
 	<div class="wave" v-bind:class="`wave_${$colorMode.value}`">
 		<div class="homepage-container">
 			<HomepageAbout />
-			<div data-aos="fade-up-right" class="article-previews-container homepage-article">
+			<div class="article-previews-container homepage-article">
 				<h2 class="navigator_header">Blog:</h2>
 				<div
 					v-for="article of posts"
@@ -45,10 +45,8 @@
 </template>
 
 <script>
-import aosMixin from "../mixins/aos";
 export default {
 	name: "index",
-	mixins: [aosMixin],
 	async asyncData({ $content }) {
 		const posts = (
 			await $content("articles")

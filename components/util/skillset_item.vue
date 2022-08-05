@@ -1,5 +1,5 @@
 <template>
-	<div class="skillset" data-aos="fade-down">
+	<div class="skillset">
 		<img
 			v-if="img"
 			:src="`https://raw.githubusercontent.com/devicons/devicon/master/icons/${get_prefix(img)}/${img}.svg`"
