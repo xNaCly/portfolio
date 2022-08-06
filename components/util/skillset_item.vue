@@ -3,7 +3,7 @@
 		<img
 			v-if="img"
 			:src="`https://raw.githubusercontent.com/devicons/devicon/master/icons/${get_prefix(img)}/${img}.svg`"
-			alt="test"
+			:alt="title"
 		/>
 		<div class="skillset-title">
 			{{ capitalise(title) }}
