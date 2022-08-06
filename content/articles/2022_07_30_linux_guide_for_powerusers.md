@@ -1,6 +1,6 @@
 ---
 title: Linux guide for powerusers
-description: A guide to help you setup your linux based workmachine and explain some core concepts
+description: A guide to help you setup your linux workmachine and explain some core concepts
 author: xnacly
 timetoread: 30min
 writtenat: 2022-07-30
@@ -15,8 +15,6 @@ terminal, i3blocks, i3status, nvim, wallpapers and dunst configuration, basic pa
 about everything you need to know to really configure a powerusers system.
 
 ## Getting started with the Lingo
-
-![xkcd_languages](https://imgs.xkcd.com/comics/language_development.webp)
 
 ### What is all this stuff…
 
@@ -36,10 +34,18 @@ Most people use Linux as a synopsis for everything included in a distribution, s
 environment, window manager, shell, etc. even though Linux is just the name of the kernel. Everyone knows what you're
 talking about by just calling everything Linux.
 
+> **View the current kernel version and build by running**
+>
+> ```bash
+> $: uname -a
+> # outdated wsl kernel
+> Linux THINK-**** 4.4.0-19041-Microsoft #1237-Microsoft Sat Sep 11 14:32:00 PST 2021 x86_64 x86_64 x86_64 GNU/Linux
+> ```
+
 #### Distribution
 
-As hinted above a distribution is a package of software. Most Linux distribution contain free software[^foss] as well as
-the Kernel, some sort of desktop environment, a window manager, multiple Apps such as a word processor and a Webbrowser.
+As hinted above a distribution is a package of software. Most Linux distribution contain the Kernel, some sort of
+desktop environment, a window manager, multiple Apps such as a word processor and a Webbrowser.
 
 Some Distros are known for their gigantic package repositories like [Debian](https://www.debian.org/index.en.html) and
 [Arch](https://archlinux.org/), other are famous for their security like e.g.
@@ -48,22 +54,37 @@ Some Distros are known for their gigantic package repositories like [Debian](htt
 [NixOS](https://nixos.org/) (unconventional package managing), [Artix](https://artixlinux.org/) (different init system)
 or [Void linux](https://voidlinux.org/) (all the before + support for musl libc implementation)
 
-Noone really knows how many distros there
-[are](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg), everyone can make
-one and switching between them is very easy.
+No one really knows how many distros there
+[are](https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg), because everyone
+can make one and switching between them is very easy.
 
 #### Package manager
 
-![xkcd_install_script](https://imgs.xkcd.com/comics/universal_install_script.webp)
-
-A package manager is a tool which installes, removes and updates installed software for you. No more going to a random
-website and downloading an `*.exe` file only to have your hdd bricked after disabling the antivirus and running the
-totally legitimate vbux generator.
+A package manager is a tool which installes, removes and updates software for you. No more going to a random website and
+downloading an `*.exe` file only to have your hdd bricked after disabling the antivirus and running the totally
+legitimate vbux generator. Package managers are accessed using the terminal, but some desktop environments include
+graphical user interfaces for managing packages.
 
 A package manager such as pacman is relativly secure due to package signing and other messuares which were put in place
 to save users from malious software.
 
-Almost all distributions contain a package manager, here are some famous ones: `apt`, `pacman` and `dnf`.
+Almost all distributions contain a package manager, the most famous are: `apt`, `pacman` and `dnf`.
+
+package manager cli examples:
+
+```bash
+# install a tool named neovim
+sudo apt install neovim
+sudo pacman -S neovim
+
+# check for new updates, upgrade the system
+sudo apt update && sudo apt upgrade
+sudo pacman -Syyu
+
+# remove neovim
+sudo apt remove neovim
+sudo pacman -R neovim
+```
 
 In this tutorial we will use [Manjaro](https://manjaro.org/), therefore you can focus on the package manager included in
 the distribution: `pacman`.
@@ -76,8 +97,6 @@ similar and depend on the same libraries. A `de` handles almost everything the u
 as volume managment, connecting to networks, mounting drives, themeing and other.
 
 ### Which distro to choose?
-
-![xkcd_oses](https://imgs.xkcd.com/comics/operating_systems.webp)
 
 I love pacman and getting new software updates fast, therefore i personally use Arch Linux, which can sometimes require
 knowledge or some time to maintain. The distro we intend to use is based on arch linux, but has a lot of preconfigured
@@ -93,7 +112,7 @@ random distro, it won't really matter.
 
 #### Rolling release vs Stable release (Continuous delivery)
 
-To always have the newest and shiniest software at hand, one could decide to pick a Distro with a rolling release
+To always have the newest and shiniest software at hand, one could decide to pick a distro with a rolling release
 circle[^rolling_release], which can at best (or worst) have several updates available a day. Like everything else RR
 distros have up- and downsides, you can read further about them [here](https://itsfoss.com/rolling-release/)
 
@@ -106,7 +125,7 @@ Relevant:
 
 ![arch_meme](linux/arch.webp)
 
-## Using Linux
+## Powering up
 
 As said before, in this tutorial we will be using Manjaro due to it:
 
@@ -128,8 +147,10 @@ now describe a simplified way to install your operating system:
 ![manjaro_download](linux/manjaro_download.webp)
 
 3. Download a minimal version of one of the three editions (I picked gnome).
-    > For simplicitie’s sake, we will not check the authenticity of the downloaded distro, one should however always
-    > check this before installing a distro on bare metal.
+    > **DISCLAIMER**
+    >
+    > For simplicitie’s sake, we will not check the authenticity of the downloaded image, one should however always
+    > check this before installing on bare metal.
 4. Start Virtual Box and click on `new`
 
 ![virtual box new vm](linux/vb_1.webp)
