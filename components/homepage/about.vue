@@ -37,8 +37,11 @@
 					<p>
 						4<span class="tabbed_2">age: {{ age }},</span>
 					</p>
-					<p>5<span class="tabbed_2">for_hire: false</span></p>
-					<p>6<span class="tabbed">}</span></p>
+					<p>5<span class="tabbed_2">for_hire: false,</span></p>
+					<p>
+						6<span class="tabbed_2"><a href="https://xnacly.github.io/blog">blog_link</a></span>
+					</p>
+					<p>7<span class="tabbed">}</span></p>
 				</div>
 				<div class="colorpalette">
 					<div class="background_0"></div>
